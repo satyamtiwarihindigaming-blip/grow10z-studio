@@ -1,0 +1,44 @@
+[
+  {
+    "id": 0,
+    "start": 0.0,
+    "end": 6.421333333333333,
+    "png": "studio_ramayana/episodes/ep001/captions/sub_0.png"
+  },
+  {
+    "id": 1,
+    "start": 6.921333333333333,
+    "end": 13.236,
+    "png": "studio_ramayana/episodes/ep001/captions/sub_1.png"
+  },
+  {
+    "id": 2,
+    "start": 13.636000000000001,
+    "end": 17.476,
+    "png": "studio_ramayana/episodes/ep001/captions/sub_2.png"
+  },
+  {
+    "id": 3,
+    "start": 17.976,
+    "end": 22.349333333333334,
+    "png": "studio_ramayana/episodes/ep001/captions/sub_3.png"
+  },
+  {
+    "id": 4,
+    "start": 22.849333333333334,
+    "end": 29.548000000000002,
+    "png": "studio_ramayana/episodes/ep001/captions/sub_4.png"
+  },
+  {
+    "id": 5,
+    "start": 30.048000000000002,
+    "end": 36.96,
+    "png": "studio_ramayana/episodes/ep001/captions/sub_5.png"
+  },
+  {
+    "id": 6,
+    "start": 37.26,
+    "end": 41.548,
+    "png": "studio_ramayana/episodes/ep001/captions/sub_6.png"
+  }
+]

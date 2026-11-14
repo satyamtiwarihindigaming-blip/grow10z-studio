@@ -1,0 +1,90 @@
+name: GROW10Z Daily Ramayana 24/7 Automation
+
+on:
+  schedule:
+    # Runs everyday at 05:30 UTC = 11:00 AM IST (Runs even when PC is completely turned off)
+    - cron: '30 5 * * *'
+  workflow_dispatch:
+    inputs:
+      episode_id:
+        description: 'Specific Episode ID to produce (leave blank for automatic next episode)'
+        required: false
+        default: ''
+
+permissions:
+  contents: write
+
+jobs:
+  produce-and-publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 📥 Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: 🐍 Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: 📦 Install FFmpeg and Devanagari Fonts
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg fonts-deva fonts-lohit-deva
+
+      - name: ⚙️ Install Python Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install numpy soundfile scipy pillow skia-python
+
+      - name: 🚀 Run Autonomous Daily Producer
+        run: |
+          python studio_ramayana/pipeline/auto_daily_producer.py ${{ github.event.inputs.episode_id }}
+
+      - name: 📤 Upload Video as Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: upload-ready-deliverables
+          path: |
+            UPLOAD_READY_VIDEOS/*.mp4
+            UPLOAD_READY_VIDEOS/*.txt
+
+      - name: 🏷️ Determine Release Tag & Assets
+        id: vars
+        run: |
+          LATEST_VIDEO=$(ls -t UPLOAD_READY_VIDEOS/*.mp4 | head -1)
+          LATEST_TXT=$(ls -t UPLOAD_READY_VIDEOS/*.txt | head -1)
+          TAG_NAME="episode-$(date +'%Y%m%d-%H%M%S')"
+          echo "video_path=$LATEST_VIDEO" >> $GITHUB_OUTPUT
+          echo "txt_path=$LATEST_TXT" >> $GITHUB_OUTPUT
+          echo "tag_name=$TAG_NAME" >> $GITHUB_OUTPUT
+
+      - name: 📦 Create Permanent GitHub Release (Direct Download Anywhere)
+        uses: softprops/action-gh-release@v2
+        if: steps.vars.outputs.video_path != ''
+        with:
+          tag_name: ${{ steps.vars.outputs.tag_name }}
+          name: "GROW10Z Ramayana Daily Episode - ${{ steps.vars.outputs.tag_name }}"
+          body_path: ${{ steps.vars.outputs.txt_path }}
+          files: |
+            ${{ steps.vars.outputs.video_path }}
+            ${{ steps.vars.outputs.txt_path }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: 📡 Run Cloud Publisher (Telegram / Webhook / Socials)
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          python studio_ramayana/pipeline/cloud_uploader.py "${{ steps.vars.outputs.video_path }}" "${{ steps.vars.outputs.txt_path }}" || true
+
+      - name: 💾 Commit & Push Progress
+        run: |
+          git config --global user.name "GROW10Z-Bot"
+          git config --global user.email "bot@grow10z.com"
+          git add studio_ramayana/episodes/episodes_database.json UPLOAD_READY_VIDEOS/*.txt
+          git commit -m "chore(auto): record completed episode [skip ci]" || echo "No changes to commit"
+          git push

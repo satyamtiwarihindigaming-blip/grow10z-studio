@@ -1,0 +1,1382 @@
+[
+  {
+    "chunk_id": "L1_0_0",
+    "start": 0.0,
+    "end": 0.23,
+    "chunk_words": [
+      "कल",
+      "रात",
+      "उस",
+      "वीराने"
+    ],
+    "active_index": 0
+  },
+  {
+    "chunk_id": "L1_0_1",
+    "start": 0.23,
+    "end": 0.574,
+    "chunk_words": [
+      "कल",
+      "रात",
+      "उस",
+      "वीराने"
+    ],
+    "active_index": 1
+  },
+  {
+    "chunk_id": "L1_0_2",
+    "start": 0.574,
+    "end": 0.804,
+    "chunk_words": [
+      "कल",
+      "रात",
+      "उस",
+      "वीराने"
+    ],
+    "active_index": 2
+  },
+  {
+    "chunk_id": "L1_0_3",
+    "start": 0.804,
+    "end": 1.493,
+    "chunk_words": [
+      "कल",
+      "रात",
+      "उस",
+      "वीराने"
+    ],
+    "active_index": 3
+  },
+  {
+    "chunk_id": "L1_1_0",
+    "start": 1.493,
+    "end": 1.838,
+    "chunk_words": [
+      "में",
+      "बूढ़ी",
+      "अम्मा",
+      "के"
+    ],
+    "active_index": 0
+  },
+  {
+    "chunk_id": "L1_1_1",
+    "start": 1.838,
+    "end": 2.412,
+    "chunk_words": [
+      "में",
+      "बूढ़ी",
+      "अम्मा",
+      "के"
+    ],
+    "active_index": 1
+  },
+  {
+    "chunk_id": "L1_1_2",
+    "start": 2.412,
+    "end": 2.986,
+    "chunk_words": [
+      "में",
+      "बूढ़ी",
+      "अम्मा",
+      "के"
+    ],
+    "active_index": 2
+  },
+  {
+    "chunk_id": "L1_1_3",
+    "start": 2.986,
+    "end": 3.216,
+    "chunk_words": [
+      "में",
+      "बूढ़ी",
+      "अम्मा",
+      "के"
+    ],
+    "active_index": 3
+  },
+  {
+    "chunk_id": "L1_2_0",
+    "start": 3.216,
+    "end": 3.79,
+    "chunk_words": [
+      "उतरते",
+      "ही",
+      "बाहर",
+      "मूसलाधार"
+    ],
+    "active_index": 0
+  },
+  {
+    "chunk_id": "L1_2_1",
+    "start": 3.79,
+    "end": 4.02,
+    "chunk_words": [
+      "उतरते",
+      "ही",
+      "बाहर",
+      "मूसलाधार"
+    ],
+    "active_index": 1
+  },
+  {
+    "chunk_id": "L1_2_2",
+    "start": 4.02,
+    "end": 4.479,
+    "chunk_words": [
+      "उतरते",
+      "ही",
+      "बाहर",
+      "मूसलाधार"
+    ],
+    "active_index": 2
+  },
+  {
+    "chunk_id": "L1_2_3",
+    "start": 4.479,
+    "end": 5.398,
+    "chunk_words": [
+      "उतरते",
+      "ही",
+      "बाहर",
+      "मूसलाधार"
+    ],
+    "active_index": 3
+  },
+  {
+    "chunk_id": "L1_3_0",
+    "start": 5.398,
+    "end": 5.972,
+    "chunk_words": [
+      "बारिश",
+      "शुरू",
+      "हो",
+      "गई"
+    ],
+    "active_index": 0
+  },
+  {
+    "chunk_id": "L1_3_1",
+    "start": 5.972,
+    "end": 6.431,
+    "chunk_words": [
+      "बारिश",
+      "शुरू",
+      "हो",
+      "गई"
+    ],
+    "active_index": 1
+  },
+  {
+    "chunk_id": "L1_3_2",
+    "start": 6.431,
+    "end": 6.661,
+    "chunk_words": [
+      "बारिश",
+      "शुरू",
+      "हो",
+      "गई"
+    ],
+    "active_index": 2
+  },
+  {
+    "chunk_id": "L1_3_3",
+    "start": 6.661,
+    "end": 6.891,
+    "chunk_words": [
+      "बारिश",
+      "शुरू",
+      "हो",
+      "गई"
+    ],
+    "active_index": 3
+  },
+  {
+    "chunk_id": "L2_0_0",
+    "start": 7.241,
+    "end": 7.695,
+    "chunk_words": [
+      "बाहर",
+      "बर्फ़ीली",
+      "हवा",
+      "चल"
+    ],
+    "active_index": 0
+  },
+  {
+    "chunk_id": "L2_0_1",
+    "start": 7.695,
+    "end": 8.605,
+    "chunk_words": [
+      "बाहर",
+      "बर्फ़ीली",
+      "हवा",
+      "चल"
+    ],
+    "active_index": 1
+  },
+  {
+    "chunk_id": "L2_0_2",
+    "start": 8.605,
+    "end": 8.946,
+    "chunk_words": [
+      "बाहर",
+      "बर्फ़ीली",
+      "हवा",
+      "चल"
+    ],
+    "active_index": 2
+  },
+  {
+    "chunk_id": "L2_0_3",
+    "start": 8.946,
+    "end": 9.173,
+    "chunk_words": [
+      "बाहर",
+      "बर्फ़ीली",
+      "हवा",
+      "चल"
+    ],
+    "active_index": 3
+  },
+  {
+    "chunk_id": "L2_1_0",
+    "start": 9.173,
+    "end": 9.514,
+    "chunk_words": [
+      "रही",
+      "थी",
+      "लेकिन",
+      "अम्मा"
+    ],
+    "active_index": 0
+  },
+  {
+    "chunk_id": "L2_1_1",
+    "start": 9.514,
+    "end": 9.741,
+    "chunk_words": [
+      "रही",
+      "थी",
+      "लेकिन",
+      "अम्मा"
+    ],
+    "active_index": 1
+  },
+  {
+    "chunk_id": "L2_1_2",
+    "start": 9.741,
+    "end": 10.31,
+    "chunk_words": [
+      "रही",
+      "थी",
+      "लेकिन",
+      "अम्मा"
+    ],
+    "active_index": 2
+  },
+  {
+    "chunk_id": "L2_1_3",
+    "start": 10.31,
+    "end": 10.878,
+    "chunk_words": [
+      "रही",
+      "थी",
+      "लेकिन",
+      "अम्मा"
+    ],
+    "active_index": 3
+  },
+  {
+    "chunk_id": "L2_2_0",
+    "start": 10.878,
+    "end": 11.106,
+    "chunk_words": [
+      "का",
+      "दिया",
+      "वो",
+      "पीतल"
+    ],
+    "active_index": 0
+  },
+  {
+    "chunk_id": "L2_2_1",
+    "start": 11.106,
+    "end": 11.56,
+    "chunk_words": [
+      "का",
+      "दिया",
+      "वो",
+      "पीतल"
+    ],
+    "active_index": 1
+  },
+  {
+    "chunk_id": "L2_2_2",
+    "start": 11.56,
+    "end": 11.788,
+    "chunk_words": [
+      "का",
+      "दिया",
+      "वो",
+      "पीतल"
+    ],
+    "active_index": 2
+  },
+  {
+    "chunk_id": "L2_2_3",
+    "start": 11.788,
+    "end": 12.242,
+    "chunk_words": [
+      "का",
+      "दिया",
+      "वो",
+      "पीतल"
+    ],
+    "active_index": 3
+  },
+  {
+    "chunk_id": "L2_3_0",
+    "start": 12.242,
+    "end": 12.47,
+    "chunk_words": [
+      "का",
+      "टिफ़िन",
+      "आग",
+      "की"
+    ],
+    "active_index": 0
+  },
+  {
+    "chunk_id": "L2_3_1",
+    "start": 12.47,
+    "end": 13.152,
+    "chunk_words": [
+      "का",
+      "टिफ़िन",
+      "आग",
+      "की"
+    ],
+    "active_index": 1
+  },
+  {
+    "chunk_id": "L2_3_2",
+    "start": 13.152,
+    "end": 13.379,
+    "chunk_words": [
+      "का",
+      "टिफ़िन",
+      "आग",
+      "की"
+    ],
+    "active_index": 2
+  },
+  {
+    "chunk_id": "L2_3_3",
+    "start": 13.379,
+    "end": 13.606,
+    "chunk_words": [
+      "का",
+      "टिफ़िन",
+      "आग",
+      "की"
+    ],
+    "active_index": 3
+  },
+  {
+    "chunk_id": "L2_4_0",
+    "start": 13.606,
+    "end": 13.947,
+    "chunk_words": [
+      "तरह",
+      "खौल",
+      "रहा",
+      "था"
+    ],
+    "active_index": 0
+  },
+  {
+    "chunk_id": "L2_4_1",
+    "start": 13.947,
+    "end": 14.288,
+    "chunk_words": [
+      "तरह",
+      "खौल",
+      "रहा",
+      "था"
+    ],
+    "active_index": 1
+  },
+  {
+    "chunk_id": "L2_4_2",
+    "start": 14.288,
+    "end": 14.629,
+    "chunk_words": [
+      "तरह",
+      "खौल",
+      "रहा",
+      "था"
+    ],
+    "active_index": 2
+  },
+  {
+    "chunk_id": "L2_4_3",
+    "start": 14.629,
+    "end": 14.857,
+    "chunk_words": [
+      "तरह",
+      "खौल",
+      "रहा",
+      "था"
+    ],
+    "active_index": 3
+  },
+  {
+    "chunk_id": "L3_0_0",
+    "start": 15.307,
+    "end": 15.749,
+    "chunk_words": [
+      "रोहन",
+      "ने",
+      "टिफ़िन",
+      "खोलने"
+    ],
+    "active_index": 0
+  },
+  {
+    "chunk_id": "L3_0_1",
+    "start": 15.749,
+    "end": 15.97,
+    "chunk_words": [
+      "रोहन",
+      "ने",
+      "टिफ़िन",
+      "खोलने"
+    ],
+    "active_index": 1
+  },
+  {
+    "chunk_id": "L3_0_2",
+    "start": 15.97,
+    "end": 16.634,
+    "chunk_words": [
+      "रोहन",
+      "ने",
+      "टिफ़िन",
+      "खोलने"
+    ],
+    "active_index": 2
+  },
+  {
+    "chunk_id": "L3_0_3",
+    "start": 16.634,
+    "end": 17.186,
+    "chunk_words": [
+      "रोहन",
+      "ने",
+      "टिफ़िन",
+      "खोलने"
+    ],
+    "active_index": 3
+  },
+  {
+    "chunk_id": "L3_1_0",
+    "start": 17.186,
+    "end": 17.408,
+    "chunk_words": [
+      "के",
+      "लिए",
+      "हाथ",
+      "बढ़ाया"
+    ],
+    "active_index": 0
+  },
+  {
+    "chunk_id": "L3_1_1",
+    "start": 17.408,
+    "end": 17.739,
+    "chunk_words": [
+      "के",
+      "लिए",
+      "हाथ",
+      "बढ़ाया"
+    ],
+    "active_index": 1
+  },
+  {
+    "chunk_id": "L3_1_2",
+    "start": 17.739,
+    "end": 18.071,
+    "chunk_words": [
+      "के",
+      "लिए",
+      "हाथ",
+      "बढ़ाया"
+    ],
+    "active_index": 2
+  },
+  {
+    "chunk_id": "L3_1_3",
+    "start": 18.071,
+    "end": 18.734,
+    "chunk_words": [
+      "के",
+      "लिए",
+      "हाथ",
+      "बढ़ाया"
+    ],
+    "active_index": 3
+  },
+  {
+    "chunk_id": "L3_2_0",
+    "start": 18.734,
+    "end": 18.956,
+    "chunk_words": [
+      "ही",
+      "था",
+      "कि",
+      "उसकी"
+    ],
+    "active_index": 0
+  },
+  {
+    "chunk_id": "L3_2_1",
+    "start": 18.956,
+    "end": 19.177,
+    "chunk_words": [
+      "ही",
+      "था",
+      "कि",
+      "उसकी"
+    ],
+    "active_index": 1
+  },
+  {
+    "chunk_id": "L3_2_2",
+    "start": 19.177,
+    "end": 19.398,
+    "chunk_words": [
+      "ही",
+      "था",
+      "कि",
+      "उसकी"
+    ],
+    "active_index": 2
+  },
+  {
+    "chunk_id": "L3_2_3",
+    "start": 19.398,
+    "end": 19.84,
+    "chunk_words": [
+      "ही",
+      "था",
+      "कि",
+      "उसकी"
+    ],
+    "active_index": 3
+  },
+  {
+    "chunk_id": "L3_3_0",
+    "start": 19.84,
+    "end": 20.172,
+    "chunk_words": [
+      "जेब",
+      "में",
+      "फोन",
+      "ज़ोर-ज़ोर"
+    ],
+    "active_index": 0
+  },
+  {
+    "chunk_id": "L3_3_1",
+    "start": 20.172,
+    "end": 20.504,
+    "chunk_words": [
+      "जेब",
+      "में",
+      "फोन",
+      "ज़ोर-ज़ोर"
+    ],
+    "active_index": 1
+  },
+  {
+    "chunk_id": "L3_3_2",
+    "start": 20.504,
+    "end": 20.835,
+    "chunk_words": [
+      "जेब",
+      "में",
+      "फोन",
+      "ज़ोर-ज़ोर"
+    ],
+    "active_index": 2
+  },
+  {
+    "chunk_id": "L3_3_3",
+    "start": 20.835,
+    "end": 21.83,
+    "chunk_words": [
+      "जेब",
+      "में",
+      "फोन",
+      "ज़ोर-ज़ोर"
+    ],
+    "active_index": 3
+  },
+  {
+    "chunk_id": "L3_4_0",
+    "start": 21.83,
+    "end": 22.052,
+    "chunk_words": [
+      "से",
+      "थरथराने",
+      "लगा"
+    ],
+    "active_index": 0
+  },
+  {
+    "chunk_id": "L3_4_1",
+    "start": 22.052,
+    "end": 22.826,
+    "chunk_words": [
+      "से",
+      "थरथराने",
+      "लगा"
+    ],
+    "active_index": 1
+  },
+  {
+    "chunk_id": "L3_4_2",
+    "start": 22.826,
+    "end": 23.157,
+    "chunk_words": [
+      "से",
+      "थरथराने",
+      "लगा"
+    ],
+    "active_index": 2
+  },
+  {
+    "chunk_id": "L4_a_0_0",
+    "start": 23.557,
+    "end": 24.32,
+    "chunk_words": [
+      "स्क्रीन",
+      "पर",
+      "माँ",
+      "का"
+    ],
+    "active_index": 0
+  },
+  {
+    "chunk_id": "L4_a_0_1",
+    "start": 24.32,
+    "end": 24.538,
+    "chunk_words": [
+      "स्क्रीन",
+      "पर",
+      "माँ",
+      "का"
+    ],
+    "active_index": 1
+  },
+  {
+    "chunk_id": "L4_a_0_2",
+    "start": 24.538,
+    "end": 24.865,
+    "chunk_words": [
+      "स्क्रीन",
+      "पर",
+      "माँ",
+      "का"
+    ],
+    "active_index": 2
+  },
+  {
+    "chunk_id": "L4_a_0_3",
+    "start": 24.865,
+    "end": 25.083,
+    "chunk_words": [
+      "स्क्रीन",
+      "पर",
+      "माँ",
+      "का"
+    ],
+    "active_index": 3
+  },
+  {
+    "chunk_id": "L4_a_1_0",
+    "start": 25.083,
+    "end": 25.41,
+    "chunk_words": [
+      "नाम",
+      "था",
+      "रोहन",
+      "ने"
+    ],
+    "active_index": 0
+  },
+  {
+    "chunk_id": "L4_a_1_1",
+    "start": 25.41,
+    "end": 25.628,
+    "chunk_words": [
+      "नाम",
+      "था",
+      "रोहन",
+      "ने"
+    ],
+    "active_index": 1
+  },
+  {
+    "chunk_id": "L4_a_1_2",
+    "start": 25.628,
+    "end": 26.064,
+    "chunk_words": [
+      "नाम",
+      "था",
+      "रोहन",
+      "ने"
+    ],
+    "active_index": 2
+  },
+  {
+    "chunk_id": "L4_a_1_3",
+    "start": 26.064,
+    "end": 26.282,
+    "chunk_words": [
+      "नाम",
+      "था",
+      "रोहन",
+      "ने"
+    ],
+    "active_index": 3
+  },
+  {
+    "chunk_id": "L4_a_2_0",
+    "start": 26.282,
+    "end": 26.936,
+    "chunk_words": [
+      "काँपते",
+      "हाथों",
+      "से",
+      "फोन"
+    ],
+    "active_index": 0
+  },
+  {
+    "chunk_id": "L4_a_2_1",
+    "start": 26.936,
+    "end": 27.481,
+    "chunk_words": [
+      "काँपते",
+      "हाथों",
+      "से",
+      "फोन"
+    ],
+    "active_index": 1
+  },
+  {
+    "chunk_id": "L4_a_2_2",
+    "start": 27.481,
+    "end": 27.699,
+    "chunk_words": [
+      "काँपते",
+      "हाथों",
+      "से",
+      "फोन"
+    ],
+    "active_index": 2
+  },
+  {
+    "chunk_id": "L4_a_2_3",
+    "start": 27.699,
+    "end": 28.026,
+    "chunk_words": [
+      "काँपते",
+      "हाथों",
+      "से",
+      "फोन"
+    ],
+    "active_index": 3
+  },
+  {
+    "chunk_id": "L4_a_3_0",
+    "start": 28.026,
+    "end": 28.571,
+    "chunk_words": [
+      "उठाया"
+    ],
+    "active_index": 0
+  },
+  {
+    "chunk_id": "L4_b_0_0",
+    "start": 28.821,
+    "end": 29.254,
+    "chunk_words": [
+      "रोहन",
+      "तू",
+      "कहाँ",
+      "है"
+    ],
+    "active_index": 0
+  },
+  {
+    "chunk_id": "L4_b_0_1",
+    "start": 29.254,
+    "end": 29.47,
+    "chunk_words": [
+      "रोहन",
+      "तू",
+      "कहाँ",
+      "है"
+    ],
+    "active_index": 1
+  },
+  {
+    "chunk_id": "L4_b_0_2",
+    "start": 29.47,
+    "end": 29.903,
+    "chunk_words": [
+      "रोहन",
+      "तू",
+      "कहाँ",
+      "है"
+    ],
+    "active_index": 2
+  },
+  {
+    "chunk_id": "L4_b_0_3",
+    "start": 29.903,
+    "end": 30.12,
+    "chunk_words": [
+      "रोहन",
+      "तू",
+      "कहाँ",
+      "है"
+    ],
+    "active_index": 3
+  },
+  {
+    "chunk_id": "L4_b_1_0",
+    "start": 30.12,
+    "end": 30.336,
+    "chunk_words": [
+      "तू",
+      "जिस",
+      "बस",
+      "में"
+    ],
+    "active_index": 0
+  },
+  {
+    "chunk_id": "L4_b_1_1",
+    "start": 30.336,
+    "end": 30.661,
+    "chunk_words": [
+      "तू",
+      "जिस",
+      "बस",
+      "में"
+    ],
+    "active_index": 1
+  },
+  {
+    "chunk_id": "L4_b_1_2",
+    "start": 30.661,
+    "end": 30.877,
+    "chunk_words": [
+      "तू",
+      "जिस",
+      "बस",
+      "में"
+    ],
+    "active_index": 2
+  },
+  {
+    "chunk_id": "L4_b_1_3",
+    "start": 30.877,
+    "end": 31.202,
+    "chunk_words": [
+      "तू",
+      "जिस",
+      "बस",
+      "में"
+    ],
+    "active_index": 3
+  },
+  {
+    "chunk_id": "L4_b_2_0",
+    "start": 31.202,
+    "end": 31.635,
+    "chunk_words": [
+      "बैठा",
+      "था",
+      "वो",
+      "तो"
+    ],
+    "active_index": 0
+  },
+  {
+    "chunk_id": "L4_b_2_1",
+    "start": 31.635,
+    "end": 31.852,
+    "chunk_words": [
+      "बैठा",
+      "था",
+      "वो",
+      "तो"
+    ],
+    "active_index": 1
+  },
+  {
+    "chunk_id": "L4_b_2_2",
+    "start": 31.852,
+    "end": 32.068,
+    "chunk_words": [
+      "बैठा",
+      "था",
+      "वो",
+      "तो"
+    ],
+    "active_index": 2
+  },
+  {
+    "chunk_id": "L4_b_2_3",
+    "start": 32.068,
+    "end": 32.285,
+    "chunk_words": [
+      "बैठा",
+      "था",
+      "वो",
+      "तो"
+    ],
+    "active_index": 3
+  },
+  {
+    "chunk_id": "L4_b_3_0",
+    "start": 32.285,
+    "end": 32.501,
+    "chunk_words": [
+      "कल",
+      "रात",
+      "ही",
+      "खाई"
+    ],
+    "active_index": 0
+  },
+  {
+    "chunk_id": "L4_b_3_1",
+    "start": 32.501,
+    "end": 32.826,
+    "chunk_words": [
+      "कल",
+      "रात",
+      "ही",
+      "खाई"
+    ],
+    "active_index": 1
+  },
+  {
+    "chunk_id": "L4_b_3_2",
+    "start": 32.826,
+    "end": 33.042,
+    "chunk_words": [
+      "कल",
+      "रात",
+      "ही",
+      "खाई"
+    ],
+    "active_index": 2
+  },
+  {
+    "chunk_id": "L4_b_3_3",
+    "start": 33.042,
+    "end": 33.367,
+    "chunk_words": [
+      "कल",
+      "रात",
+      "ही",
+      "खाई"
+    ],
+    "active_index": 3
+  },
+  {
+    "chunk_id": "L4_b_4_0",
+    "start": 33.367,
+    "end": 33.692,
+    "chunk_words": [
+      "में",
+      "गिर",
+      "चुकी",
+      "है"
+    ],
+    "active_index": 0
+  },
+  {
+    "chunk_id": "L4_b_4_1",
+    "start": 33.692,
+    "end": 34.017,
+    "chunk_words": [
+      "में",
+      "गिर",
+      "चुकी",
+      "है"
+    ],
+    "active_index": 1
+  },
+  {
+    "chunk_id": "L4_b_4_2",
+    "start": 34.017,
+    "end": 34.45,
+    "chunk_words": [
+      "में",
+      "गिर",
+      "चुकी",
+      "है"
+    ],
+    "active_index": 2
+  },
+  {
+    "chunk_id": "L4_b_4_3",
+    "start": 34.45,
+    "end": 34.666,
+    "chunk_words": [
+      "में",
+      "गिर",
+      "चुकी",
+      "है"
+    ],
+    "active_index": 3
+  },
+  {
+    "chunk_id": "L5_0_0",
+    "start": 35.516,
+    "end": 35.975,
+    "chunk_words": [
+      "रोहन",
+      "की",
+      "रूह",
+      "काँप"
+    ],
+    "active_index": 0
+  },
+  {
+    "chunk_id": "L5_0_1",
+    "start": 35.975,
+    "end": 36.204,
+    "chunk_words": [
+      "रोहन",
+      "की",
+      "रूह",
+      "काँप"
+    ],
+    "active_index": 1
+  },
+  {
+    "chunk_id": "L5_0_2",
+    "start": 36.204,
+    "end": 36.548,
+    "chunk_words": [
+      "रोहन",
+      "की",
+      "रूह",
+      "काँप"
+    ],
+    "active_index": 2
+  },
+  {
+    "chunk_id": "L5_0_3",
+    "start": 36.548,
+    "end": 37.007,
+    "chunk_words": [
+      "रोहन",
+      "की",
+      "रूह",
+      "काँप"
+    ],
+    "active_index": 3
+  },
+  {
+    "chunk_id": "L5_1_0",
+    "start": 37.007,
+    "end": 37.236,
+    "chunk_words": [
+      "गई",
+      "उसने",
+      "नज़र",
+      "उठाई"
+    ],
+    "active_index": 0
+  },
+  {
+    "chunk_id": "L5_1_1",
+    "start": 37.236,
+    "end": 37.695,
+    "chunk_words": [
+      "गई",
+      "उसने",
+      "नज़र",
+      "उठाई"
+    ],
+    "active_index": 1
+  },
+  {
+    "chunk_id": "L5_1_2",
+    "start": 37.695,
+    "end": 38.153,
+    "chunk_words": [
+      "गई",
+      "उसने",
+      "नज़र",
+      "उठाई"
+    ],
+    "active_index": 2
+  },
+  {
+    "chunk_id": "L5_1_3",
+    "start": 38.153,
+    "end": 38.612,
+    "chunk_words": [
+      "गई",
+      "उसने",
+      "नज़र",
+      "उठाई"
+    ],
+    "active_index": 3
+  },
+  {
+    "chunk_id": "L5_2_0",
+    "start": 38.612,
+    "end": 38.841,
+    "chunk_words": [
+      "तो",
+      "पूरी",
+      "बस",
+      "में"
+    ],
+    "active_index": 0
+  },
+  {
+    "chunk_id": "L5_2_1",
+    "start": 38.841,
+    "end": 39.3,
+    "chunk_words": [
+      "तो",
+      "पूरी",
+      "बस",
+      "में"
+    ],
+    "active_index": 1
+  },
+  {
+    "chunk_id": "L5_2_2",
+    "start": 39.3,
+    "end": 39.529,
+    "chunk_words": [
+      "तो",
+      "पूरी",
+      "बस",
+      "में"
+    ],
+    "active_index": 2
+  },
+  {
+    "chunk_id": "L5_2_3",
+    "start": 39.529,
+    "end": 39.873,
+    "chunk_words": [
+      "तो",
+      "पूरी",
+      "बस",
+      "में"
+    ],
+    "active_index": 3
+  },
+  {
+    "chunk_id": "L5_3_0",
+    "start": 39.873,
+    "end": 40.217,
+    "chunk_words": [
+      "कोई",
+      "ड्राइवर",
+      "था",
+      "ही"
+    ],
+    "active_index": 0
+  },
+  {
+    "chunk_id": "L5_3_1",
+    "start": 40.217,
+    "end": 41.02,
+    "chunk_words": [
+      "कोई",
+      "ड्राइवर",
+      "था",
+      "ही"
+    ],
+    "active_index": 1
+  },
+  {
+    "chunk_id": "L5_3_2",
+    "start": 41.02,
+    "end": 41.249,
+    "chunk_words": [
+      "कोई",
+      "ड्राइवर",
+      "था",
+      "ही"
+    ],
+    "active_index": 2
+  },
+  {
+    "chunk_id": "L5_3_3",
+    "start": 41.249,
+    "end": 41.479,
+    "chunk_words": [
+      "कोई",
+      "ड्राइवर",
+      "था",
+      "ही"
+    ],
+    "active_index": 3
+  },
+  {
+    "chunk_id": "L5_4_0",
+    "start": 41.479,
+    "end": 41.937,
+    "chunk_words": [
+      "नहीं"
+    ],
+    "active_index": 0
+  },
+  {
+    "chunk_id": "L6_0_0",
+    "start": 42.637,
+    "end": 42.959,
+    "chunk_words": [
+      "आगे",
+      "क्या",
+      "होगा",
+      "कल"
+    ],
+    "active_index": 0
+  },
+  {
+    "chunk_id": "L6_0_1",
+    "start": 42.959,
+    "end": 43.387,
+    "chunk_words": [
+      "आगे",
+      "क्या",
+      "होगा",
+      "कल"
+    ],
+    "active_index": 1
+  },
+  {
+    "chunk_id": "L6_0_2",
+    "start": 43.387,
+    "end": 43.816,
+    "chunk_words": [
+      "आगे",
+      "क्या",
+      "होगा",
+      "कल"
+    ],
+    "active_index": 2
+  },
+  {
+    "chunk_id": "L6_0_3",
+    "start": 43.816,
+    "end": 44.03,
+    "chunk_words": [
+      "आगे",
+      "क्या",
+      "होगा",
+      "कल"
+    ],
+    "active_index": 3
+  },
+  {
+    "chunk_id": "L6_1_0",
+    "start": 44.03,
+    "end": 44.566,
+    "chunk_words": [
+      "बताता",
+      "हूँ",
+      "कमेंट",
+      "में"
+    ],
+    "active_index": 0
+  },
+  {
+    "chunk_id": "L6_1_1",
+    "start": 44.566,
+    "end": 44.888,
+    "chunk_words": [
+      "बताता",
+      "हूँ",
+      "कमेंट",
+      "में"
+    ],
+    "active_index": 1
+  },
+  {
+    "chunk_id": "L6_1_2",
+    "start": 44.888,
+    "end": 45.423,
+    "chunk_words": [
+      "बताता",
+      "हूँ",
+      "कमेंट",
+      "में"
+    ],
+    "active_index": 2
+  },
+  {
+    "chunk_id": "L6_1_3",
+    "start": 45.423,
+    "end": 45.745,
+    "chunk_words": [
+      "बताता",
+      "हूँ",
+      "कमेंट",
+      "में"
+    ],
+    "active_index": 3
+  },
+  {
+    "chunk_id": "L6_2_0",
+    "start": 45.745,
+    "end": 46.173,
+    "chunk_words": [
+      "अपना",
+      "अंदाज़ा",
+      "लिखो"
+    ],
+    "active_index": 0
+  },
+  {
+    "chunk_id": "L6_2_1",
+    "start": 46.173,
+    "end": 46.923,
+    "chunk_words": [
+      "अपना",
+      "अंदाज़ा",
+      "लिखो"
+    ],
+    "active_index": 1
+  },
+  {
+    "chunk_id": "L6_2_2",
+    "start": 46.923,
+    "end": 47.352,
+    "chunk_words": [
+      "अपना",
+      "अंदाज़ा",
+      "लिखो"
+    ],
+    "active_index": 2
+  }
+]

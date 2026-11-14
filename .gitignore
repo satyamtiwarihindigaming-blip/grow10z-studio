@@ -1,0 +1,37 @@
+# Python & Virtual Environments
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Large Models & Soundfonts (Downloaded automatically in CI)
+models/*.onnx
+models/*.bin
+models/*.sf2
+
+# Node & Build artifacts
+node_modules/
+.npm/
+
+# Temporary video render caches & frames
+*.mp4
+*.mkv
+*.mov
+**/temp_video*.mp4
+**/temp_*.mp4
+**/chunk_*.png
+**/frame*.jpg
+studio_ramayana/episodes/**/temp_*
+studio_ramayana/episodes/**/chunk_*
+studio_ramayana/episodes/**/frame*
+
+# Archives & loose dumps
+*.zip
+*.tar.gz
+files.zip
+antigravity_pack.zip
+
+# OS Specific
+.DS_Store
+Thumbs.db

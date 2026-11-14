@@ -1,0 +1,50 @@
+[
+  {
+    "id": 0,
+    "start": 0.0,
+    "end": 2.3893333333333335,
+    "png": "series_storybook/ep01/captions/sub_0.png"
+  },
+  {
+    "id": 1,
+    "start": 2.7893333333333334,
+    "end": 6.842666666666667,
+    "png": "series_storybook/ep01/captions/sub_1.png"
+  },
+  {
+    "id": 2,
+    "start": 7.342666666666667,
+    "end": 10.841333333333335,
+    "png": "series_storybook/ep01/captions/sub_2.png"
+  },
+  {
+    "id": 3,
+    "start": 11.341333333333335,
+    "end": 14.754666666666669,
+    "png": "series_storybook/ep01/captions/sub_3.png"
+  },
+  {
+    "id": 4,
+    "start": 15.254666666666669,
+    "end": 16.897333333333336,
+    "png": "series_storybook/ep01/captions/sub_4.png"
+  },
+  {
+    "id": 5,
+    "start": 17.497333333333337,
+    "end": 19.993333333333336,
+    "png": "series_storybook/ep01/captions/sub_5.png"
+  },
+  {
+    "id": 6,
+    "start": 20.393333333333334,
+    "end": 23.785333333333334,
+    "png": "series_storybook/ep01/captions/sub_6.png"
+  },
+  {
+    "id": 7,
+    "start": 24.585333333333335,
+    "end": 26.974666666666668,
+    "png": "series_storybook/ep01/captions/sub_7.png"
+  }
+]

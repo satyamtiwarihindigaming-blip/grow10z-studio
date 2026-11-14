@@ -1,0 +1,62 @@
+[
+  {
+    "id": "s1",
+    "start": 0,
+    "end": 5,
+    "scene": "night road",
+    "camera": "push-in",
+    "characters": "[]",
+    "action": "bus arrives under moon",
+    "sfx": "wind,crickets,bus_rumble"
+  },
+  {
+    "id": "s2",
+    "start": 5,
+    "end": 12,
+    "scene": "bus interior",
+    "camera": "drift",
+    "characters": "[Rohan,Amma]",
+    "action": "two passengers",
+    "sfx": "rumble,tick"
+  },
+  {
+    "id": "s3",
+    "start": 12,
+    "end": 19,
+    "scene": "bus interior",
+    "camera": "close-up+shake",
+    "characters": "[Amma,Rohan]",
+    "action": "amma says his name",
+    "sfx": "gasp,heartbeat72"
+  },
+  {
+    "id": "s4",
+    "start": 19,
+    "end": 26,
+    "scene": "bus interior",
+    "camera": "push-in",
+    "characters": "[Amma,Rohan]",
+    "action": "tiffin handed over",
+    "sfx": "clink"
+  },
+  {
+    "id": "s5",
+    "start": 26,
+    "end": 32,
+    "scene": "road/bus door",
+    "camera": "wide zoom-out",
+    "characters": "[Rohan,Amma]",
+    "action": "amma exits, empty field",
+    "sfx": "door_hiss,riser,heartbeat110"
+  },
+  {
+    "id": "s6",
+    "start": 32,
+    "end": 36,
+    "scene": "empty field",
+    "camera": "static hold",
+    "characters": "[]",
+    "action": "end card",
+    "sfx": "silence,impact"
+  }
+]

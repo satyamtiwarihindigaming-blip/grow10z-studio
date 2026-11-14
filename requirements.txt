@@ -1,0 +1,9 @@
+kokoro-onnx
+soundfile
+numpy
+scipy
+pillow
+skia-python
+pymunk
+pedalboard
+imageio-ffmpeg
