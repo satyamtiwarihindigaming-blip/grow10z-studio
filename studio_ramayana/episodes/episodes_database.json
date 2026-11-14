@@ -9,8 +9,8 @@
       "Mata Kaushalya",
       "Baal Ram"
     ],
-    "environment": "Ayodhya Royal Palace & Yagya Shala",
-    "runtime_target": 40.0,
+    "environment": "ayodhya_palace",
+    "runtime_target": 41.75,
     "status": "completed",
     "hook": "जब तीनों लोकों के स्वामी ने अयोध्या में एक नन्हें बालक के रूप में जन्म लिया...",
     "script_lines": [
@@ -55,8 +55,40 @@
       "Shri Ram",
       "Lakshman"
     ],
-    "environment": "Ayodhya Durbar & Sarayu River Coast",
-    "runtime_target": 40.0
+    "environment": "ayodhya_palace",
+    "runtime_target": 51.50,
+    "status": "completed",
+    "hook": "मुनिवर! मेरे प्राण ले लीजिए, पर मेरे राम को न मांगिए...",
+    "script_lines": [
+      {
+        "speaker": "narrator",
+        "text": "अयोध्या का भव्य राजदरबार... जहाँ चारों राजकुमारों के बाल्यकाल से महल गूँज रहा था।"
+      },
+      {
+        "speaker": "narrator",
+        "text": "तभी दरबार में महाक्रोध और तपस्या के प्रतीक महर्षि विश्वामित्र का अचानक आगमन हुआ!"
+      },
+      {
+        "speaker": "vishwamitra",
+        "text": "राजन! यज्ञ की रक्षा और राक्षसों के संहार हेतु मुझे राम और लक्ष्मण चाहिए!"
+      },
+      {
+        "speaker": "dasharatha",
+        "text": "मुनिवर! मेरे प्राण ले लीजिए, पर मेरे राम को न मांगिए!"
+      },
+      {
+        "speaker": "narrator",
+        "text": "किंतु स्वयं मर्यादा पुरुषोत्तम श्रीराम ने आगे बढ़कर कोदण्ड धनुष उठा लिया।"
+      },
+      {
+        "speaker": "narrator",
+        "text": "धर्म और अधर्म के पहले महा-युद्ध का दिव्य प्रस्थान!"
+      },
+      {
+        "speaker": "narrator",
+        "text": "अगले भाग में देखिए: ताड़का वध — पहला धर्म युद्ध!"
+      }
+    ]
   },
   {
     "id": "EP003",
@@ -64,11 +96,40 @@
     "source": "वाल्मीकि रामायण (बालकाण्ड सर्ग 26-30)",
     "characters": [
       "Narrator",
+      "Maharishi Vishwamitra",
       "Shri Ram",
-      "Lakshman",
       "Tadaka"
     ],
-    "environment": "Dandaka Border Dense Forest"
+    "environment": "dandaka_forest",
+    "runtime_target": 42.0,
+    "status": "pending",
+    "hook": "भयानक गर्जना के साथ जब आकाश से बरसे पत्थर... क्या श्रीराम करेंगे राक्षसी ताड़का का वध?",
+    "script_lines": [
+      {
+        "speaker": "narrator",
+        "text": "घोर अंधकार और भयानक सन्नाटा... विश्वामित्र के साथ दोनों राजकुमार पहुंचे मलद-करूष के बीहड़ वन में!"
+      },
+      {
+        "speaker": "narrator",
+        "text": "तभी आकाश में गूँज उठी वो गर्जना, जिससे धरती काँप उठी!"
+      },
+      {
+        "speaker": "tadaka",
+        "text": "कौन है जो मेरे वन में बिना मेरी आज्ञा के जीवित रहने का साहस कर रहा है!"
+      },
+      {
+        "speaker": "vishwamitra",
+        "text": "राम! संकोच मत करो... अधर्म का नाश करने हेतु स्त्री-वध का दोष नहीं लगता! प्रत्यंचा खींचो!"
+      },
+      {
+        "speaker": "narrator",
+        "text": "प्रभु श्रीराम ने कोदण्ड धनुष पर ब्रह्मास्त्र का संधान किया... और छूटा वो दिव्य बाण!"
+      },
+      {
+        "speaker": "narrator",
+        "text": "क्या ताड़का का पहला वार रोक पाएंगे श्रीराम? देखिए अगले भाग में!"
+      }
+    ]
   },
   {
     "id": "EP004",
@@ -78,9 +139,38 @@
       "Narrator",
       "Shri Ram",
       "Mata Ahilya",
-      "Rishi Gautam"
+      "Maharishi Vishwamitra"
     ],
-    "environment": "Ancient Abandoned Hermitage"
+    "environment": "dandaka_forest",
+    "runtime_target": 42.0,
+    "status": "pending",
+    "hook": "सदियों से शापग्रस्त वो शिला... जब प्रभु श्रीराम के चरण-कमल का स्पर्श हुआ!",
+    "script_lines": [
+      {
+        "speaker": "narrator",
+        "text": "गंगा किनारे एक वीरान, निर्जन आश्रम... जहाँ युगों से एक मौन शिला पड़ी थी।"
+      },
+      {
+        "speaker": "shri_ram",
+        "text": "गुरुदेव! इस पावन तपोभूमि में यह कैसी उदासी और सन्नाटा है?"
+      },
+      {
+        "speaker": "vishwamitra",
+        "text": "राम! यह महर्षि गौतम की पत्नी देवी अहिल्या हैं, जो शापवश पाषाण बन चुकी हैं। इन्हें तारो!"
+      },
+      {
+        "speaker": "narrator",
+        "text": "जैसे ही प्रभु श्रीराम के चरण-रज का पावन स्पर्श हुआ... वो शिला एक दिव्य ज्योति बनकर खिल उठी!"
+      },
+      {
+        "speaker": "ahilya",
+        "text": "हे मर्यादा पुरुषोत्तम! आपने इस अभागिन को सदियों के अंधकार से मुक्त कर दिया!"
+      },
+      {
+        "speaker": "narrator",
+        "text": "अगले भाग में देखिए: मिथिला का भव्य स्वयंवर और शिव धनुष!"
+      }
+    ]
   },
   {
     "id": "EP005",
@@ -90,10 +180,38 @@
       "Narrator",
       "Raja Janak",
       "Mata Sita",
-      "Shri Ram",
-      "Lakshman"
+      "Shri Ram"
     ],
-    "environment": "Mithila Swyamvar Royal Durbar"
+    "environment": "ayodhya_palace",
+    "runtime_target": 42.0,
+    "status": "pending",
+    "hook": "सैकड़ों महाबली राजा मिलकर भी हिला न सके जिस पिनाक को... क्या कोई उठा पाएगा शिव धनुष?",
+    "script_lines": [
+      {
+        "speaker": "narrator",
+        "text": "मिथिला का स्वर्णिम राजदरबार... जहाँ विश्व भर के महारथी और राजा पधारे थे।"
+      },
+      {
+        "speaker": "narrator",
+        "text": "बीच सभा में रखा था देवाधिदेव महादेव का अलौकिक शिव धनुष — पिनाक!"
+      },
+      {
+        "speaker": "janak",
+        "text": "धिक्कार है! क्या यह पृथ्वी वीरों से शून्य हो चुकी है? कोई एक भी धनुष हिला न सका!"
+      },
+      {
+        "speaker": "narrator",
+        "text": "तभी महर्षि विश्वामित्र ने मंद मुस्कान के साथ श्रीराम की ओर देखा..."
+      },
+      {
+        "speaker": "vishwamitra",
+        "text": "उठो तात! जनक का संताप हरो और इस धनुष की प्रत्यंचा चढ़ाओ!"
+      },
+      {
+        "speaker": "narrator",
+        "text": "क्या बालक राम उठा पाएंगे वो महा-धनुष? देखिए अगले भाग में: शिव धनुष भंग!"
+      }
+    ]
   },
   {
     "id": "EP006",
@@ -105,57 +223,31 @@
       "Raja Janak",
       "Mata Sita"
     ],
-    "environment": "Mithila Grand Hall"
-  },
-  {
-    "id": "EP007",
-    "title": "परशुराम संवाद — मर्यादा और पराक्रम की परीक्षा",
-    "source": "रामचरितमानस (बालकाण्ड) व वाल्मीकि रामायण",
-    "characters": [
-      "Narrator",
-      "Bhagwan Parashuram",
-      "Lakshman",
-      "Shri Ram"
-    ],
-    "environment": "Mithila Outskirts"
-  },
-  {
-    "id": "EP008",
-    "title": "राम वनवास — पितृ-वचन और त्याग की पराकाष्ठा",
-    "source": "वाल्मीकि रामायण (अयोध्याकाण्ड)",
-    "characters": [
-      "Narrator",
-      "Shri Ram",
-      "Mata Sita",
-      "Lakshman",
-      "Mata Kaikeyi"
-    ],
-    "environment": "Ayodhya Gates & Chariot"
-  },
-  {
-    "id": "EP009",
-    "title": "केवट प्रसंग — प्रेम और अनन्य भक्ति की गंगा",
-    "source": "रामचरितमानस (अयोध्याकाण्ड)",
-    "characters": [
-      "Narrator",
-      "Kewat",
-      "Shri Ram",
-      "Mata Sita",
-      "Lakshman"
-    ],
-    "environment": "Ganga River Banks & Wooden Boat"
-  },
-  {
-    "id": "EP010",
-    "title": "पंचवटी और शूर्पणखा प्रसंग",
-    "source": "वाल्मीकि रामायण (अरण्यकाण्ड)",
-    "characters": [
-      "Narrator",
-      "Shri Ram",
-      "Mata Sita",
-      "Lakshman",
-      "Shurpanakha"
-    ],
-    "environment": "Panchavati Forest & Godavari River"
+    "environment": "ayodhya_palace",
+    "runtime_target": 42.0,
+    "status": "pending",
+    "hook": "जैसे ही श्रीराम ने छुआ महादेव का धनुष... तीनों लोकों में गूँज उठा महा-गर्जन!",
+    "script_lines": [
+      {
+        "speaker": "narrator",
+        "text": "सहज, शांत गति से आगे बढ़े मर्यादा पुरुषोत्तम श्रीराम... जैसे सिंह मतवाले गजराज की ओर बढ़ता है।"
+      },
+      {
+        "speaker": "narrator",
+        "text": "सारे राजा चकित रह गए जब श्रीराम ने खेल-खेल में उस भारी वज्र समान धनुष को उठा लिया!"
+      },
+      {
+        "speaker": "narrator",
+        "text": "और जैसे ही खींची प्रत्यंचा... एक भीषण कड़क के साथ धनुष दो टुकड़ों में टूट गया!"
+      },
+      {
+        "speaker": "narrator",
+        "text": "ब्रह्मांड में गूँज उठी जयकार! माता सीता ने लजाते हुए श्रीराम के गले में वरमाला डाल दी!"
+      },
+      {
+        "speaker": "narrator",
+        "text": "किंतु तभी दरबार में गूँज उठी क्रोधित हुंकार... भगवान परशुराम का आगमन! देखिए अगले भाग में!"
+      }
+    ]
   }
 ]

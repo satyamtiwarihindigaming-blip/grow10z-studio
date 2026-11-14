@@ -1,9 +1,11 @@
-name: GROW10Z Daily Ramayana 24/7 Automation
+name: GROW10Z Daily Ramayana 24/7 Automation (2 Reels Daily)
 
 on:
   schedule:
-    # Runs everyday at 05:30 UTC = 11:00 AM IST (Runs even when PC is completely turned off)
-    - cron: '30 5 * * *'
+    # Slot 1: Morning Reel at 03:30 UTC = 09:00 AM IST (Runs 24/7 when PC is ON or OFF)
+    - cron: '30 3 * * *'
+    # Slot 2: Evening Reel at 12:30 UTC = 06:00 PM IST (Runs 24/7 when PC is ON or OFF)
+    - cron: '30 12 * * *'
   workflow_dispatch:
     inputs:
       episode_id:
@@ -32,12 +34,24 @@ jobs:
       - name: 📦 Install FFmpeg and Devanagari Fonts
         run: |
           sudo apt-get update
-          sudo apt-get install -y ffmpeg fonts-deva fonts-lohit-deva
+          sudo apt-get install -y ffmpeg fonts-deva fonts-lohit-deva wget
 
       - name: ⚙️ Install Python Dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install numpy soundfile scipy pillow skia-python
+          pip install numpy soundfile scipy pillow skia-python kokoro-onnx
+
+      - name: 🎙️ Download Kokoro Hindi Models
+        run: |
+          mkdir -p models
+          if [ ! -f models/kokoro-v1.0.onnx ]; then
+            echo "Downloading kokoro-v1.0.onnx..."
+            wget -q -O models/kokoro-v1.0.onnx https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.0/kokoro-v1.0.onnx
+          fi
+          if [ ! -f models/voices-v1.0.bin ]; then
+            echo "Downloading voices-v1.0.bin..."
+            wget -q -O models/voices-v1.0.bin https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.0/voices-v1.0.bin
+          fi
 
       - name: 🚀 Run Autonomous Daily Producer
         run: |
@@ -74,7 +88,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: 📡 Run Cloud Publisher (Telegram / Webhook / Buffer / Instagram)
+      - name: 📡 Run Cloud Publisher (Buffer -> Instagram @grow10z)
         env:
           BUFFER_ACCESS_TOKEN: ${{ secrets.BUFFER_ACCESS_TOKEN || 'DhMsR0Uslt8x2IUO_1F4nAUi2U5qelo7gDVexB3wZEJ' }}
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
@@ -82,7 +96,7 @@ jobs:
         run: |
           RELEASE_VIDEO_URL="https://github.com/${{ github.repository }}/releases/download/${{ steps.vars.outputs.tag_name }}/$(basename ${{ steps.vars.outputs.video_path }})"
           python studio_ramayana/pipeline/cloud_uploader.py "${{ steps.vars.outputs.video_path }}" "${{ steps.vars.outputs.txt_path }}" || true
-          # Direct Buffer Instagram Publishing
+          # Direct Buffer Instagram Publishing (Share Now)
           python -c "
           import sys, os
           from studio_ramayana.pipeline.buffer_publisher import create_instagram_post
