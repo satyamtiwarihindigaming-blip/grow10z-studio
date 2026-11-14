@@ -778,3 +778,133 @@ def draw_cinematic_environment(cv, env_type, t_sec, W, H):
                 AntiAlias=True
             )
             cv.drawCircle(dx, 440 - flame_h * 0.4, flame_h, flame_paint)
+
+
+def draw_sacred_shila(cv, cx, cy, scale=1.0, glow=0.0):
+    """
+    Sacred Ahilya Stone (मौन पाषाण शिला)
+    - Weathered ancient stone with cracked mossy texture
+    - Emerging divine golden-white celestial radiance as Shri Ram approaches
+    """
+    cv.save()
+    cv.translate(cx, cy)
+    cv.scale(scale, scale)
+
+    # 1. Emerging Divine Aura if touched
+    if glow > 0.05:
+        aura_paint = skia.Paint(
+            Shader=skia.GradientShader.MakeRadial(
+                skia.Point(0, -30), 160 * glow,
+                [skia.ColorSetARGB(int(240 * glow), 255, 250, 220), skia.ColorSetARGB(int(140 * glow), 255, 200, 70), skia.ColorSetARGB(0, 255, 160, 20)],
+                [0.0, 0.6, 1.0]
+            ),
+            AntiAlias=True
+        )
+        cv.drawCircle(0, -30, 160 * glow, aura_paint)
+
+    # 2. Rock Base (शिला)
+    shila_p = skia.Path()
+    shila_p.moveTo(-110, 40)
+    shila_p.cubicTo(-130, -20, -70, -85, 0, -95)
+    shila_p.cubicTo(70, -85, 130, -20, 110, 40)
+    shila_p.close()
+
+    rock_shader = skia.GradientShader.MakeLinear(
+        [skia.Point(-110, -95), skia.Point(110, 40)],
+        [skia.ColorSetARGB(255, 120, 115, 110), skia.ColorSetARGB(255, 65, 60, 62), skia.ColorSetARGB(255, 38, 35, 40)],
+        [0.0, 0.6, 1.0]
+    )
+    cv.drawPath(shila_p, skia.Paint(Shader=rock_shader, AntiAlias=True))
+    cv.drawPath(shila_p, skia.Paint(Style=skia.Paint.kStroke_Style, StrokeWidth=4, Color=skia.ColorSetARGB(255, 45, 40, 45), AntiAlias=True))
+
+    # Cracks & Ancient Moss Veins
+    cv.drawLine(-50, -40, -10, 10, skia.Paint(StrokeWidth=3, Color=skia.ColorSetARGB(180, 25, 22, 28), AntiAlias=True))
+    cv.drawLine(-10, 10, 35, -20, skia.Paint(StrokeWidth=2.5, Color=skia.ColorSetARGB(180, 25, 22, 28), AntiAlias=True))
+    cv.drawLine(20, -60, 45, -30, skia.Paint(StrokeWidth=2, Color=skia.ColorSetARGB(180, 40, 85, 45), AntiAlias=True))
+
+    cv.restore()
+
+
+def draw_cinematic_ahilya(cv, cx, cy, scale=1.0, emergence=1.0):
+    """
+    Mata Ahilya Emerging from Shila (शिला से दिव्य उद्धार)
+    - Sacred golden-white aura of liberation (मुक्ति तेज)
+    - Hands folded in reverent prayer (करबद्ध प्रार्थना)
+    - Lotus eyes filled with divine tears of devotion and gratitude
+    - Pure ascetic ivory and saffron attire
+    """
+    cv.save()
+    cv.translate(cx, cy)
+    cv.scale(scale * emergence, scale * emergence)
+
+    # 1. Ethereal Divine Aura
+    draw_ornate_aura(cv, 0, -90, 220, pulse=1.0 + 0.05 * math.sin(emergence * 4), color_scheme="gold")
+
+    # 2. Sacred Robe (Ivory & Saffron Ascetic Saree)
+    C_SKIN = skia.ColorSetARGB(255, 245, 205, 165)
+    C_SAREE_BASE = skia.ColorSetARGB(255, 252, 248, 238)
+    C_SAREE_SHADOW = skia.ColorSetARGB(255, 215, 195, 175)
+    C_GOLD = skia.ColorSetARGB(255, 235, 185, 45)
+
+    robe_p = skia.Path()
+    robe_p.moveTo(-70, 35)
+    robe_p.cubicTo(-95, 120, -75, 230, -65, 360)
+    robe_p.lineTo(65, 360)
+    robe_p.cubicTo(75, 230, 95, 120, 70, 35)
+    robe_p.close()
+
+    r_shader = skia.GradientShader.MakeLinear(
+        [skia.Point(-70, 35), skia.Point(70, 360)],
+        [C_SAREE_BASE, C_SAREE_SHADOW],
+        [0.0, 1.0]
+    )
+    cv.drawPath(robe_p, skia.Paint(Shader=r_shader, AntiAlias=True))
+    cv.drawPath(robe_p, skia.Paint(Style=skia.Paint.kStroke_Style, StrokeWidth=3.5, Color=C_GOLD, AntiAlias=True))
+
+    # Flowing Pallu draped over head and shoulder
+    pallu_p = skia.Path()
+    pallu_p.moveTo(-50, -120)
+    pallu_p.cubicTo(-75, -50, -85, 80, -95, 260)
+    pallu_p.lineTo(-65, 275)
+    pallu_p.cubicTo(-55, 90, -45, -40, -35, -115)
+    pallu_p.close()
+    cv.drawPath(pallu_p, skia.Paint(Color=C_SAREE_BASE, AntiAlias=True))
+    cv.drawPath(pallu_p, skia.Paint(Style=skia.Paint.kStroke_Style, StrokeWidth=2.5, Color=C_GOLD, AntiAlias=True))
+
+    # 3. Head & Divine Facial Features
+    cv.drawCircle(0, -90, 50, skia.Paint(Color=C_SKIN, AntiAlias=True))
+
+    # Sacred Vermilion Bindi on forehead
+    cv.drawCircle(0, -105, 4, skia.Paint(Color=skia.ColorSetARGB(255, 215, 30, 35), AntiAlias=True))
+
+    # Eyes filled with devotion and gratitude (कमल नयन)
+    for s in [-1, 1]:
+        ex = s * 18
+        ey = -90
+        eye_p = skia.Path()
+        eye_p.moveTo(ex - 12, ey)
+        eye_p.cubicTo(ex - 5, ey - 7, ex + 5, ey - 7, ex + 12, ey)
+        eye_p.cubicTo(ex + 5, ey + 7, ex - 5, ey + 7, ex - 12, ey)
+        eye_p.close()
+        cv.drawPath(eye_p, skia.Paint(Color=skia.ColorWHITE, AntiAlias=True))
+        cv.drawCircle(ex, ey, 5, skia.Paint(Color=skia.ColorSetARGB(255, 45, 30, 25), AntiAlias=True))
+        cv.drawCircle(ex - 1.8, ey - 1.8, 1.8, skia.Paint(Color=skia.ColorWHITE, AntiAlias=True))
+        # Tear of gratitude
+        cv.drawCircle(ex, ey + 10, 2.0, skia.Paint(Color=skia.ColorSetARGB(200, 220, 240, 255), AntiAlias=True))
+
+    # Gentle Smile of Liberation
+    smile_p = skia.Path()
+    smile_p.moveTo(-10, -68)
+    smile_p.cubicTo(-3, -63, 3, -63, 10, -68)
+    cv.drawPath(smile_p, skia.Paint(Style=skia.Paint.kStroke_Style, StrokeWidth=2.2, Color=skia.ColorSetARGB(255, 175, 45, 55), AntiAlias=True))
+
+    # 4. Folded Hands in Prayer (करबद्ध हाथ / Anjali Mudra)
+    hands_p = skia.Path()
+    hands_p.moveTo(-16, 50)
+    hands_p.lineTo(0, 10)
+    hands_p.lineTo(16, 50)
+    hands_p.close()
+    cv.drawPath(hands_p, skia.Paint(Color=C_SKIN, AntiAlias=True))
+    cv.drawPath(hands_p, skia.Paint(Style=skia.Paint.kStroke_Style, StrokeWidth=2.5, Color=skia.ColorSetARGB(255, 185, 130, 85), AntiAlias=True))
+
+    cv.restore()

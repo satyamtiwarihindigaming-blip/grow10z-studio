@@ -31,7 +31,9 @@ from studio_ramayana.character_engine.cinematic_character_v2 import (
     draw_cinematic_environment,
     draw_cinematic_shri_ram,
     draw_cinematic_tadaka,
-    draw_cinematic_vishwamitra
+    draw_cinematic_vishwamitra,
+    draw_sacred_shila,
+    draw_cinematic_ahilya
 )
 
 EPISODES_DB = BASE_DIR / "studio_ramayana" / "episodes" / "episodes_database.json"
@@ -354,6 +356,10 @@ def render_episode(ep_data):
             if ep_id == "EP003":
                 draw_cinematic_vishwamitra(canvas, 320, 1160, scale=1.45 * breath, breathing=t_sec)
                 draw_cinematic_shri_ram(canvas, 760, 1180, scale=1.5 * breath, breathing=t_sec, bow_draw=0.2)
+            elif ep_id == "EP004":
+                draw_cinematic_vishwamitra(canvas, 280, 1160, scale=1.45 * breath, breathing=t_sec)
+                draw_cinematic_shri_ram(canvas, 760, 1180, scale=1.5 * breath, breathing=t_sec, bow_draw=0.0)
+                draw_sacred_shila(canvas, 520, 1380, scale=1.2, glow=0.1)
             else:
                 draw_cinematic_shri_ram(canvas, 540, 1180, scale=1.65 * breath, breathing=t_sec, bow_draw=0.0)
 
@@ -364,11 +370,15 @@ def render_episode(ep_data):
             if ep_id == "EP003":
                 draw_cinematic_tadaka(canvas, 780, 880, scale=1.55 * breath, roar_intensity=1.0, phase=t_sec)
                 draw_cinematic_vishwamitra(canvas, 260, 1220, scale=1.35, breathing=t_sec)
+            elif ep_id == "EP004":
+                draw_cinematic_vishwamitra(canvas, 240, 1200, scale=1.4, breathing=t_sec)
+                draw_cinematic_shri_ram(canvas, 560, 1160, scale=1.65, breathing=t_sec)
+                draw_sacred_shila(canvas, 840, 1380, scale=1.3, glow=0.3 + 0.1 * math.sin(t_sec * 4))
             else:
                 draw_cinematic_shri_ram(canvas, 540, 1100, scale=1.85 * breath, breathing=t_sec)
 
         elif t_sec < 33.0:
-            # SHOT 4: Heroic Action Angle — Shri Ram Drawing Kodanda Bow
+            # SHOT 4: Heroic Action Angle — Shri Ram Drawing Kodanda Bow / Touching Shila
             cam_zoom = 1.0 + 0.08 * ((t_sec - 23.0) / 10.0)
             canvas.save()
             canvas.translate(W * 0.5, H * 0.5)
@@ -381,18 +391,28 @@ def render_episode(ep_data):
             if ep_id == "EP003":
                 draw_cinematic_tadaka(canvas, 820, 840, scale=1.3, roar_intensity=0.8, phase=t_sec)
                 draw_cinematic_shri_ram(canvas, 420, 1220, scale=1.9 * breath, breathing=t_sec, bow_draw=bow_progress)
+            elif ep_id == "EP004":
+                touch_progress = min(1.0, (t_sec - 23.0) / 4.0)
+                draw_sacred_shila(canvas, 740, 1380, scale=1.3, glow=touch_progress)
+                if touch_progress > 0.2:
+                    draw_cinematic_ahilya(canvas, 740, 1150, scale=1.45, emergence=touch_progress)
+                draw_cinematic_shri_ram(canvas, 340, 1200, scale=1.75 * breath, breathing=t_sec)
             else:
                 draw_cinematic_shri_ram(canvas, 540, 1150, scale=2.1 * breath, breathing=t_sec, bow_draw=bow_progress)
             canvas.restore()
 
         else:
-            # SHOT 5: Climax Arrow Release & Cliffhanger Climax
+            # SHOT 5: Climax Arrow Release & Cliffhanger Climax / Liberation
             shake_x = 8.0 * math.sin(t_sec * 45) if t_sec < 35.5 else 0.0
             shake_y = 6.0 * math.cos(t_sec * 50) if t_sec < 35.5 else 0.0
             canvas.save()
             canvas.translate(shake_x, shake_y)
             canvas.drawImage(env_snap, 0, 0)
-            draw_cinematic_shri_ram(canvas, 540, 1180, scale=1.8, breathing=t_sec, bow_draw=1.0)
+            if ep_id == "EP004":
+                draw_cinematic_ahilya(canvas, 720, 1160, scale=1.55, emergence=1.0)
+                draw_cinematic_shri_ram(canvas, 340, 1180, scale=1.75, breathing=t_sec)
+            else:
+                draw_cinematic_shri_ram(canvas, 540, 1180, scale=1.8, breathing=t_sec, bow_draw=1.0)
             canvas.restore()
 
             if t_sec >= 36.5:
