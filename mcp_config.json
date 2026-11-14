@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "buffer": {
+      "url": "https://mcp.buffer.com/mcp",
+      "serverUrl": "https://mcp.buffer.com/mcp"
+    }
+  }
+}
