@@ -3,26 +3,58 @@
     "id": "EP001",
     "title": "श्रीराम जन्म — अयोध्या में दिव्य आगमन",
     "source": "रामचरितमानस (बालकाण्ड) एवं वाल्मीकि रामायण",
-    "characters": ["Narrator", "Maharaja Dasharatha", "Mata Kaushalya", "Baal Ram"],
+    "characters": [
+      "Narrator",
+      "Maharaja Dasharatha",
+      "Mata Kaushalya",
+      "Baal Ram"
+    ],
     "environment": "Ayodhya Royal Palace & Yagya Shala",
     "runtime_target": 40.0,
     "status": "completed",
     "hook": "जब तीनों लोकों के स्वामी ने अयोध्या में एक नन्हें बालक के रूप में जन्म लिया...",
     "script_lines": [
-      {"speaker": "narrator", "text": "चैत्र मास की नवमी तिथि... अयोध्या में एक ऐसा सूर्योदय हुआ, जो युगों तक अमर हो गया!"},
-      {"speaker": "narrator", "text": "महाराज दशरथ के महल में गूँज उठी वो किलकारी, जिसका इंतज़ार तीनों लोकों को था।"},
-      {"speaker": "dasharatha", "text": "कौशल्या! देखो... हमारे घर स्वयं नारायण पधारे हैं!"},
-      {"speaker": "narrator", "text": "नील कमल सी कांति, विशाल नयन और मुख पर वो मंद मुस्कान..."},
-      {"speaker": "narrator", "text": "अयोध्या की गलियों में फूलों की वर्षा होने लगी, और देवताओं ने आकाश से दुंदुभी बजाई!"},
-      {"speaker": "narrator", "text": "मर्यादा पुरुषोत्तम प्रभु श्रीराम का यह दिव्य बाल रूप... अधर्म के अंत की पहली शुरुआत थी!"},
-      {"speaker": "narrator", "text": "अगले भाग में देखिए: महर्षि विश्वामित्र का अयोध्या आगमन!"}
+      {
+        "speaker": "narrator",
+        "text": "चैत्र मास की नवमी तिथि... अयोध्या में एक ऐसा सूर्योदय हुआ, जो युगों तक अमर हो गया!"
+      },
+      {
+        "speaker": "narrator",
+        "text": "महाराज दशरथ के महल में गूँज उठी वो किलकारी, जिसका इंतज़ार तीनों लोकों को था।"
+      },
+      {
+        "speaker": "dasharatha",
+        "text": "कौशल्या! देखो... हमारे घर स्वयं नारायण पधारे हैं!"
+      },
+      {
+        "speaker": "narrator",
+        "text": "नील कमल सी कांति, विशाल नयन और मुख पर वो मंद मुस्कान..."
+      },
+      {
+        "speaker": "narrator",
+        "text": "अयोध्या की गलियों में फूलों की वर्षा होने लगी, और देवताओं ने आकाश से दुंदुभी बजाई!"
+      },
+      {
+        "speaker": "narrator",
+        "text": "मर्यादा पुरुषोत्तम प्रभु श्रीराम का यह दिव्य बाल रूप... अधर्म के अंत की पहली शुरुआत थी!"
+      },
+      {
+        "speaker": "narrator",
+        "text": "अगले भाग में देखिए: महर्षि विश्वामित्र का अयोध्या आगमन!"
+      }
     ]
   },
   {
     "id": "EP002",
     "title": "विश्वामित्र का आगमन — राम और लक्ष्मण का प्रस्थान",
     "source": "वाल्मीकि रामायण (बालकाण्ड सर्ग 18-22)",
-    "characters": ["Narrator", "Maharishi Vishwamitra", "Maharaja Dasharatha", "Shri Ram", "Lakshman"],
+    "characters": [
+      "Narrator",
+      "Maharishi Vishwamitra",
+      "Maharaja Dasharatha",
+      "Shri Ram",
+      "Lakshman"
+    ],
     "environment": "Ayodhya Durbar & Sarayu River Coast",
     "runtime_target": 40.0
   },
@@ -30,56 +62,100 @@
     "id": "EP003",
     "title": "ताड़का वध — पहला धर्म युद्ध",
     "source": "वाल्मीकि रामायण (बालकाण्ड सर्ग 26-30)",
-    "characters": ["Narrator", "Shri Ram", "Lakshman", "Tadaka"],
+    "characters": [
+      "Narrator",
+      "Shri Ram",
+      "Lakshman",
+      "Tadaka"
+    ],
     "environment": "Dandaka Border Dense Forest"
   },
   {
     "id": "EP004",
     "title": "अहिल्या उद्धार — पाषाण से पुनर्जीवन",
     "source": "रामचरितमानस (बालकाण्ड) व वाल्मीकि रामायण",
-    "characters": ["Narrator", "Shri Ram", "Mata Ahilya", "Rishi Gautam"],
+    "characters": [
+      "Narrator",
+      "Shri Ram",
+      "Mata Ahilya",
+      "Rishi Gautam"
+    ],
     "environment": "Ancient Abandoned Hermitage"
   },
   {
     "id": "EP005",
     "title": "सीता स्वयंवर — मिथिला का भव्य दरबार",
     "source": "रामचरितमानस (बालकाण्ड)",
-    "characters": ["Narrator", "Raja Janak", "Mata Sita", "Shri Ram", "Lakshman"],
+    "characters": [
+      "Narrator",
+      "Raja Janak",
+      "Mata Sita",
+      "Shri Ram",
+      "Lakshman"
+    ],
     "environment": "Mithila Swyamvar Royal Durbar"
   },
   {
     "id": "EP006",
     "title": "शिव धनुष भंग — पिनाक का दिव्य गर्जन",
     "source": "रामचरितमानस (बालकाण्ड दोहा 259-264)",
-    "characters": ["Narrator", "Shri Ram", "Raja Janak", "Mata Sita"],
+    "characters": [
+      "Narrator",
+      "Shri Ram",
+      "Raja Janak",
+      "Mata Sita"
+    ],
     "environment": "Mithila Grand Hall"
   },
   {
     "id": "EP007",
     "title": "परशुराम संवाद — मर्यादा और पराक्रम की परीक्षा",
     "source": "रामचरितमानस (बालकाण्ड) व वाल्मीकि रामायण",
-    "characters": ["Narrator", "Bhagwan Parashuram", "Lakshman", "Shri Ram"],
+    "characters": [
+      "Narrator",
+      "Bhagwan Parashuram",
+      "Lakshman",
+      "Shri Ram"
+    ],
     "environment": "Mithila Outskirts"
   },
   {
     "id": "EP008",
     "title": "राम वनवास — पितृ-वचन और त्याग की पराकाष्ठा",
     "source": "वाल्मीकि रामायण (अयोध्याकाण्ड)",
-    "characters": ["Narrator", "Shri Ram", "Mata Sita", "Lakshman", "Mata Kaikeyi"],
+    "characters": [
+      "Narrator",
+      "Shri Ram",
+      "Mata Sita",
+      "Lakshman",
+      "Mata Kaikeyi"
+    ],
     "environment": "Ayodhya Gates & Chariot"
   },
   {
     "id": "EP009",
     "title": "केवट प्रसंग — प्रेम और अनन्य भक्ति की गंगा",
     "source": "रामचरितमानस (अयोध्याकाण्ड)",
-    "characters": ["Narrator", "Kewat", "Shri Ram", "Mata Sita", "Lakshman"],
+    "characters": [
+      "Narrator",
+      "Kewat",
+      "Shri Ram",
+      "Mata Sita",
+      "Lakshman"
+    ],
     "environment": "Ganga River Banks & Wooden Boat"
   },
   {
     "id": "EP010",
     "title": "पंचवटी और शूर्पणखा प्रसंग",
     "source": "वाल्मीकि रामायण (अरण्यकाण्ड)",
-    "characters": ["Narrator", "Shri Ram", "Mata Sita", "Lakshman", "Shurpanakha"],
+    "characters": [
+      "Narrator",
+      "Shri Ram",
+      "Mata Sita",
+      "Lakshman",
+      "Shurpanakha"
+    ],
     "environment": "Panchavati Forest & Godavari River"
   }
 ]
