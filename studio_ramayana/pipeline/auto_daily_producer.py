@@ -35,6 +35,11 @@ from studio_ramayana.character_engine.cinematic_character_v2 import (
     draw_sacred_shila,
     draw_cinematic_ahilya
 )
+from studio_ramayana.character_engine.playwright_typography import (
+    generate_manuscript_image,
+    generate_captions_batch,
+    generate_cliffhanger_badge
+)
 
 EPISODES_DB = BASE_DIR / "studio_ramayana" / "episodes" / "episodes_database.json"
 UPLOAD_DIR = BASE_DIR / "UPLOAD_READY_VIDEOS"
@@ -249,19 +254,19 @@ def render_episode(ep_data):
         ]
 
     chunk_dur = duration / len(lines)
+    print("🎨 Rendering 100% shaped Devanagari caption badges (zero tofu boxes)...")
+    cap_paths = generate_captions_batch(lines, captions_dir)
     caption_events = []
     for i, line in enumerate(lines):
         t_start = i * chunk_dur
         t_end = (i + 1) * chunk_dur
-        pill_path = captions_dir / f"chunk_{i:02d}.png"
-        generate_devanagari_caption_pill_v2(line["text"][:38], pill_path)
         caption_events.append({
             "idx": i,
             "speaker": line["speaker"],
             "text": line["text"],
             "start": t_start,
             "end": t_end,
-            "img_path": str(pill_path)
+            "img_path": cap_paths[i]
         })
 
     with open(ep_dir / "caption_events.json", "w", encoding="utf-8") as f:
@@ -295,12 +300,18 @@ def render_episode(ep_data):
 
     pipe = subprocess.Popen(ffmpeg_cmd, stdin=subprocess.PIPE)
 
-    # Pre-render Manuscript Page & Environment Backdrop for blazingly fast rendering
-    book_surf = skia.Surface(W, H)
-    bcv = book_surf.getCanvas()
-    bcv.clear(skia.ColorSetARGB(255, 12, 8, 18))
-    draw_ancient_manuscript_page(bcv, W, H, title, "॥ ॐ श्री गणेशाय नमः ॥", 1.0)
-    book_snap = book_surf.makeImageSnapshot()
+    # Pre-render Manuscript Page & Cliffhanger Badge with Playwright HarfBuzz
+    book_img_path = ep_dir / "manuscript_page.png"
+    print("📜 Generating ancient Sanskrit manuscript opening page with HarfBuzz shaping...")
+    generate_manuscript_image(title, "॥ ॐ श्री गणेशाय नमः ॥", book_img_path)
+    book_data = skia.Data.MakeFromFileName(str(book_img_path))
+    book_snap = skia.Image.MakeFromEncoded(book_data)
+
+    cliff_badge_path = ep_dir / "cliffhanger_badge.png"
+    print("🚩 Generating cliffhanger suspense badge...")
+    generate_cliffhanger_badge(cliff_badge_path)
+    cliff_data = skia.Data.MakeFromFileName(str(cliff_badge_path))
+    cliff_snap = skia.Image.MakeFromEncoded(cliff_data)
 
     env_surf = skia.Surface(W, H)
     ecv = env_surf.getCanvas()
@@ -416,21 +427,11 @@ def render_episode(ep_data):
             canvas.restore()
 
             if t_sec >= 36.5:
-                card_rect = skia.Rect(80, 720, W - 80, 1020)
-                card_p = skia.Paint(Color=skia.ColorSetARGB(235, 18, 10, 22), AntiAlias=True)
-                canvas.drawRoundRect(card_rect, 25, 25, card_p)
-                canvas.drawRoundRect(card_rect, 25, 25, skia.Paint(Style=skia.Paint.kStroke_Style, StrokeWidth=4, Color=skia.ColorSetARGB(255, 245, 195, 60), AntiAlias=True))
-                
-                font_c1 = skia.Font(skia.Typeface.MakeFromName("Arial", skia.FontStyle.Bold()), 52)
-                font_c2 = skia.Font(skia.Typeface.MakeFromName("Arial", skia.FontStyle.Normal()), 40)
-                
-                t1 = "आगे क्या होगा? 🚩"
-                b1 = font_c1.measureText(t1)
-                canvas.drawString(t1, (W - b1) * 0.5, 820, font_c1, skia.Paint(Color=skia.ColorSetARGB(255, 255, 220, 80), AntiAlias=True))
-
-                t2 = "देखिए अगले भाग में! फॉलो करें @grow10z"
-                b2 = font_c2.measureText(t2)
-                canvas.drawString(t2, (W - b2) * 0.5, 910, font_c2, skia.Paint(Color=skia.ColorWHITE, AntiAlias=True))
+                if cliff_snap:
+                    fade = min(1.0, (t_sec - 36.5) * 3.0)
+                    canvas.save()
+                    canvas.drawImage(cliff_snap, 80, 780)
+                    canvas.restore()
 
         # Floating Golden Light Sparks / Embers
         for pt in particles:
@@ -502,8 +503,11 @@ def render_episode(ep_data):
         f.write("#श्रीराम #रामायण #ताड़का #Ayodhya #Ramayan #ShriRam #SanatanDharma #IndianMythology #GROW10Z #DivineAnimation")
 
     # Mark completed in DB
-    ep_data["status"] = "completed"
-    save_episodes(load_episodes())
+    all_eps = load_episodes()
+    for e in all_eps:
+        if e["id"].upper() == ep_id.upper():
+            e["status"] = "completed"
+    save_episodes(all_eps)
 
     print(f"✅ {ep_id} production and publishing pack 100% complete!")
     return str(upload_video), str(postcopy_txt)

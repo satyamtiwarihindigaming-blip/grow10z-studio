@@ -735,7 +735,7 @@ def draw_cinematic_environment(cv, env_type, t_sec, W, H):
             [skia.ColorSetARGB(255, 18, 12, 36), skia.ColorSetARGB(255, 65, 32, 55), skia.ColorSetARGB(255, 160, 85, 35)],
             [0.0, 0.55, 1.0]
         )
-        cv.drawRect(skia.Rect(0, 0, W, H), sky_shader)
+        cv.drawRect(skia.Rect(0, 0, W, H), skia.Paint(Shader=sky_shader))
 
         # Distant Temple Spires (Shikharas)
         spire_paint = skia.Paint(Color=skia.ColorSetARGB(190, 45, 25, 45), AntiAlias=True)
