@@ -1,0 +1,1290 @@
+[
+  {
+    "line_idx": 0,
+    "word_idx": 0,
+    "word": "क्या",
+    "start": 3.8,
+    "end": 4.314207522089295,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_00_word_00.png"
+  },
+  {
+    "line_idx": 0,
+    "word_idx": 1,
+    "word": "आपने",
+    "start": 4.314207522089295,
+    "end": 4.82841504417859,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_00_word_01.png"
+  },
+  {
+    "line_idx": 0,
+    "word_idx": 2,
+    "word": "कभी",
+    "start": 4.82841504417859,
+    "end": 5.214070685745562,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_00_word_02.png"
+  },
+  {
+    "line_idx": 0,
+    "word_idx": 3,
+    "word": "सोचा",
+    "start": 5.214070685745562,
+    "end": 5.728278207834857,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_00_word_03.png"
+  },
+  {
+    "line_idx": 0,
+    "word_idx": 4,
+    "word": "है...",
+    "start": 5.728278207834857,
+    "end": 6.371037610446477,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_00_word_04.png"
+  },
+  {
+    "line_idx": 0,
+    "word_idx": 5,
+    "word": "जिस",
+    "start": 6.371037610446477,
+    "end": 6.756693252013449,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_00_word_05.png"
+  },
+  {
+    "line_idx": 0,
+    "word_idx": 6,
+    "word": "धनुष",
+    "start": 6.756693252013449,
+    "end": 7.270900774102744,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_00_word_06.png"
+  },
+  {
+    "line_idx": 0,
+    "word_idx": 7,
+    "word": "को",
+    "start": 7.270900774102744,
+    "end": 7.528004535147391,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_00_word_07.png"
+  },
+  {
+    "line_idx": 0,
+    "word_idx": 8,
+    "word": "हिलाना",
+    "start": 7.528004535147391,
+    "end": 8.299315818281334,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_00_word_08.png"
+  },
+  {
+    "line_idx": 0,
+    "word_idx": 9,
+    "word": "भी",
+    "start": 8.299315818281334,
+    "end": 8.556419579325983,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_00_word_09.png"
+  },
+  {
+    "line_idx": 0,
+    "word_idx": 10,
+    "word": "असंभव",
+    "start": 8.556419579325983,
+    "end": 9.199178981937601,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_00_word_10.png"
+  },
+  {
+    "line_idx": 0,
+    "word_idx": 11,
+    "word": "था,",
+    "start": 9.199178981937601,
+    "end": 9.584834623504573,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_00_word_11.png"
+  },
+  {
+    "line_idx": 0,
+    "word_idx": 12,
+    "word": "उसे",
+    "start": 9.584834623504573,
+    "end": 9.970490265071545,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_00_word_12.png"
+  },
+  {
+    "line_idx": 0,
+    "word_idx": 13,
+    "word": "एक",
+    "start": 9.970490265071545,
+    "end": 10.227594026116194,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_00_word_13.png"
+  },
+  {
+    "line_idx": 0,
+    "word_idx": 14,
+    "word": "16",
+    "start": 10.227594026116194,
+    "end": 10.484697787160842,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_00_word_14.png"
+  },
+  {
+    "line_idx": 0,
+    "word_idx": 15,
+    "word": "वर्ष",
+    "start": 10.484697787160842,
+    "end": 10.998905309250137,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_00_word_15.png"
+  },
+  {
+    "line_idx": 0,
+    "word_idx": 16,
+    "word": "के",
+    "start": 10.998905309250137,
+    "end": 11.256009070294786,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_00_word_16.png"
+  },
+  {
+    "line_idx": 0,
+    "word_idx": 17,
+    "word": "सुकुमार",
+    "start": 11.256009070294786,
+    "end": 12.155872233951053,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_00_word_17.png"
+  },
+  {
+    "line_idx": 0,
+    "word_idx": 18,
+    "word": "राजकुमार",
+    "start": 12.155872233951053,
+    "end": 13.184287278129643,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_00_word_18.png"
+  },
+  {
+    "line_idx": 0,
+    "word_idx": 19,
+    "word": "ने",
+    "start": 13.184287278129643,
+    "end": 13.441391039174292,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_00_word_19.png"
+  },
+  {
+    "line_idx": 0,
+    "word_idx": 20,
+    "word": "कैसे",
+    "start": 13.441391039174292,
+    "end": 13.955598561263587,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_00_word_20.png"
+  },
+  {
+    "line_idx": 0,
+    "word_idx": 21,
+    "word": "उठा",
+    "start": 13.955598561263587,
+    "end": 14.341254202830559,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_00_word_21.png"
+  },
+  {
+    "line_idx": 0,
+    "word_idx": 22,
+    "word": "लिया?",
+    "start": 14.341254202830559,
+    "end": 15.384013605442176,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_00_word_22.png"
+  },
+  {
+    "line_idx": 1,
+    "word_idx": 0,
+    "word": "ये",
+    "start": 15.384013605442176,
+    "end": 15.627013888888888,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_01_word_00.png"
+  },
+  {
+    "line_idx": 1,
+    "word_idx": 1,
+    "word": "कोई",
+    "start": 15.627013888888888,
+    "end": 15.991514314058955,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_01_word_01.png"
+  },
+  {
+    "line_idx": 1,
+    "word_idx": 2,
+    "word": "साधारण",
+    "start": 15.991514314058955,
+    "end": 16.720515164399092,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_01_word_02.png"
+  },
+  {
+    "line_idx": 1,
+    "word_idx": 3,
+    "word": "धनुष",
+    "start": 16.720515164399092,
+    "end": 17.206515731292516,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_01_word_03.png"
+  },
+  {
+    "line_idx": 1,
+    "word_idx": 4,
+    "word": "नहीं",
+    "start": 17.206515731292516,
+    "end": 17.69251629818594,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_01_word_04.png"
+  },
+  {
+    "line_idx": 1,
+    "word_idx": 5,
+    "word": "था...",
+    "start": 17.69251629818594,
+    "end": 18.30001700680272,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_01_word_05.png"
+  },
+  {
+    "line_idx": 1,
+    "word_idx": 6,
+    "word": "ये",
+    "start": 18.30001700680272,
+    "end": 18.54301729024943,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_01_word_06.png"
+  },
+  {
+    "line_idx": 1,
+    "word_idx": 7,
+    "word": "था",
+    "start": 18.54301729024943,
+    "end": 18.786017573696142,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_01_word_07.png"
+  },
+  {
+    "line_idx": 1,
+    "word_idx": 8,
+    "word": "स्वयं",
+    "start": 18.786017573696142,
+    "end": 19.39351828231292,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_01_word_08.png"
+  },
+  {
+    "line_idx": 1,
+    "word_idx": 9,
+    "word": "देवाधिदेव",
+    "start": 19.39351828231292,
+    "end": 20.487019557823125,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_01_word_09.png"
+  },
+  {
+    "line_idx": 1,
+    "word_idx": 10,
+    "word": "महादेव",
+    "start": 20.487019557823125,
+    "end": 21.21602040816326,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_01_word_10.png"
+  },
+  {
+    "line_idx": 1,
+    "word_idx": 11,
+    "word": "का",
+    "start": 21.21602040816326,
+    "end": 21.45902069160997,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_01_word_11.png"
+  },
+  {
+    "line_idx": 1,
+    "word_idx": 12,
+    "word": "अलौकिक",
+    "start": 21.45902069160997,
+    "end": 22.188021541950107,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_01_word_12.png"
+  },
+  {
+    "line_idx": 1,
+    "word_idx": 13,
+    "word": "'पिनाक'!",
+    "start": 22.188021541950107,
+    "end": 23.710022675736962,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_01_word_13.png"
+  },
+  {
+    "line_idx": 2,
+    "word_idx": 0,
+    "word": "दिग्दिगंत",
+    "start": 23.710022675736962,
+    "end": 24.85823606635637,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_02_word_00.png"
+  },
+  {
+    "line_idx": 2,
+    "word_idx": 1,
+    "word": "के",
+    "start": 24.85823606635637,
+    "end": 25.113394597605126,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_02_word_01.png"
+  },
+  {
+    "line_idx": 2,
+    "word_idx": 2,
+    "word": "महाबली",
+    "start": 25.113394597605126,
+    "end": 25.878870191351396,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_02_word_02.png"
+  },
+  {
+    "line_idx": 2,
+    "word_idx": 3,
+    "word": "राजा",
+    "start": 25.878870191351396,
+    "end": 26.38918725384891,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_02_word_03.png"
+  },
+  {
+    "line_idx": 2,
+    "word_idx": 4,
+    "word": "आए...",
+    "start": 26.38918725384891,
+    "end": 27.027083581970803,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_02_word_04.png"
+  },
+  {
+    "line_idx": 2,
+    "word_idx": 5,
+    "word": "सबने",
+    "start": 27.027083581970803,
+    "end": 27.537400644468317,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_02_word_05.png"
+  },
+  {
+    "line_idx": 2,
+    "word_idx": 6,
+    "word": "अपना",
+    "start": 27.537400644468317,
+    "end": 28.04771770696583,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_02_word_06.png"
+  },
+  {
+    "line_idx": 2,
+    "word_idx": 7,
+    "word": "अहंकार",
+    "start": 28.04771770696583,
+    "end": 28.8131933007121,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_02_word_07.png"
+  },
+  {
+    "line_idx": 2,
+    "word_idx": 8,
+    "word": "और",
+    "start": 28.8131933007121,
+    "end": 29.068351831960857,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_02_word_08.png"
+  },
+  {
+    "line_idx": 2,
+    "word_idx": 9,
+    "word": "पूरा",
+    "start": 29.068351831960857,
+    "end": 29.57866889445837,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_02_word_09.png"
+  },
+  {
+    "line_idx": 2,
+    "word_idx": 10,
+    "word": "बल",
+    "start": 29.57866889445837,
+    "end": 29.833827425707128,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_02_word_10.png"
+  },
+  {
+    "line_idx": 2,
+    "word_idx": 11,
+    "word": "झोंक",
+    "start": 29.833827425707128,
+    "end": 30.34414448820464,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_02_word_11.png"
+  },
+  {
+    "line_idx": 2,
+    "word_idx": 12,
+    "word": "दिया!",
+    "start": 30.34414448820464,
+    "end": 31.38204081632653,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_02_word_12.png"
+  },
+  {
+    "line_idx": 3,
+    "word_idx": 0,
+    "word": "लेकिन",
+    "start": 31.38204081632653,
+    "end": 32.091514898357005,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_03_word_00.png"
+  },
+  {
+    "line_idx": 3,
+    "word_idx": 1,
+    "word": "धनुष...",
+    "start": 32.091514898357005,
+    "end": 33.08477861319967,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_03_word_01.png"
+  },
+  {
+    "line_idx": 3,
+    "word_idx": 2,
+    "word": "एक",
+    "start": 33.08477861319967,
+    "end": 33.368568246011854,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_03_word_02.png"
+  },
+  {
+    "line_idx": 3,
+    "word_idx": 3,
+    "word": "तिल",
+    "start": 33.368568246011854,
+    "end": 33.794252695230135,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_03_word_03.png"
+  },
+  {
+    "line_idx": 3,
+    "word_idx": 4,
+    "word": "बराबर",
+    "start": 33.794252695230135,
+    "end": 34.50372677726061,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_03_word_04.png"
+  },
+  {
+    "line_idx": 3,
+    "word_idx": 5,
+    "word": "भी",
+    "start": 34.50372677726061,
+    "end": 34.7875164100728,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_03_word_05.png"
+  },
+  {
+    "line_idx": 3,
+    "word_idx": 6,
+    "word": "नहीं",
+    "start": 34.7875164100728,
+    "end": 35.35509567569718,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_03_word_06.png"
+  },
+  {
+    "line_idx": 3,
+    "word_idx": 7,
+    "word": "हिला!",
+    "start": 35.35509567569718,
+    "end": 36.064569757727654,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_03_word_07.png"
+  },
+  {
+    "line_idx": 3,
+    "word_idx": 8,
+    "word": "वीरों",
+    "start": 36.064569757727654,
+    "end": 36.77404383975813,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_03_word_08.png"
+  },
+  {
+    "line_idx": 3,
+    "word_idx": 9,
+    "word": "का",
+    "start": 36.77404383975813,
+    "end": 37.057833472570316,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_03_word_09.png"
+  },
+  {
+    "line_idx": 3,
+    "word_idx": 10,
+    "word": "घमंड",
+    "start": 37.057833472570316,
+    "end": 37.6254127381947,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_03_word_10.png"
+  },
+  {
+    "line_idx": 3,
+    "word_idx": 11,
+    "word": "चकनाचूर",
+    "start": 37.6254127381947,
+    "end": 38.61867645303736,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_03_word_11.png"
+  },
+  {
+    "line_idx": 3,
+    "word_idx": 12,
+    "word": "हो",
+    "start": 38.61867645303736,
+    "end": 38.90246608584955,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_03_word_12.png"
+  },
+  {
+    "line_idx": 3,
+    "word_idx": 13,
+    "word": "गया!",
+    "start": 38.90246608584955,
+    "end": 40.02004535147392,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_03_word_13.png"
+  },
+  {
+    "line_idx": 4,
+    "word_idx": 0,
+    "word": "पूरी",
+    "start": 40.02004535147392,
+    "end": 40.498591355734206,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_04_word_00.png"
+  },
+  {
+    "line_idx": 4,
+    "word_idx": 1,
+    "word": "सभा",
+    "start": 40.498591355734206,
+    "end": 40.85750085892942,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_04_word_01.png"
+  },
+  {
+    "line_idx": 4,
+    "word_idx": 2,
+    "word": "में",
+    "start": 40.85750085892942,
+    "end": 41.216410362124634,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_04_word_02.png"
+  },
+  {
+    "line_idx": 4,
+    "word_idx": 3,
+    "word": "श्मशान",
+    "start": 41.216410362124634,
+    "end": 41.93422936851507,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_04_word_03.png"
+  },
+  {
+    "line_idx": 4,
+    "word_idx": 4,
+    "word": "जैसा",
+    "start": 41.93422936851507,
+    "end": 42.41277537277536,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_04_word_04.png"
+  },
+  {
+    "line_idx": 4,
+    "word_idx": 5,
+    "word": "सन्नाटा",
+    "start": 42.41277537277536,
+    "end": 43.250230880230866,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_04_word_05.png"
+  },
+  {
+    "line_idx": 4,
+    "word_idx": 6,
+    "word": "छा",
+    "start": 43.250230880230866,
+    "end": 43.489503882361014,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_04_word_06.png"
+  },
+  {
+    "line_idx": 4,
+    "word_idx": 7,
+    "word": "गया।",
+    "start": 43.489503882361014,
+    "end": 43.9680498866213,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_04_word_07.png"
+  },
+  {
+    "line_idx": 4,
+    "word_idx": 8,
+    "word": "महाराज",
+    "start": 43.9680498866213,
+    "end": 44.68586889301174,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_04_word_08.png"
+  },
+  {
+    "line_idx": 4,
+    "word_idx": 9,
+    "word": "जनक",
+    "start": 44.68586889301174,
+    "end": 45.04477839620695,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_04_word_09.png"
+  },
+  {
+    "line_idx": 4,
+    "word_idx": 10,
+    "word": "की",
+    "start": 45.04477839620695,
+    "end": 45.2840513983371,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_04_word_10.png"
+  },
+  {
+    "line_idx": 4,
+    "word_idx": 11,
+    "word": "आँखों",
+    "start": 45.2840513983371,
+    "end": 45.88223390366246,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_04_word_11.png"
+  },
+  {
+    "line_idx": 4,
+    "word_idx": 12,
+    "word": "से",
+    "start": 45.88223390366246,
+    "end": 46.12150690579261,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_04_word_12.png"
+  },
+  {
+    "line_idx": 4,
+    "word_idx": 13,
+    "word": "अश्रु",
+    "start": 46.12150690579261,
+    "end": 46.71968941111797,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_04_word_13.png"
+  },
+  {
+    "line_idx": 4,
+    "word_idx": 14,
+    "word": "बह",
+    "start": 46.71968941111797,
+    "end": 46.958962413248116,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_04_word_14.png"
+  },
+  {
+    "line_idx": 4,
+    "word_idx": 15,
+    "word": "निकले...",
+    "start": 46.958962413248116,
+    "end": 48.316054421768705,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_04_word_15.png"
+  },
+  {
+    "line_idx": 5,
+    "word_idx": 0,
+    "word": "क्या",
+    "start": 48.316054421768705,
+    "end": 48.80187315330172,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_05_word_00.png"
+  },
+  {
+    "line_idx": 5,
+    "word_idx": 1,
+    "word": "इस",
+    "start": 48.80187315330172,
+    "end": 49.04478251906823,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_05_word_01.png"
+  },
+  {
+    "line_idx": 5,
+    "word_idx": 2,
+    "word": "पूरी",
+    "start": 49.04478251906823,
+    "end": 49.530601250601244,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_05_word_02.png"
+  },
+  {
+    "line_idx": 5,
+    "word_idx": 3,
+    "word": "धरती",
+    "start": 49.530601250601244,
+    "end": 50.01641998213426,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_05_word_03.png"
+  },
+  {
+    "line_idx": 5,
+    "word_idx": 4,
+    "word": "पर",
+    "start": 50.01641998213426,
+    "end": 50.25932934790077,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_05_word_04.png"
+  },
+  {
+    "line_idx": 5,
+    "word_idx": 5,
+    "word": "एक",
+    "start": 50.25932934790077,
+    "end": 50.502238713667275,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_05_word_05.png"
+  },
+  {
+    "line_idx": 5,
+    "word_idx": 6,
+    "word": "भी",
+    "start": 50.502238713667275,
+    "end": 50.74514807943378,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_05_word_06.png"
+  },
+  {
+    "line_idx": 5,
+    "word_idx": 7,
+    "word": "वीर",
+    "start": 50.74514807943378,
+    "end": 51.109512128083544,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_05_word_07.png"
+  },
+  {
+    "line_idx": 5,
+    "word_idx": 8,
+    "word": "पुरुष",
+    "start": 51.109512128083544,
+    "end": 51.716785542499814,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_05_word_08.png"
+  },
+  {
+    "line_idx": 5,
+    "word_idx": 9,
+    "word": "नहीं",
+    "start": 51.716785542499814,
+    "end": 52.20260427403283,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_05_word_09.png"
+  },
+  {
+    "line_idx": 5,
+    "word_idx": 10,
+    "word": "बचा?",
+    "start": 52.20260427403283,
+    "end": 52.688423005565845,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_05_word_10.png"
+  },
+  {
+    "line_idx": 5,
+    "word_idx": 11,
+    "word": "क्या",
+    "start": 52.688423005565845,
+    "end": 53.17424173709886,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_05_word_11.png"
+  },
+  {
+    "line_idx": 5,
+    "word_idx": 12,
+    "word": "मेरी",
+    "start": 53.17424173709886,
+    "end": 53.660060468631876,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_05_word_12.png"
+  },
+  {
+    "line_idx": 5,
+    "word_idx": 13,
+    "word": "सीता",
+    "start": 53.660060468631876,
+    "end": 54.14587920016489,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_05_word_13.png"
+  },
+  {
+    "line_idx": 5,
+    "word_idx": 14,
+    "word": "आजन्म",
+    "start": 54.14587920016489,
+    "end": 54.75315261458116,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_05_word_14.png"
+  },
+  {
+    "line_idx": 5,
+    "word_idx": 15,
+    "word": "कुँवारी",
+    "start": 54.75315261458116,
+    "end": 55.60333539476394,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_05_word_15.png"
+  },
+  {
+    "line_idx": 5,
+    "word_idx": 16,
+    "word": "रहेगी?",
+    "start": 55.60333539476394,
+    "end": 56.88206349206349,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_05_word_16.png"
+  },
+  {
+    "line_idx": 6,
+    "word_idx": 0,
+    "word": "तभी...",
+    "start": 56.88206349206349,
+    "end": 57.68504746531381,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_06_word_00.png"
+  },
+  {
+    "line_idx": 6,
+    "word_idx": 1,
+    "word": "महर्षि",
+    "start": 57.68504746531381,
+    "end": 58.48803143856413,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_06_word_01.png"
+  },
+  {
+    "line_idx": 6,
+    "word_idx": 2,
+    "word": "विश्वामित्र",
+    "start": 58.48803143856413,
+    "end": 59.96016872285637,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_06_word_02.png"
+  },
+  {
+    "line_idx": 6,
+    "word_idx": 3,
+    "word": "ने",
+    "start": 59.96016872285637,
+    "end": 60.227830047273144,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_06_word_03.png"
+  },
+  {
+    "line_idx": 6,
+    "word_idx": 4,
+    "word": "मंद",
+    "start": 60.227830047273144,
+    "end": 60.629322033898305,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_06_word_04.png"
+  },
+  {
+    "line_idx": 6,
+    "word_idx": 5,
+    "word": "मुस्कान",
+    "start": 60.629322033898305,
+    "end": 61.56613666935701,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_06_word_05.png"
+  },
+  {
+    "line_idx": 6,
+    "word_idx": 6,
+    "word": "के",
+    "start": 61.56613666935701,
+    "end": 61.83379799377378,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_06_word_06.png"
+  },
+  {
+    "line_idx": 6,
+    "word_idx": 7,
+    "word": "साथ",
+    "start": 61.83379799377378,
+    "end": 62.23528998039894,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_06_word_07.png"
+  },
+  {
+    "line_idx": 6,
+    "word_idx": 8,
+    "word": "देखा।",
+    "start": 62.23528998039894,
+    "end": 62.90444329144087,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_06_word_08.png"
+  },
+  {
+    "line_idx": 6,
+    "word_idx": 9,
+    "word": "और",
+    "start": 62.90444329144087,
+    "end": 63.17210461585764,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_06_word_09.png"
+  },
+  {
+    "line_idx": 6,
+    "word_idx": 10,
+    "word": "संकेत",
+    "start": 63.17210461585764,
+    "end": 63.84125792689957,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_06_word_10.png"
+  },
+  {
+    "line_idx": 6,
+    "word_idx": 11,
+    "word": "किया...",
+    "start": 63.84125792689957,
+    "end": 65.17807256235828,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_06_word_11.png"
+  },
+  {
+    "line_idx": 7,
+    "word_idx": 0,
+    "word": "श्रीराम",
+    "start": 65.17807256235828,
+    "end": 66.31140589569162,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_07_word_00.png"
+  },
+  {
+    "line_idx": 7,
+    "word_idx": 1,
+    "word": "उठे।",
+    "start": 66.31140589569162,
+    "end": 66.95902494331067,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_07_word_01.png"
+  },
+  {
+    "line_idx": 7,
+    "word_idx": 2,
+    "word": "कोई",
+    "start": 66.95902494331067,
+    "end": 67.44473922902495,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_07_word_02.png"
+  },
+  {
+    "line_idx": 7,
+    "word_idx": 3,
+    "word": "घमंड",
+    "start": 67.44473922902495,
+    "end": 68.09235827664399,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_07_word_03.png"
+  },
+  {
+    "line_idx": 7,
+    "word_idx": 4,
+    "word": "नहीं...",
+    "start": 68.09235827664399,
+    "end": 69.22569160997733,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_07_word_04.png"
+  },
+  {
+    "line_idx": 7,
+    "word_idx": 5,
+    "word": "कोई",
+    "start": 69.22569160997733,
+    "end": 69.71140589569161,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_07_word_05.png"
+  },
+  {
+    "line_idx": 7,
+    "word_idx": 6,
+    "word": "उतावलापन",
+    "start": 69.71140589569161,
+    "end": 71.0066439909297,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_07_word_06.png"
+  },
+  {
+    "line_idx": 7,
+    "word_idx": 7,
+    "word": "नहीं।",
+    "start": 71.0066439909297,
+    "end": 71.81616780045351,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_07_word_07.png"
+  },
+  {
+    "line_idx": 7,
+    "word_idx": 8,
+    "word": "केवल",
+    "start": 71.81616780045351,
+    "end": 72.46378684807256,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_07_word_08.png"
+  },
+  {
+    "line_idx": 7,
+    "word_idx": 9,
+    "word": "सागर",
+    "start": 72.46378684807256,
+    "end": 73.1114058956916,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_07_word_09.png"
+  },
+  {
+    "line_idx": 7,
+    "word_idx": 10,
+    "word": "जैसी",
+    "start": 73.1114058956916,
+    "end": 73.75902494331065,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_07_word_10.png"
+  },
+  {
+    "line_idx": 7,
+    "word_idx": 11,
+    "word": "असीम",
+    "start": 73.75902494331065,
+    "end": 74.4066439909297,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_07_word_11.png"
+  },
+  {
+    "line_idx": 7,
+    "word_idx": 12,
+    "word": "शांति।",
+    "start": 74.4066439909297,
+    "end": 75.92807256235828,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_07_word_12.png"
+  },
+  {
+    "line_idx": 8,
+    "word_idx": 0,
+    "word": "राम",
+    "start": 75.92807256235828,
+    "end": 76.34673973293022,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_08_word_00.png"
+  },
+  {
+    "line_idx": 8,
+    "word_idx": 1,
+    "word": "ने",
+    "start": 76.34673973293022,
+    "end": 76.62585117997817,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_08_word_01.png"
+  },
+  {
+    "line_idx": 8,
+    "word_idx": 2,
+    "word": "केवल",
+    "start": 76.62585117997817,
+    "end": 77.18407407407408,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_08_word_02.png"
+  },
+  {
+    "line_idx": 8,
+    "word_idx": 3,
+    "word": "एक",
+    "start": 77.18407407407408,
+    "end": 77.46318552112203,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_08_word_03.png"
+  },
+  {
+    "line_idx": 8,
+    "word_idx": 4,
+    "word": "हाथ",
+    "start": 77.46318552112203,
+    "end": 77.88185269169396,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_08_word_04.png"
+  },
+  {
+    "line_idx": 8,
+    "word_idx": 5,
+    "word": "से",
+    "start": 77.88185269169396,
+    "end": 78.16096413874192,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_08_word_05.png"
+  },
+  {
+    "line_idx": 8,
+    "word_idx": 6,
+    "word": "पिनाक",
+    "start": 78.16096413874192,
+    "end": 78.8587427563618,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_08_word_06.png"
+  },
+  {
+    "line_idx": 8,
+    "word_idx": 7,
+    "word": "को",
+    "start": 78.8587427563618,
+    "end": 79.13785420340976,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_08_word_07.png"
+  },
+  {
+    "line_idx": 8,
+    "word_idx": 8,
+    "word": "छुआ...",
+    "start": 79.13785420340976,
+    "end": 79.97518854455362,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_08_word_08.png"
+  },
+  {
+    "line_idx": 8,
+    "word_idx": 9,
+    "word": "और",
+    "start": 79.97518854455362,
+    "end": 80.25429999160157,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_08_word_09.png"
+  },
+  {
+    "line_idx": 8,
+    "word_idx": 10,
+    "word": "धनुष",
+    "start": 80.25429999160157,
+    "end": 80.81252288569748,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_08_word_10.png"
+  },
+  {
+    "line_idx": 8,
+    "word_idx": 11,
+    "word": "तिनके",
+    "start": 80.81252288569748,
+    "end": 81.51030150331736,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_08_word_11.png"
+  },
+  {
+    "line_idx": 8,
+    "word_idx": 12,
+    "word": "की",
+    "start": 81.51030150331736,
+    "end": 81.78941295036532,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_08_word_12.png"
+  },
+  {
+    "line_idx": 8,
+    "word_idx": 13,
+    "word": "तरह",
+    "start": 81.78941295036532,
+    "end": 82.20808012093725,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_08_word_13.png"
+  },
+  {
+    "line_idx": 8,
+    "word_idx": 14,
+    "word": "ऊपर",
+    "start": 82.20808012093725,
+    "end": 82.62674729150919,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_08_word_14.png"
+  },
+  {
+    "line_idx": 8,
+    "word_idx": 15,
+    "word": "उठ",
+    "start": 82.62674729150919,
+    "end": 82.90585873855714,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_08_word_15.png"
+  },
+  {
+    "line_idx": 8,
+    "word_idx": 16,
+    "word": "गया!",
+    "start": 82.90585873855714,
+    "end": 83.86408163265307,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_08_word_16.png"
+  },
+  {
+    "line_idx": 9,
+    "word_idx": 0,
+    "word": "पूरी",
+    "start": 83.86408163265307,
+    "end": 84.38351149983804,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_09_word_00.png"
+  },
+  {
+    "line_idx": 9,
+    "word_idx": 1,
+    "word": "सभा",
+    "start": 84.38351149983804,
+    "end": 84.77308390022677,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_09_word_01.png"
+  },
+  {
+    "line_idx": 9,
+    "word_idx": 2,
+    "word": "की",
+    "start": 84.77308390022677,
+    "end": 85.03279883381926,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_09_word_02.png"
+  },
+  {
+    "line_idx": 9,
+    "word_idx": 3,
+    "word": "सांसें",
+    "start": 85.03279883381926,
+    "end": 85.81194363459672,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_09_word_03.png"
+  },
+  {
+    "line_idx": 9,
+    "word_idx": 4,
+    "word": "हलक",
+    "start": 85.81194363459672,
+    "end": 86.20151603498545,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_09_word_04.png"
+  },
+  {
+    "line_idx": 9,
+    "word_idx": 5,
+    "word": "में",
+    "start": 86.20151603498545,
+    "end": 86.59108843537417,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_09_word_05.png"
+  },
+  {
+    "line_idx": 9,
+    "word_idx": 6,
+    "word": "अटक",
+    "start": 86.59108843537417,
+    "end": 86.9806608357629,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_09_word_06.png"
+  },
+  {
+    "line_idx": 9,
+    "word_idx": 7,
+    "word": "गईं।",
+    "start": 86.9806608357629,
+    "end": 87.50009070294787,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_09_word_07.png"
+  },
+  {
+    "line_idx": 9,
+    "word_idx": 8,
+    "word": "जैसे",
+    "start": 87.50009070294787,
+    "end": 88.01952057013284,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_09_word_08.png"
+  },
+  {
+    "line_idx": 9,
+    "word_idx": 9,
+    "word": "ही",
+    "start": 88.01952057013284,
+    "end": 88.27923550372533,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_09_word_09.png"
+  },
+  {
+    "line_idx": 9,
+    "word_idx": 10,
+    "word": "प्रत्यंचा",
+    "start": 88.27923550372533,
+    "end": 89.4479527048915,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_09_word_10.png"
+  },
+  {
+    "line_idx": 9,
+    "word_idx": 11,
+    "word": "को",
+    "start": 89.4479527048915,
+    "end": 89.707667638484,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_09_word_11.png"
+  },
+  {
+    "line_idx": 9,
+    "word_idx": 12,
+    "word": "कान",
+    "start": 89.707667638484,
+    "end": 90.09724003887273,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_09_word_12.png"
+  },
+  {
+    "line_idx": 9,
+    "word_idx": 13,
+    "word": "तक",
+    "start": 90.09724003887273,
+    "end": 90.35695497246522,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_09_word_13.png"
+  },
+  {
+    "line_idx": 9,
+    "word_idx": 14,
+    "word": "खींचा—",
+    "start": 90.35695497246522,
+    "end": 91.68609977324263,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_09_word_14.png"
+  },
+  {
+    "line_idx": 10,
+    "word_idx": 0,
+    "word": "भयंकर",
+    "start": 91.68609977324263,
+    "end": 92.36058565955118,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_10_word_00.png"
+  },
+  {
+    "line_idx": 10,
+    "word_idx": 1,
+    "word": "गर्जना",
+    "start": 92.36058565955118,
+    "end": 93.16996872312143,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_10_word_01.png"
+  },
+  {
+    "line_idx": 10,
+    "word_idx": 2,
+    "word": "से",
+    "start": 93.16996872312143,
+    "end": 93.43976307764484,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_10_word_02.png"
+  },
+  {
+    "line_idx": 10,
+    "word_idx": 3,
+    "word": "तीनों",
+    "start": 93.43976307764484,
+    "end": 94.11424896395339,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_10_word_03.png"
+  },
+  {
+    "line_idx": 10,
+    "word_idx": 4,
+    "word": "लोक",
+    "start": 94.11424896395339,
+    "end": 94.51894049573852,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_10_word_04.png"
+  },
+  {
+    "line_idx": 10,
+    "word_idx": 5,
+    "word": "काँप",
+    "start": 94.51894049573852,
+    "end": 95.05852920478536,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_10_word_05.png"
+  },
+  {
+    "line_idx": 10,
+    "word_idx": 6,
+    "word": "उठे!",
+    "start": 95.05852920478536,
+    "end": 95.9981179138322,
+    "img_path": "studio_ramayana\\episodes\\ep005\\captions_v2\\line_10_word_06.png"
+  }
+]

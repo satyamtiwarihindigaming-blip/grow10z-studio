@@ -302,8 +302,9 @@ def render_episode(ep_data):
         ]
 
     if ep_id == "EP005":
-        print("🎨 Generating WORD-BY-WORD active highlighted captions (65s epic)...")
-        caption_events = generate_word_by_word_captions(lines, active_start=4.5, active_end=62.0, captions_dir=captions_dir)
+        from studio_ramayana.pipeline.render_fixed_ep005 import main as render_ep005_fixed
+        render_ep005_fixed()
+        return ep_dir / "ep005_final.mp4"
     else:
         chunk_dur = duration / len(lines)
         print("🎨 Rendering 100% shaped Devanagari caption badges (zero tofu boxes)...")
