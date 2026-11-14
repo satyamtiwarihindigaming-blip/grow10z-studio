@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <title>GROW10Z Hollywood 3D Ramayana Universe</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body, html { width: 1080px; height: 1920px; overflow: hidden; background: #000; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+    #canvas3d { width: 1080px; height: 1920px; display: block; position: absolute; top: 0; left: 0; z-index: 1; }
+    #vignette {
+      position: absolute; top: 0; left: 0; width: 1080px; height: 1920px; z-index: 10; pointer-events: none;
+      background: radial-gradient(circle at 50% 50%, rgba(0,0,0,0) 55%, rgba(10,5,15,0.7) 85%, rgba(5,2,8,0.95) 100%);
+    }
+  </style>
+  <script src="three.min.js"></script>
+</head>
+<body>
+  <canvas id="canvas3d"></canvas>
+  <div id="vignette"></div>
+
+  <script>
+    const W = 1080, H = 1920;
+    const canvas = document.getElementById('canvas3d');
+    const renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true, alpha: false, powerPreference: "high-performance" });
+    renderer.setSize(W, H);
+    renderer.setPixelRatio(1.0);
+    renderer.shadowMap.enabled = true;
+    renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+    renderer.toneMapping = THREE.ACESFilmicToneMapping;
+    renderer.toneMappingExposure = 1.15;
+
+    const scene = new THREE.Scene();
+    scene.fog = new THREE.FogExp2(0x180f24, 0.0018);
+
+    const camera = new THREE.PerspectiveCamera(45, W / H, 0.1, 2000);
+    camera.position.set(0, 45, 160);
+
+    // ==============================================================
+    // 1. AASMAN (CELESTIAL SKY & ATMOSPHERE)
+    // ==============================================================
+    // Celestial Sky Dome with Gradient Vertex Colors
+    const skyGeo = new THREE.SphereGeometry(1200, 32, 24);
+    const skyMat = new THREE.ShaderMaterial({
+      uniforms: {
+        topColor: { value: new THREE.Color(0x0e081c) },
+        horizonColor: { value: new THREE.Color(0xd45d28) },
+        bottomColor: { value: new THREE.Color(0x221318) },
+        offset: { value: 50 },
+        exponent: { value: 0.6 }
+      },
+      vertexShader: `
+        varying vec3 vWorldPosition;
+        void main() {
+          vec4 worldPosition = modelMatrix * vec4(position, 1.0);
+          vWorldPosition = worldPosition.xyz;
+          gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+        }
+      `,
+      fragmentShader: `
+        uniform vec3 topColor;
+        uniform vec3 horizonColor;
+        uniform vec3 bottomColor;
+        uniform float offset;
+        uniform float exponent;
+        varying vec3 vWorldPosition;
+        void main() {
+          float h = normalize(vWorldPosition + offset).y;
+          vec3 col = (h > 0.0) ? mix(horizonColor, topColor, pow(h, exponent)) : mix(horizonColor, bottomColor, -h);
+          gl_FragColor = vec4(col, 1.0);
+        }
+      `,
+      side: THREE.BackSide
+    });
+    const skyDome = new THREE.Mesh(skyGeo, skyMat);
+    scene.add(skyDome);
+
+    // ==============================================================
+    // 2. SURAJ & CHAND (DIVINE SUN WITH ANAMORPHIC FLARE & MOON)
+    // ==============================================================
+    const sunGroup = new THREE.Group();
+    // Sun core
+    const sunCoreGeo = new THREE.SphereGeometry(22, 32, 32);
+    const sunCoreMat = new THREE.MeshBasicMaterial({ color: 0xfffae6 });
+    const sunCore = new THREE.Mesh(sunCoreGeo, sunCoreMat);
+    sunGroup.add(sunCore);
+
+    // Sun Corona Rings
+    const ringGeo1 = new THREE.RingGeometry(24, 75, 32);
+    const ringMat1 = new THREE.MeshBasicMaterial({ color: 0xff9922, side: THREE.DoubleSide, transparent: true, opacity: 0.6 });
+    const ring1 = new THREE.Mesh(ringGeo1, ringMat1);
+    sunGroup.add(ring1);
+
+    const ringGeo2 = new THREE.RingGeometry(75, 180, 32);
+    const ringMat2 = new THREE.MeshBasicMaterial({ color: 0xff5500, side: THREE.DoubleSide, transparent: true, opacity: 0.25 });
+    const ring2 = new THREE.Mesh(ringGeo2, ringMat2);
+    sunGroup.add(ring2);
+
+    sunGroup.position.set(0, 180, -550);
+    scene.add(sunGroup);
+
+    // Directional Sun Light with Shadows
+    const sunLight = new THREE.DirectionalLight(0xffdfa0, 2.2);
+    sunLight.position.set(0, 250, -450);
+    sunLight.castShadow = true;
+    sunLight.shadow.mapSize.width = 2048;
+    sunLight.shadow.mapSize.height = 2048;
+    sunLight.shadow.camera.near = 10;
+    sunLight.shadow.camera.far = 1000;
+    sunLight.shadow.camera.left = -200;
+    sunLight.shadow.camera.right = 200;
+    sunLight.shadow.camera.top = 200;
+    sunLight.shadow.camera.bottom = -200;
+    scene.add(sunLight);
+
+    const ambientLight = new THREE.AmbientLight(0x45283c, 0.9);
+    scene.add(ambientLight);
+
+    // Volumetric God-Rays (Crepuscular Light Cones)
+    const rayGroup = new THREE.Group();
+    for (let r = 0; r < 7; r++) {
+      const angle = (r - 3) * 0.18;
+      const coneGeo = new THREE.CylinderGeometry(15, 90, 700, 16, 1, true);
+      const coneMat = new THREE.MeshBasicMaterial({
+        color: 0xffd277,
+        transparent: true,
+        opacity: 0.08,
+        side: THREE.DoubleSide,
+        depthWrite: false,
+        blending: THREE.AdditiveBlending
+      });
+      const ray = new THREE.Mesh(coneGeo, coneMat);
+      ray.position.set(Math.sin(angle) * 120, 120, -320);
+      ray.rotation.z = angle;
+      rayGroup.add(ray);
+    }
+    scene.add(rayGroup);
+
+    // ==============================================================
+    // 3. ZAMEEN (PBR ANCIENT PALACE & GROUND TERRAIN)
+    // ==============================================================
+    // Main Marble Palace Terrace Floor
+    const floorGeo = new THREE.PlaneGeometry(600, 600, 40, 40);
+    const floorMat = new THREE.MeshStandardMaterial({
+      color: 0x1d1424,
+      roughness: 0.25,
+      metalness: 0.4,
+      envMapIntensity: 1.0
+    });
+    const floor = new THREE.Mesh(floorGeo, floorMat);
+    floor.rotation.x = -Math.PI / 2;
+    floor.receiveShadow = true;
+    scene.add(floor);
+
+    // Golden Inlay Lines on Floor
+    for (let gx = -180; gx <= 180; gx += 60) {
+      const gridLineGeo = new THREE.BoxGeometry(2, 0.4, 600);
+      const gridLineMat = new THREE.MeshBasicMaterial({ color: 0xd49b25 });
+      const gridLine = new THREE.Mesh(gridLineGeo, gridLineMat);
+      gridLine.position.set(gx, 0.2, 0);
+      scene.add(gridLine);
+    }
+
+    // ==============================================================
+    // 4. BUILDINGS (AYODHYA TEMPLE SHIKHARAS & PALACE PILLARS)
+    // ==============================================================
+    const templeGroup = new THREE.Group();
+
+    // Central Temple Shikhara (Multi-tier Spire)
+    function createShikhara(x, z, scaleH) {
+      const g = new THREE.Group();
+      // Base Plinth
+      const baseGeo = new THREE.BoxGeometry(60, 20, 60);
+      const baseMat = new THREE.MeshStandardMaterial({ color: 0x482d3e, roughness: 0.6 });
+      const base = new THREE.Mesh(baseGeo, baseMat);
+      base.position.y = 10;
+      base.castShadow = true;
+      base.receiveShadow = true;
+      g.add(base);
+
+      // Multi-tier Shikhara tiers
+      for (let t = 0; t < 6; t++) {
+        const w = 50 - t * 7;
+        const tierGeo = new THREE.BoxGeometry(w, 18 * scaleH, w);
+        const tierMat = new THREE.MeshStandardMaterial({ color: 0x3d2235 + t * 0x050403, roughness: 0.5 });
+        const tier = new THREE.Mesh(tierGeo, tierMat);
+        tier.position.y = 20 + t * 16 * scaleH;
+        tier.castShadow = true;
+        g.add(tier);
+      }
+
+      // Kalash & Amalak Pinnacle (Top Peak)
+      const amalakGeo = new THREE.CylinderGeometry(12, 16, 8, 16);
+      const goldMat = new THREE.MeshStandardMaterial({ color: 0xf5c242, roughness: 0.2, metalness: 0.85 });
+      const amalak = new THREE.Mesh(amalakGeo, goldMat);
+      amalak.position.y = 20 + 6 * 16 * scaleH + 4;
+      g.add(amalak);
+
+      const kalashGeo = new THREE.SphereGeometry(7, 16, 16);
+      const kalash = new THREE.Mesh(kalashGeo, goldMat);
+      kalash.position.y = amalak.position.y + 8;
+      g.add(kalash);
+
+      // Sacred Dhwaja (Saffron Flag on top)
+      const flagPoleGeo = new THREE.CylinderGeometry(0.8, 0.8, 25);
+      const flagPole = new THREE.Mesh(flagPoleGeo, goldMat);
+      flagPole.position.y = kalash.position.y + 12;
+      g.add(flagPole);
+
+      const flagGeo = new THREE.BufferGeometry();
+      const vertices = new Float32Array([
+        0, 0, 0,
+        18, -6, 0,
+        0, -12, 0
+      ]);
+      flagGeo.setAttribute('position', new THREE.BufferAttribute(vertices, 3));
+      const flagMat = new THREE.MeshBasicMaterial({ color: 0xff5511, side: THREE.DoubleSide });
+      const flag = new THREE.Mesh(flagGeo, flagMat);
+      flag.position.set(0, kalash.position.y + 24, 0);
+      g.add(flag);
+
+      g.position.set(x, 0, z);
+      return g;
+    }
+
+    templeGroup.add(createShikhara(0, -280, 1.3));
+    templeGroup.add(createShikhara(-140, -320, 1.0));
+    templeGroup.add(createShikhara(140, -320, 1.0));
+    scene.add(templeGroup);
+
+    // Grand Imperial Pillars (Colonnade flanking scene)
+    function createPillar(x, z) {
+      const p = new THREE.Group();
+      // Base
+      const bGeo = new THREE.CylinderGeometry(10, 12, 10, 16);
+      const pMat = new THREE.MeshStandardMaterial({ color: 0xe8d5b8, roughness: 0.35, metalness: 0.15 });
+      const b = new THREE.Mesh(bGeo, pMat);
+      b.position.y = 5;
+      b.castShadow = true;
+      p.add(b);
+
+      // Shaft
+      const sGeo = new THREE.CylinderGeometry(7.5, 8.5, 120, 20);
+      const s = new THREE.Mesh(sGeo, pMat);
+      s.position.y = 65;
+      s.castShadow = true;
+      p.add(s);
+
+      // Capital (Lotus capital)
+      const cGeo = new THREE.CylinderGeometry(14, 8, 12, 16);
+      const goldRingMat = new THREE.MeshStandardMaterial({ color: 0xf5c242, roughness: 0.25, metalness: 0.8 });
+      const c = new THREE.Mesh(cGeo, goldRingMat);
+      c.position.y = 128;
+      p.add(c);
+
+      // Hanging Brass Diya
+      const diyaGroup = new THREE.Group();
+      const chainGeo = new THREE.CylinderGeometry(0.4, 0.4, 35);
+      const chainMat = new THREE.MeshBasicMaterial({ color: 0xd49b25 });
+      const chain = new THREE.Mesh(chainGeo, chainMat);
+      chain.position.y = -17.5;
+      diyaGroup.add(chain);
+
+      const bowlGeo = new THREE.SphereGeometry(6, 16, 12, 0, Math.PI * 2, Math.PI / 2, Math.PI / 2);
+      const bowl = new THREE.Mesh(bowlGeo, goldRingMat);
+      bowl.position.y = -35;
+      diyaGroup.add(bowl);
+
+      const flameGeo = new THREE.SphereGeometry(3.5, 12, 12);
+      const flameMat = new THREE.MeshBasicMaterial({ color: 0xffe277 });
+      const flame = new THREE.Mesh(flameGeo, flameMat);
+      flame.position.y = -33;
+      diyaGroup.add(flame);
+
+      const diyaLight = new THREE.PointLight(0xffa533, 1.8, 110);
+      diyaLight.position.set(0, -32, 0);
+      diyaGroup.add(diyaLight);
+
+      diyaGroup.position.set(x > 0 ? -12 : 12, 120, 0);
+      p.add(diyaGroup);
+
+      p.position.set(x, 0, z);
+      return p;
+    }
+
+    // Colonnade rows
+    for (let pz = 100; pz >= -150; pz -= 80) {
+      scene.add(createPillar(-75, pz));
+      scene.add(createPillar(75, pz));
+    }
+
+    // ==============================================================
+    // 5. PED & NATURE (ANCIENT BANYAN / SAL TREES & FOLIAGE)
+    // ==============================================================
+    function createSacredTree(x, z, scale) {
+      const tree = new THREE.Group();
+      // Trunk with twisting roots
+      const trunkGeo = new THREE.CylinderGeometry(8 * scale, 18 * scale, 140 * scale, 12);
+      const barkMat = new THREE.MeshStandardMaterial({ color: 0x2e1e19, roughness: 0.9 });
+      const trunk = new THREE.Mesh(trunkGeo, barkMat);
+      trunk.position.y = 70 * scale;
+      trunk.castShadow = true;
+      tree.add(trunk);
+
+      // Foliage Clustered Canopies (Lush Emerald Canopy)
+      for (let f = 0; f < 5; f++) {
+        const leafGeo = new THREE.DodecahedronGeometry((28 + f * 5) * scale, 1);
+        const leafMat = new THREE.MeshStandardMaterial({ color: 0x134825 + f * 0x021204, roughness: 0.7 });
+        const canopy = new THREE.Mesh(leafGeo, leafMat);
+        const ang = f * 1.3;
+        canopy.position.set(Math.cos(ang) * 24 * scale, (120 + f * 14) * scale, Math.sin(ang) * 24 * scale);
+        canopy.castShadow = true;
+        tree.add(canopy);
+      }
+
+      tree.position.set(x, 0, z);
+      return tree;
+    }
+
+    scene.add(createSacredTree(-180, 20, 1.2));
+    scene.add(createSacredTree(180, -40, 1.1));
+    scene.add(createSacredTree(-210, -180, 1.4));
+    scene.add(createSacredTree(210, -180, 1.4));
+
+    // ==============================================================
+    // 6. EVERY PARTICLE (DIVINE PARTICLES & HOLLYWOOD VFX)
+    // ==============================================================
+    const particleCount = 1800;
+    const pGeo = new THREE.BufferGeometry();
+    const pPos = new Float32Array(particleCount * 3);
+    const pVel = [];
+
+    for (let i = 0; i < particleCount; i++) {
+      pPos[i * 3 + 0] = (Math.random() - 0.5) * 450;
+      pPos[i * 3 + 1] = Math.random() * 220;
+      pPos[i * 3 + 2] = (Math.random() - 0.5) * 500;
+      pVel.push({
+        y: 0.2 + Math.random() * 0.6,
+        x: (Math.random() - 0.5) * 0.3,
+        rot: Math.random() * Math.PI * 2
+      });
+    }
+
+    pGeo.setAttribute('position', new THREE.BufferAttribute(pPos, 3));
+
+    // Particle Canvas Texture (Glowing Golden Sparkle)
+    const pCanvas = document.createElement('canvas');
+    pCanvas.width = 32; pCanvas.height = 32;
+    const pctx = pCanvas.getContext('2d');
+    const grad = pctx.createRadialGradient(16, 16, 0, 16, 16, 16);
+    grad.addColorStop(0, 'rgba(255, 255, 255, 1)');
+    grad.addColorStop(0.3, 'rgba(255, 215, 65, 0.9)');
+    grad.addColorStop(0.7, 'rgba(255, 140, 20, 0.4)');
+    grad.addColorStop(1, 'rgba(255, 80, 0, 0)');
+    pctx.fillStyle = grad;
+    pctx.fillRect(0, 0, 32, 32);
+
+    const pTex = new THREE.CanvasTexture(pCanvas);
+    const pMat = new THREE.PointsMaterial({
+      size: 6.5,
+      map: pTex,
+      transparent: true,
+      blending: THREE.AdditiveBlending,
+      depthWrite: false
+    });
+
+    const particles = new THREE.Points(pGeo, pMat);
+    scene.add(particles);
+
+    // ==============================================================
+    // 7. HOLLYWOOD-LEVEL CAMERA CONTROLS & RENDER API
+    // ==============================================================
+    window.renderFrameAtTime = function(tSec) {
+      // 1. Smooth Camera Motion Sweep (Hollywood Crane Dolly)
+      camera.position.x = 22 * Math.sin(tSec * 0.35);
+      camera.position.y = 48 + 8 * Math.cos(tSec * 0.45);
+      camera.position.z = 160 - tSec * 2.8;
+      camera.lookAt(0, 60, -100);
+
+      // 2. Animate Sun & Light Pulses
+      sunGroup.rotation.z = tSec * 0.08;
+      rayGroup.rotation.z = Math.sin(tSec * 0.2) * 0.05;
+
+      // 3. Animate Particles
+      const pos = particles.geometry.attributes.position.array;
+      for (let i = 0; i < particleCount; i++) {
+        pos[i * 3 + 1] += pVel[i].y;
+        pos[i * 3 + 0] += Math.sin(tSec + i) * 0.15;
+        if (pos[i * 3 + 1] > 240) {
+          pos[i * 3 + 1] = 0;
+        }
+      }
+      particles.geometry.attributes.position.needsUpdate = true;
+
+      // Render
+      renderer.render(scene, camera);
+      return true;
+    };
+
+    // Initial draw
+    window.renderFrameAtTime(0);
+  </script>
+</body>
+</html>

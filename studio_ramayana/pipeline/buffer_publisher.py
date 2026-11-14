@@ -14,16 +14,16 @@ TOKEN = os.environ.get("BUFFER_ACCESS_TOKEN", "DhMsR0Uslt8x2IUO_1F4nAUi2U5qelo7g
 GRAPHQL_URL = "https://api.buffer.com/graphql"
 GROW10Z_CHANNEL_ID = "6af8338e62b70b94b02aeee3"
 
-def create_instagram_post(text, video_url=None, first_comment=None, share_now=False):
+def create_instagram_post(text, video_url=None, share_now=True):
     """
-    Creates a post/Reel on Instagram @grow10z via Buffer.
+    Creates a Reel on Instagram @grow10z via Buffer GraphQL API.
     """
     mode = "shareNow" if share_now else "addToQueue"
     
     mutation = """
     mutation CreatePost($input: CreatePostInput!) {
       createPost(input: $input) {
-        ... on CreatePostSuccess {
+        ... on PostActionSuccess {
           post {
             id
             status
@@ -31,7 +31,13 @@ def create_instagram_post(text, video_url=None, first_comment=None, share_now=Fa
             dueAt
           }
         }
-        ... on CreatePostError {
+        ... on InvalidInputError {
+          message
+        }
+        ... on UnexpectedError {
+          message
+        }
+        ... on LimitReachedError {
           message
         }
       }
@@ -46,14 +52,12 @@ def create_instagram_post(text, video_url=None, first_comment=None, share_now=Fa
         "needsApproval": False,
         "metadata": {
             "instagram": {
+                "type": "reel",
                 "shouldShareToFeed": True,
                 "isAiGenerated": False
             }
         }
     }
-
-    if first_comment:
-        post_input["metadata"]["instagram"]["firstComment"] = first_comment
 
     if video_url:
         post_input["assets"] = [{
@@ -85,4 +89,9 @@ def create_instagram_post(text, video_url=None, first_comment=None, share_now=Fa
         return None
 
 if __name__ == "__main__":
-    print("Buffer Publisher ready for @grow10z!")
+    if len(sys.argv) > 2:
+        caption_text = sys.argv[1]
+        v_url = sys.argv[2]
+        create_instagram_post(caption_text, video_url=v_url, share_now=True)
+    else:
+        print("Buffer Publisher ready for @grow10z!")
