@@ -729,6 +729,58 @@ def draw_cinematic_environment(cv, env_type, t_sec, W, H):
         for vx in [80, 130, W - 100, W - 60]:
             cv.drawLine(vx, 0, vx + 15 * math.sin(vx + t_sec), H * 0.85, skia.Paint(StrokeWidth=6, Color=skia.ColorSetARGB(220, 25, 18, 22), AntiAlias=True))
 
+    elif env_type == "mithila_darbar":
+        # Grand Royal Mithila Assembly Hall
+        bg_shader = skia.GradientShader.MakeLinear(
+            [skia.Point(0, 0), skia.Point(0, H)],
+            [skia.ColorSetARGB(255, 20, 8, 16), skia.ColorSetARGB(255, 55, 16, 26), skia.ColorSetARGB(255, 110, 42, 22)],
+            [0.0, 0.6, 1.0]
+        )
+        cv.drawRect(skia.Rect(0, 0, W, H), skia.Paint(Shader=bg_shader))
+
+        # Polished Imperial Marble Floor with Gold Inlays
+        floor_y = H * 0.72
+        floor_shader = skia.GradientShader.MakeLinear(
+            [skia.Point(0, floor_y), skia.Point(0, H)],
+            [skia.ColorSetARGB(255, 42, 18, 26), skia.ColorSetARGB(255, 15, 6, 12)],
+            [0.0, 1.0]
+        )
+        cv.drawRect(skia.Rect(0, floor_y, W, H), skia.Paint(Shader=floor_shader))
+        cv.drawLine(0, floor_y, W, floor_y, skia.Paint(StrokeWidth=4.5, Color=skia.ColorSetARGB(255, 245, 195, 60), AntiAlias=True))
+
+        # Grand Fluted Mithila Palace Pillars
+        pillar_paint = skia.Paint(
+            Shader=skia.GradientShader.MakeLinear(
+                [skia.Point(0, 0), skia.Point(140, 0)],
+                [skia.ColorSetARGB(255, 60, 22, 32), skia.ColorSetARGB(255, 95, 38, 48), skia.ColorSetARGB(255, 45, 15, 22)],
+                [0.0, 0.5, 1.0]
+            ),
+            AntiAlias=True
+        )
+        for px in [-40, 160, W - 300, W - 100]:
+            cv.drawRect(skia.Rect(px, 0, px + 140, floor_y), pillar_paint)
+            cv.drawRect(skia.Rect(px - 15, floor_y - 30, px + 155, floor_y), skia.Paint(Color=skia.ColorSetARGB(255, 235, 185, 50), AntiAlias=True))
+            cv.drawRect(skia.Rect(px - 15, 0, px + 155, 40), skia.Paint(Color=skia.ColorSetARGB(255, 235, 185, 50), AntiAlias=True))
+
+        # Burning Brass Mashals (Torches)
+        for tx in [230, W - 230]:
+            cv.drawRect(skia.Rect(tx - 12, floor_y - 480, tx + 12, floor_y - 420), skia.Paint(Color=skia.ColorSetARGB(255, 205, 155, 40), AntiAlias=True))
+            cv.drawCircle(tx, floor_y - 480, 28, skia.Paint(Color=skia.ColorSetARGB(255, 185, 130, 35), AntiAlias=True))
+            cv.drawCircle(tx, floor_y - 500, 75, skia.Paint(
+                Shader=skia.GradientShader.MakeRadial(
+                    skia.Point(tx, floor_y - 500), 75,
+                    [skia.ColorSetARGB(170, 255, 200, 70), skia.ColorTRANSPARENT],
+                    [0.0, 1.0]
+                ),
+                AntiAlias=True
+            ))
+            flame_p = skia.Path()
+            flame_p.moveTo(tx - 18, floor_y - 480)
+            flame_p.cubicTo(tx - 24, floor_y - 520, tx, floor_y - 555, tx, floor_y - 565)
+            flame_p.cubicTo(tx + 6, floor_y - 535, tx + 20, floor_y - 515, tx + 18, floor_y - 480)
+            flame_p.close()
+            cv.drawPath(flame_p, skia.Paint(Color=skia.ColorSetARGB(255, 255, 160, 30), AntiAlias=True))
+
     else: # Ayodhya Palace Default
         sky_shader = skia.GradientShader.MakeLinear(
             [skia.Point(0, 0), skia.Point(0, H)],
@@ -906,5 +958,188 @@ def draw_cinematic_ahilya(cv, cx, cy, scale=1.0, emergence=1.0):
     hands_p.close()
     cv.drawPath(hands_p, skia.Paint(Color=C_SKIN, AntiAlias=True))
     cv.drawPath(hands_p, skia.Paint(Style=skia.Paint.kStroke_Style, StrokeWidth=2.5, Color=skia.ColorSetARGB(255, 185, 130, 85), AntiAlias=True))
+
+    cv.restore()
+
+
+def draw_sacred_pinaka_bow(cv, cx, cy, scale=1.0, glow=1.0, crack=0.0):
+    """
+    Renders Lord Shiva's Divine Pinaka Bow resting on the 8-Wheeled Heavy Iron Chariot Cart.
+    Includes dark bronze-obsidian finish, serpent motifs, glowing runes, and electric aura.
+    """
+    cv.save()
+    cv.translate(cx, cy)
+    cv.scale(scale, scale)
+
+    # 1. Divine Shiva Aura (Cyan-Gold Resonant Pulse)
+    if glow > 0:
+        aura_p = skia.Paint(
+            Shader=skia.GradientShader.MakeRadial(
+                skia.Point(0, -180), 320,
+                [skia.ColorSetARGB(int(140 * glow), 65, 185, 255), skia.ColorSetARGB(int(60 * glow), 245, 195, 60), skia.ColorTRANSPARENT],
+                [0.0, 0.55, 1.0]
+            ),
+            AntiAlias=True
+        )
+        cv.drawCircle(0, -180, 320, aura_p)
+
+    # 2. Eight-Wheeled Heavy Iron Cart Base (अष्ट-चक्र लौह-रथ)
+    cart_paint = skia.Paint(
+        Shader=skia.GradientShader.MakeLinear(
+            [skia.Point(0, 0), skia.Point(0, 80)],
+            [skia.ColorSetARGB(255, 38, 32, 42), skia.ColorSetARGB(255, 18, 15, 22)],
+            [0.0, 1.0]
+        ),
+        AntiAlias=True
+    )
+    # Heavy Iron Bed
+    cv.drawRoundRect(skia.Rect(-280, 0, 280, 55), 12, 12, cart_paint)
+    cv.drawRoundRect(skia.Rect(-280, 0, 280, 55), 12, 12, skia.Paint(Style=skia.Paint.kStroke_Style, StrokeWidth=3, Color=skia.ColorSetARGB(255, 95, 85, 105), AntiAlias=True))
+
+    # Iron Wheels with Brass Hubs
+    wheel_xs = [-240, -160, -80, 80, 160, 240]
+    for wx in wheel_xs:
+        cv.drawCircle(wx, 55, 32, cart_paint)
+        cv.drawCircle(wx, 55, 32, skia.Paint(Style=skia.Paint.kStroke_Style, StrokeWidth=3.5, Color=skia.ColorSetARGB(255, 120, 110, 130), AntiAlias=True))
+        cv.drawCircle(wx, 55, 10, skia.Paint(Color=skia.ColorSetARGB(255, 220, 175, 55), AntiAlias=True))
+
+    # Heavy Iron Chains Binding the Bow to the Cart
+    chain_p = skia.Paint(Style=skia.Paint.kStroke_Style, StrokeWidth=5, Color=skia.ColorSetARGB(255, 140, 130, 150), AntiAlias=True)
+    for ch_x in [-180, -60, 60, 180]:
+        cv.drawLine(ch_x, 5, ch_x - 15, -45, chain_p)
+        cv.drawLine(ch_x - 15, -45, ch_x + 10, -55, chain_p)
+
+    # 3. Massive Divine Bow Body (Pinaka)
+    bow_body = skia.Path()
+    bow_body.moveTo(-220, -15)
+    bow_body.cubicTo(-260, -160, -180, -320, 0, -340)
+    bow_body.cubicTo(180, -320, 260, -160, 220, -15)
+    bow_body.cubicTo(235, -15, 205, -305, 0, -325)
+    bow_body.cubicTo(-205, -305, -235, -15, -220, -15)
+    bow_body.close()
+
+    bow_paint = skia.Paint(
+        Shader=skia.GradientShader.MakeLinear(
+            [skia.Point(-220, -15), skia.Point(220, -340)],
+            [skia.ColorSetARGB(255, 30, 22, 28), skia.ColorSetARGB(255, 75, 48, 38), skia.ColorSetARGB(255, 25, 18, 24)],
+            [0.0, 0.5, 1.0]
+        ),
+        AntiAlias=True
+    )
+    cv.drawPath(bow_body, bow_paint)
+    cv.drawPath(bow_body, skia.Paint(Style=skia.Paint.kStroke_Style, StrokeWidth=4.5, Color=skia.ColorSetARGB(255, 225, 175, 55), AntiAlias=True))
+
+    # Glowing Blue Shiva Runes along the Bow Limbs
+    rune_paint = skia.Paint(Color=skia.ColorSetARGB(235, 100, 215, 255), AntiAlias=True)
+    for rx in [-150, -100, -50, 50, 100, 150]:
+        ry = -315 + abs(rx) * 0.95
+        cv.drawCircle(rx, ry, 4.5, rune_paint)
+        cv.drawCircle(rx, ry, 8.0, skia.Paint(Color=skia.ColorSetARGB(90, 80, 200, 255), AntiAlias=True))
+
+    # Serpent Carvings (Sheshanaga Motif) on the Tips
+    for s_side, sx in [(-1, -220), (1, 220)]:
+        cv.drawCircle(sx, -15, 14, skia.Paint(Color=skia.ColorSetARGB(255, 235, 185, 50), AntiAlias=True))
+        cv.drawCircle(sx + s_side * 5, -18, 4, skia.Paint(Color=skia.ColorSetARGB(255, 220, 30, 30), AntiAlias=True))
+
+    # 4. Taut Golden Bowstring (प्रत्यंचा)
+    string_p = skia.Paint(
+        StrokeWidth=3.5,
+        Color=skia.ColorSetARGB(255, 255, 240, 140),
+        AntiAlias=True
+    )
+    cv.drawLine(-220, -15, 220, -15, string_p)
+    cv.drawCircle(0, -15, 6, skia.Paint(Color=skia.ColorSetARGB(240, 255, 255, 220), AntiAlias=True))
+
+    cv.restore()
+
+
+def draw_maharaja_janak(cv, cx, cy, scale=1.0, agony=1.0, breathing=0.0):
+    """
+    Renders Maharaja Janak of Mithila with Royal Crown, White Beard, Royal Robes,
+    and expressive features portraying grief/despair in the Swayamwar hall.
+    """
+    cv.save()
+    cv.translate(cx, cy)
+    cv.scale(scale, scale)
+
+    # 1. Royal Purple & Gold Angavastra
+    robe_paint = skia.Paint(
+        Shader=skia.GradientShader.MakeLinear(
+            [skia.Point(-120, -60), skia.Point(120, 240)],
+            [skia.ColorSetARGB(255, 65, 20, 65), skia.ColorSetARGB(255, 95, 30, 85), skia.ColorSetARGB(255, 45, 12, 45)],
+            [0.0, 0.5, 1.0]
+        ),
+        AntiAlias=True
+    )
+    torso_p = skia.Path()
+    torso_p.moveTo(-75, -50)
+    torso_p.lineTo(75, -50)
+    torso_p.lineTo(95, 200)
+    torso_p.lineTo(-95, 200)
+    torso_p.close()
+    cv.drawPath(torso_p, robe_paint)
+    cv.drawPath(torso_p, skia.Paint(Style=skia.Paint.kStroke_Style, StrokeWidth=4, Color=skia.ColorSetARGB(255, 245, 195, 55), AntiAlias=True))
+
+    # Golden Royal Sash / Uttariya draped across chest
+    sash_p = skia.Path()
+    sash_p.moveTo(-75, -50)
+    sash_p.lineTo(-20, -50)
+    sash_p.lineTo(95, 170)
+    sash_p.lineTo(65, 195)
+    sash_p.close()
+    cv.drawPath(sash_p, skia.Paint(Color=skia.ColorSetARGB(255, 225, 175, 45), AntiAlias=True))
+
+    # 2. Venerable Head & Majestic White Beard
+    cv.drawCircle(0, -95, 50, skia.Paint(Color=skia.ColorSetARGB(255, 235, 190, 150), AntiAlias=True))
+
+    # Flowing White Beard of the Sage-King
+    beard_p = skia.Path()
+    beard_p.moveTo(-42, -85)
+    beard_p.cubicTo(-48, -20, -35, 60, 0, 95)
+    beard_p.cubicTo(35, 60, 48, -20, 42, -85)
+    beard_p.close()
+    cv.drawPath(beard_p, skia.Paint(Color=skia.ColorSetARGB(255, 242, 242, 246), AntiAlias=True))
+    cv.drawPath(beard_p, skia.Paint(Style=skia.Paint.kStroke_Style, StrokeWidth=2, Color=skia.ColorSetARGB(180, 200, 200, 210), AntiAlias=True))
+
+    # White Moustache
+    m_p = skia.Path()
+    m_p.moveTo(-32, -75)
+    m_p.cubicTo(-15, -60, 0, -68, 0, -72)
+    m_p.cubicTo(0, -68, 15, -60, 32, -75)
+    m_p.cubicTo(20, -82, -20, -82, -32, -75)
+    m_p.close()
+    cv.drawPath(m_p, skia.Paint(Color=skia.ColorSetARGB(255, 245, 245, 250), AntiAlias=True))
+
+    # Eyes of Agony / Sorrow (Tears Glistening)
+    for s in [-1, 1]:
+        ex = s * 18
+        ey = -100
+        cv.drawLine(ex - 12 * s, ey - 16 - agony * 4, ex + 12 * s, ey - 10, skia.Paint(StrokeWidth=3, Color=skia.ColorSetARGB(255, 180, 180, 190), AntiAlias=True))
+        cv.drawCircle(ex, ey, 6.5, skia.Paint(Color=skia.ColorSetARGB(255, 55, 40, 35), AntiAlias=True))
+        cv.drawCircle(ex - 1.5, ey - 1.5, 2, skia.Paint(Color=skia.ColorWHITE, AntiAlias=True))
+        if agony > 0.3:
+            cv.drawCircle(ex, ey + 12, 2.5, skia.Paint(Color=skia.ColorSetARGB(220, 230, 245, 255), AntiAlias=True))
+
+    # 3. Royal Mithila Crown (त्रि-शिखर स्वर्ण मुकुट)
+    crown_p = skia.Path()
+    crown_p.moveTo(-52, -135)
+    crown_p.lineTo(-42, -190)
+    crown_p.lineTo(-18, -155)
+    crown_p.lineTo(0, -215)
+    crown_p.lineTo(18, -155)
+    crown_p.lineTo(42, -190)
+    crown_p.lineTo(52, -135)
+    crown_p.close()
+    cv.drawPath(crown_p, skia.Paint(
+        Shader=skia.GradientShader.MakeLinear(
+            [skia.Point(-52, -215), skia.Point(52, -135)],
+            [skia.ColorSetARGB(255, 255, 225, 75), skia.ColorSetARGB(255, 215, 160, 35)],
+            [0.0, 1.0]
+        ),
+        AntiAlias=True
+    ))
+    cv.drawPath(crown_p, skia.Paint(Style=skia.Paint.kStroke_Style, StrokeWidth=3, Color=skia.ColorSetARGB(255, 160, 110, 20), AntiAlias=True))
+    cv.drawCircle(0, -165, 8, skia.Paint(Color=skia.ColorSetARGB(255, 215, 25, 35), AntiAlias=True))
+    cv.drawLine(0, -125, 0, -108, skia.Paint(StrokeWidth=3, Color=skia.ColorSetARGB(255, 215, 30, 35), AntiAlias=True))
 
     cv.restore()

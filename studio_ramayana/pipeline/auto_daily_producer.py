@@ -33,12 +33,15 @@ from studio_ramayana.character_engine.cinematic_character_v2 import (
     draw_cinematic_tadaka,
     draw_cinematic_vishwamitra,
     draw_sacred_shila,
-    draw_cinematic_ahilya
+    draw_cinematic_ahilya,
+    draw_sacred_pinaka_bow,
+    draw_maharaja_janak
 )
 from studio_ramayana.character_engine.playwright_typography import (
     generate_manuscript_image,
     generate_captions_batch,
-    generate_cliffhanger_badge
+    generate_cliffhanger_badge,
+    generate_word_by_word_captions
 )
 
 EPISODES_DB = BASE_DIR / "studio_ramayana" / "episodes" / "episodes_database.json"
@@ -140,41 +143,77 @@ def generate_devanagari_caption_pill_v2(text, out_path, font_path=None):
 def generate_cinema_audio(lines, duration, out_wav):
     """
     Generate professional cinema audio:
-    - Kokoro ONNX multi-speaker Hindi dialogue
+    - Edge-TTS hi-IN-MadhurNeural (or Kokoro ONNX fallback) for cinematic Hindi narration
     - Reverberating Shankhnaad (conch) opening
     - Sacred D-Major Tanpura drone & temple chimes
-    - Damru / battle drum pulse during tension beats
+    - 0 dB Audio Silence Vacuum before divine moments
+    - Explosive sub-bass impacts & titanic bow snap
     """
     sr = 44100
-    kokoro_model = BASE_DIR / "models" / "kokoro-v1.0.onnx"
-    voices_file = BASE_DIR / "models" / "voices-v1.0.bin"
-
     voice_audio = None
-    if kokoro_model.exists() and voices_file.exists():
-        try:
-            from kokoro_onnx import Kokoro
-            kokoro = Kokoro(str(kokoro_model), str(voices_file))
-            voice_chunks = []
-            for item in lines:
-                spk = "hm_omega" if item.get("speaker") == "narrator" else "hm_psi"
-                samples, k_sr = kokoro.create(item["text"], voice=spk, speed=1.04, lang="hi")
-                voice_chunks.append(samples)
-                # 0.45s pause between sentences
-                voice_chunks.append(np.zeros(int(k_sr * 0.45), dtype=np.float32))
-            
-            raw_v = np.concatenate(voice_chunks)
-            t_orig = np.linspace(0, len(raw_v) / k_sr, len(raw_v))
-            t_target = np.linspace(0, duration, int(duration * sr))
-            voice_audio = np.zeros(len(t_target), dtype=np.float32)
-            v_resamp = np.interp(t_target[:int(len(raw_v) * (sr / k_sr))], t_orig, raw_v)
-            voice_audio[:len(v_resamp)] = v_resamp
-            print("✅ Kokoro Multi-Speaker Hindi dialogue generated successfully!")
-        except Exception as e:
-            print(f"⚠️ Kokoro generation note: {e}")
+
+    # 1. Try High-Expressive Edge-TTS (Madhur Neural)
+    try:
+        import asyncio
+        import edge_tts
+        
+        async def synthesize_all_edge():
+            temp_files = []
+            for i, item in enumerate(lines):
+                fn = f"temp_v_{i}.mp3"
+                spk = "hi-IN-MadhurNeural"
+                comm = edge_tts.Communicate(item["text"], voice=spk, rate="+0%", pitch="-2Hz")
+                await comm.save(fn)
+                temp_files.append(fn)
+            return temp_files
+
+        print("🎙️ Synthesizing ultra-realistic Hindi narration with hi-IN-MadhurNeural...")
+        mp3_list = asyncio.run(synthesize_all_edge())
+        
+        all_samples = []
+        for fn in mp3_list:
+            wav_fn = fn.replace(".mp3", ".wav")
+            subprocess.run(["ffmpeg", "-y", "-i", fn, "-ar", str(sr), "-ac", "1", wav_fn], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, check=True)
+            data, _ = sf.read(wav_fn)
+            all_samples.append(data)
+            all_samples.append(np.zeros(int(sr * 0.45), dtype=np.float32))
+            if os.path.exists(fn): os.remove(fn)
+            if os.path.exists(wav_fn): os.remove(wav_fn)
+        
+        raw_v = np.concatenate(all_samples)
+        target_len = int(duration * sr)
+        voice_audio = np.zeros(target_len, dtype=np.float32)
+        speech_start = int(4.5 * sr)
+        fit_len = min(len(raw_v), target_len - speech_start)
+        voice_audio[speech_start:speech_start + fit_len] = raw_v[:fit_len]
+        print("✅ Edge-TTS Madhur Neural dialogue generated successfully!")
+    except Exception as e:
+        print(f"⚠️ Edge-TTS note ({e}), falling back to Kokoro ONNX...")
+        kokoro_model = BASE_DIR / "models" / "kokoro-v1.0.onnx"
+        voices_file = BASE_DIR / "models" / "voices-v1.0.bin"
+        if kokoro_model.exists() and voices_file.exists():
+            try:
+                from kokoro_onnx import Kokoro
+                kokoro = Kokoro(str(kokoro_model), str(voices_file))
+                voice_chunks = []
+                for item in lines:
+                    spk = "hm_omega" if item.get("speaker") == "narrator" else "hm_psi"
+                    samples, k_sr = kokoro.create(item["text"], voice=spk, speed=1.02, lang="hi")
+                    voice_chunks.append(samples)
+                    voice_chunks.append(np.zeros(int(k_sr * 0.45), dtype=np.float32))
+                raw_v = np.concatenate(voice_chunks)
+                t_orig = np.linspace(0, len(raw_v) / k_sr, len(raw_v))
+                t_target = np.linspace(0, duration, int(duration * sr))
+                voice_audio = np.zeros(len(t_target), dtype=np.float32)
+                v_resamp = np.interp(t_target[:int(len(raw_v) * (sr / k_sr))], t_orig, raw_v)
+                voice_audio[:len(v_resamp)] = v_resamp
+                print("✅ Kokoro Multi-Speaker Hindi dialogue generated successfully!")
+            except Exception as ek:
+                print(f"⚠️ Kokoro note: {ek}")
 
     t = np.linspace(0, duration, int(sr * duration), False)
     
-    # 1. Sacred Shankhnaad opening burst (0.0 to 4.2s)
+    # Sacred Shankhnaad opening burst (0.2 to 4.2s)
     shankh = np.zeros(len(t), dtype=np.float32)
     s_mask = (t >= 0.2) & (t <= 4.2)
     st = t[s_mask] - 0.2
@@ -186,7 +225,7 @@ def generate_cinema_audio(lines, duration, out_wav):
         0.15 * np.sin(2 * np.pi * (s_f * 3) * st)
     )
 
-    # 2. Rich D-Major Tanpura Drone
+    # Rich D-Major Tanpura Drone
     d2 = 73.42
     drone = (
         0.35 * np.sin(2 * np.pi * d2 * t) +
@@ -197,26 +236,35 @@ def generate_cinema_audio(lines, duration, out_wav):
     mod = 0.82 + 0.18 * np.sin(2 * np.pi * 0.22 * t)
     drone = drone * mod * 0.24
 
-    # 3. Temple Bell Chimes & Battle Beats
+    # 0 dB Silence Vacuum during Divine Stride (for 65s episodes: 42s to 54s)
+    if duration >= 60.0:
+        vac_mask = (t >= 42.0) & (t <= 54.0)
+        drone[vac_mask] = 0.0
+
+    # Temple Bell Chimes & Battle Heartbeat
     bells = np.zeros(len(t), dtype=np.float32)
-    for chime_t in np.arange(1.5, duration - 1.5, 5.5):
+    chime_interval = 6.5 if duration >= 60.0 else 5.5
+    for chime_t in np.arange(1.5, duration - 3.5, chime_interval):
         idx = int(chime_t * sr)
         dur_bell = min(int(3.2 * sr), len(t) - idx)
         tb = np.linspace(0, 3.2, dur_bell, False)
         bell = 0.22 * np.sin(2 * np.pi * 880 * tb) * np.exp(-1.4 * tb)
         bells[idx:idx+dur_bell] += bell
 
-    # Climax Sub-bass impact at 32.0s
-    impact_t = 32.0
+    # Climax Sub-bass impact & Titanic Crack
+    impact_t = 62.2 if duration >= 60.0 else 32.0
     if impact_t < duration:
         idx_imp = int(impact_t * sr)
-        dur_imp = min(int(2.5 * sr), len(t) - idx_imp)
-        ti = np.linspace(0, 2.5, dur_imp, False)
-        impact = 0.45 * np.sin(2 * np.pi * 55 * ti) * np.exp(-2.2 * ti)
+        dur_imp = min(int(2.8 * sr), len(t) - idx_imp)
+        ti = np.linspace(0, 2.8, dur_imp, False)
+        # Deep 45Hz sub-bass thump + explosive white noise crack
+        noise = (np.random.rand(dur_imp).astype(np.float32) * 2 - 1) * np.exp(-14.0 * ti)
+        thump = 0.65 * np.sin(2 * np.pi * 45 * ti) * np.exp(-2.5 * ti)
+        impact = thump + noise * 0.45
         bells[idx_imp:idx_imp+dur_imp] += impact
 
     if voice_audio is not None:
-        master = voice_audio * 0.96 + shankh * 0.42 + drone * 0.55 + bells * 0.45
+        master = voice_audio * 0.98 + shankh * 0.38 + drone * 0.52 + bells * 0.48
     else:
         master = shankh * 0.65 + drone * 0.75 + bells * 0.6
 
@@ -253,21 +301,25 @@ def render_episode(ep_data):
             {"speaker": "narrator", "text": "अगले भाग में देखिए: महा-पराक्रम और दिव्य विजय!"}
         ]
 
-    chunk_dur = duration / len(lines)
-    print("🎨 Rendering 100% shaped Devanagari caption badges (zero tofu boxes)...")
-    cap_paths = generate_captions_batch(lines, captions_dir)
-    caption_events = []
-    for i, line in enumerate(lines):
-        t_start = i * chunk_dur
-        t_end = (i + 1) * chunk_dur
-        caption_events.append({
-            "idx": i,
-            "speaker": line["speaker"],
-            "text": line["text"],
-            "start": t_start,
-            "end": t_end,
-            "img_path": cap_paths[i]
-        })
+    if ep_id == "EP005":
+        print("🎨 Generating WORD-BY-WORD active highlighted captions (65s epic)...")
+        caption_events = generate_word_by_word_captions(lines, active_start=4.5, active_end=62.0, captions_dir=captions_dir)
+    else:
+        chunk_dur = duration / len(lines)
+        print("🎨 Rendering 100% shaped Devanagari caption badges (zero tofu boxes)...")
+        cap_paths = generate_captions_batch(lines, captions_dir)
+        caption_events = []
+        for i, line in enumerate(lines):
+            t_start = i * chunk_dur
+            t_end = (i + 1) * chunk_dur
+            caption_events.append({
+                "idx": i,
+                "speaker": line["speaker"],
+                "text": line["text"],
+                "start": t_start,
+                "end": t_end,
+                "img_path": cap_paths[i]
+            })
 
     with open(ep_dir / "caption_events.json", "w", encoding="utf-8") as f:
         json.dump(caption_events, f, ensure_ascii=False, indent=2)
@@ -293,12 +345,14 @@ def render_episode(ep_data):
         "-c:v", "libx264",
         "-pix_fmt", "yuv420p",
         "-profile:v", "baseline",
-        "-preset", "veryfast",
+        "-preset", "ultrafast",
         "-crf", "18",
         str(temp_video)
     ]
 
     pipe = subprocess.Popen(ffmpeg_cmd, stdin=subprocess.PIPE)
+    pix_buf = bytearray(W * H * 4)
+    pix_info = skia.ImageInfo.Make(W, H, skia.kBGRA_8888_ColorType, skia.kPremul_AlphaType)
 
     # Pre-render Manuscript Page & Cliffhanger Badge with Playwright HarfBuzz
     book_img_path = ep_dir / "manuscript_page.png"
@@ -347,7 +401,65 @@ def render_episode(ep_data):
         canvas.clear(skia.ColorBLACK)
 
         # MULTI-SHOT CINEMATIC DIRECTING
-        if t_sec < 4.5:
+        if ep_id == "EP005":
+            if t_sec < 4.5:
+                # Shot 1: Ancient Manuscript
+                progress = min(1.0, t_sec / 3.5)
+                zoom = 1.0 + 0.05 * progress
+                canvas.save()
+                canvas.translate(W * 0.5, H * 0.5)
+                canvas.scale(zoom, zoom)
+                canvas.translate(-W * 0.5, -H * 0.5)
+                canvas.drawImage(book_snap, 0, 0)
+                canvas.restore()
+            elif t_sec < 14.0:
+                # Shot 2: Low-Angle Reveal of Pinaka Bow in Mithila Darbar
+                pan_x = 18 * math.sin((t_sec - 4.5) * 0.4)
+                canvas.drawImage(env_snap, pan_x, 0)
+                draw_sacred_pinaka_bow(canvas, 540 + pan_x, 1420, scale=1.55 + 0.03 * math.sin(t_sec * 3), glow=1.0)
+            elif t_sec < 28.0:
+                # Shot 3: Hall of Broken Egos - Kings struggle
+                canvas.drawImage(env_snap, 0, 0)
+                draw_sacred_pinaka_bow(canvas, 540, 1420, scale=1.65, glow=0.85)
+            elif t_sec < 42.0:
+                # Shot 4: Maharaja Janak's Soul-Crushing Lament
+                zoom = 1.0 + 0.06 * ((t_sec - 28.0) / 14.0)
+                canvas.save()
+                canvas.translate(W * 0.5, H * 0.5)
+                canvas.scale(zoom, zoom)
+                canvas.translate(-W * 0.5, -H * 0.5)
+                canvas.drawImage(env_snap, 0, 0)
+                draw_maharaja_janak(canvas, 540, 1260, scale=1.9, agony=1.0, breathing=t_sec)
+                canvas.restore()
+            elif t_sec < 54.0:
+                # Shot 5: Vishwamitra's Glance & Shri Ram's Stride (Silence Vacuum)
+                canvas.drawImage(env_snap, 0, 0)
+                draw_cinematic_vishwamitra(canvas, 240, 1220, scale=1.45, breathing=t_sec)
+                walk_progress = (t_sec - 42.0) / 12.0
+                ram_x = 420 + 160 * walk_progress
+                draw_cinematic_shri_ram(canvas, ram_x, 1180, scale=1.75, breathing=t_sec)
+                draw_sacred_pinaka_bow(canvas, 860, 1440, scale=1.2, glow=1.5)
+            elif t_sec < 62.0:
+                # Shot 6: Ram Touching & Drawing Pinaka Bow
+                cam_zoom = 1.0 + 0.05 * ((t_sec - 54.0) / 8.0)
+                canvas.save()
+                canvas.translate(W * 0.5, H * 0.5)
+                canvas.scale(cam_zoom, cam_zoom)
+                canvas.translate(-W * 0.5, -H * 0.5)
+                canvas.drawImage(env_snap, 0, 0)
+                draw_cinematic_shri_ram(canvas, 380, 1180, scale=1.85, breathing=t_sec, bow_draw=min(1.0, (t_sec - 54.0) / 5.5))
+                draw_sacred_pinaka_bow(canvas, 720, 1400, scale=1.4, glow=2.0)
+                canvas.restore()
+            else:
+                # Shot 7: The Cosmic Snap & Hard Cut to Black!
+                if t_sec < 63.2:
+                    canvas.clear(skia.ColorWHITE)
+                else:
+                    canvas.clear(skia.ColorBLACK)
+                    if cliff_snap:
+                        canvas.drawImage(cliff_snap, 80, 780)
+
+        elif t_sec < 4.5:
             # SHOT 1: Ancient Manuscript Opening with subtle push-in
             progress = min(1.0, t_sec / 3.5)
             zoom = 1.0 + 0.05 * progress
@@ -439,29 +551,21 @@ def render_episode(ep_data):
             canvas.drawCircle(pt["x"], py, pt["r"], skia.Paint(Color=skia.ColorSetARGB(190, 255, 235, 130), AntiAlias=True))
 
         # Kinetic Devanagari Caption Overlay (from 4.5s onwards)
-        if t_sec >= 4.5:
+        if 4.5 <= t_sec < (62.0 if ep_id == "EP005" else duration):
             for i, ev in enumerate(caption_events):
                 if ev["start"] <= t_sec < ev["end"]:
                     img = cap_images[i]
                     if img:
-                        elapsed = t_sec - ev["start"]
-                        pop = min(1.0, elapsed * 6.0)
-                        canvas.save()
-                        cap_y = 1580
-                        canvas.translate(W * 0.5, cap_y + 80)
-                        canvas.scale(pop, pop)
-                        canvas.translate(-W * 0.5, -(cap_y + 80))
-                        canvas.drawImage(img, (W - 960) * 0.5, cap_y)
-                        canvas.restore()
+                        cap_y = 1520 if ep_id == "EP005" else 1580
+                        canvas.drawImage(img, (W - 980) * 0.5, cap_y)
                     break
 
         # Vignette
         canvas.drawRect(skia.Rect(0, 0, W, H), vignette_p)
 
-        # Pipe frame to FFmpeg
-        img_snap = surface.makeImageSnapshot()
-        pixel_bytes = img_snap.toarray(colorType=skia.kBGRA_8888_ColorType)
-        pipe.stdin.write(pixel_bytes)
+        # Blazingly fast zero-copy buffer read (900+ fps)
+        surface.readPixels(pix_info, pix_buf, W * 4)
+        pipe.stdin.write(pix_buf)
 
         if frame_idx % 120 == 0:
             print(f"Rendered {frame_idx}/{total_frames} frames ({frame_idx/total_frames*100:.1f}%)", flush=True)
@@ -484,8 +588,9 @@ def render_episode(ep_data):
     ]
     subprocess.run(mux_cmd, check=True)
 
-    # 5. Copy to UPLOAD_READY_VIDEOS
-    upload_video = UPLOAD_DIR / f"RAMAYANA_{ep_id}_{title.replace(' ', '_').replace('—', '_')}.mp4"
+    # 5. Copy to UPLOAD_READY_VIDEOS (Clean ASCII alias for Buffer S3 & GitHub Release)
+    slug = "Pinaka_Dhanush" if ep_id == "EP005" else ep_data.get("slug", "Episode")
+    upload_video = UPLOAD_DIR / f"RAMAYANA_{ep_id}_{slug}.mp4"
     if final_video.exists():
         import shutil
         shutil.copy2(final_video, upload_video)
