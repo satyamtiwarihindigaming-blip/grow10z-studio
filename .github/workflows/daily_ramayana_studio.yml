@@ -74,18 +74,25 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: 📡 Run Cloud Publisher (Telegram / Webhook / Socials)
+      - name: 📡 Run Cloud Publisher (Telegram / Webhook / Buffer / Instagram)
         env:
+          BUFFER_ACCESS_TOKEN: ${{ secrets.BUFFER_ACCESS_TOKEN || 'DhMsR0Uslt8x2IUO_1F4nAUi2U5qelo7gDVexB3wZEJ' }}
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-          INSTAGRAM_ACCESS_TOKEN: ${{ secrets.INSTAGRAM_ACCESS_TOKEN }}
-          INSTAGRAM_ACCOUNT_ID: ${{ secrets.INSTAGRAM_ACCOUNT_ID }}
-          INSTAGRAM_WEBHOOK_URL: ${{ secrets.INSTAGRAM_WEBHOOK_URL }}
         run: |
-          python studio_ramayana/pipeline/cloud_uploader.py "${{ steps.vars.outputs.video_path }}" "${{ steps.vars.outputs.txt_path }}" || true
-          # If Instagram credentials configured, auto-publish Reel
           RELEASE_VIDEO_URL="https://github.com/${{ github.repository }}/releases/download/${{ steps.vars.outputs.tag_name }}/$(basename ${{ steps.vars.outputs.video_path }})"
-          python studio_ramayana/pipeline/instagram_publisher.py "$RELEASE_VIDEO_URL" "${{ steps.vars.outputs.txt_path }}" || true
+          python studio_ramayana/pipeline/cloud_uploader.py "${{ steps.vars.outputs.video_path }}" "${{ steps.vars.outputs.txt_path }}" || true
+          # Direct Buffer Instagram Publishing
+          python -c "
+          import sys, os
+          from studio_ramayana.pipeline.buffer_publisher import create_instagram_post
+          txt_file = '${{ steps.vars.outputs.txt_path }}'
+          caption = ''
+          if os.path.exists(txt_file):
+              with open(txt_file, 'r', encoding='utf-8') as f:
+                  caption = f.read()
+          create_instagram_post(caption[:2100], video_url='${RELEASE_VIDEO_URL}', share_now=True)
+          " || true
 
       - name: 💾 Commit & Push Progress
         run: |
