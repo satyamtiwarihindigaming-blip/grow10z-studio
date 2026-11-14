@@ -101,11 +101,41 @@ def generate_devanagari_caption_pill(text, out_path, font_path=None):
     img = surface.makeImageSnapshot()
     img.save(str(out_path), skia.kPNG)
 
-def generate_drone_audio(duration, out_wav):
-    """Synthesize D-major Tanpura drone + bells audio"""
+def generate_drone_audio(lines, duration, out_wav):
+    """
+    Generate dialogue audio using Kokoro ONNX if available,
+    layered with Shankh and D-Major Tanpura drone.
+    """
     sr = 44100
+    kokoro_model = BASE_DIR / "models" / "kokoro-v1.0.onnx"
+    voices_file = BASE_DIR / "models" / "voices-v1.0.bin"
+
+    voice_audio = None
+    if kokoro_model.exists() and voices_file.exists():
+        try:
+            from kokoro_onnx import Kokoro
+            kokoro = Kokoro(str(kokoro_model), str(voices_file))
+            voice_chunks = []
+            for item in lines:
+                spk = "hm_omega" if item.get("speaker") == "narrator" else "hm_psi"
+                samples, k_sr = kokoro.create(item["text"], voice=spk, speed=1.05, lang="hi")
+                voice_chunks.append(samples)
+                # 0.4s pause
+                voice_chunks.append(np.zeros(int(k_sr * 0.4), dtype=np.float32))
+            
+            raw_v = np.concatenate(voice_chunks)
+            # Resample to 44100
+            t_orig = np.linspace(0, len(raw_v) / k_sr, len(raw_v))
+            t_target = np.linspace(0, duration, int(duration * sr))
+            voice_audio = np.zeros(len(t_target), dtype=np.float32)
+            v_resamp = np.interp(t_target[:int(len(raw_v) * (sr / k_sr))], t_orig, raw_v)
+            voice_audio[:len(v_resamp)] = v_resamp
+            print("✅ Kokoro Multi-Speaker Hindi dialogue generated!")
+        except Exception as e:
+            print(f"⚠️ Kokoro generation notice: {e}")
+
+    # Synthesize D-major Tanpura drone + bells
     t = np.linspace(0, duration, int(sr * duration), False)
-    # Fundamental D2 (73.4 Hz) + Harmonics
     d2 = 73.42
     drone = (
         0.35 * np.sin(2 * np.pi * d2 * t) +
@@ -113,9 +143,8 @@ def generate_drone_audio(duration, out_wav):
         0.18 * np.sin(2 * np.pi * (d2 * 2.0) * t) +
         0.12 * np.sin(2 * np.pi * (d2 * 3.0) * t)
     )
-    # Slow gentle amplitude modulation
     mod = 0.8 + 0.2 * np.sin(2 * np.pi * 0.25 * t)
-    drone = drone * mod
+    drone = drone * mod * 0.25
 
     # Bell chime every 6 seconds
     for chime_t in np.arange(1.0, duration - 2.0, 6.0):
@@ -125,9 +154,16 @@ def generate_drone_audio(duration, out_wav):
         bell = 0.25 * np.sin(2 * np.pi * 880 * tb) * np.exp(-1.5 * tb)
         drone[idx:idx+dur_bell] += bell
 
-    # Normalization & write
-    drone = np.clip(drone, -0.95, 0.95)
-    sf.write(str(out_wav), drone.astype(np.float32), sr)
+    if voice_audio is not None:
+        master = voice_audio * 0.95 + drone * 0.6
+    else:
+        master = drone
+
+    peak = np.max(np.abs(master))
+    if peak > 0:
+        master = master / peak * 0.89
+
+    sf.write(str(out_wav), master.astype(np.float32), sr)
 
 def render_episode(ep_data):
     ep_id = ep_data["id"]
@@ -178,7 +214,7 @@ def render_episode(ep_data):
 
     # 2. Generate Audio
     final_audio_path = ep_dir / "audio_master.wav"
-    generate_drone_audio(duration, final_audio_path)
+    generate_drone_audio(lines, duration, final_audio_path)
 
     # 3. Setup Video Pipeline (1080x1920 @ 60fps)
     W, H = 1080, 1920
