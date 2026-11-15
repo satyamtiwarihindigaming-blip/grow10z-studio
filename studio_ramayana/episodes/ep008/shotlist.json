@@ -1,0 +1,65 @@
+{
+  "episode_id": "EP008",
+  "title": "श्रीराम-परशुराम मिलन और वैष्णव धनुष",
+  "total_duration_sec": 55.0,
+  "fps": 30,
+  "resolution": [1080, 1920],
+  "shots": [
+    {
+      "shot_id": 1,
+      "name": "manuscript_opening",
+      "start_sec": 0.0,
+      "end_sec": 5.0,
+      "description": "Ancient Sanskrit manuscript page with push-in camera, gold embers, Vedic title 'श्रीराम-परशुराम मिलन'",
+      "camera": "slow_push_in"
+    },
+    {
+      "shot_id": 2,
+      "name": "parashurama_axe_strike",
+      "start_sec": 5.0,
+      "end_sec": 13.0,
+      "description": "Furious Parashurama raises battle axe with glowing eyes against smiling Kumar Lakshman",
+      "camera": "dramatic_tilt_and_shake"
+    },
+    {
+      "shot_id": 3,
+      "name": "shri_ram_gentle_stride",
+      "start_sec": 13.0,
+      "end_sec": 22.0,
+      "description": "Maryada Purushottam Shri Ram strides gracefully between Parashurama and Lakshman, cyan-gold halo blooming",
+      "camera": "slow_motion_tracking"
+    },
+    {
+      "shot_id": 4,
+      "name": "humble_plea",
+      "start_sec": 22.0,
+      "end_sec": 32.0,
+      "description": "Shri Ram folds hands in gentle reverence before Parashurama, speaking words of infinite peace",
+      "camera": "dialogue_medium_close"
+    },
+    {
+      "shot_id": 5,
+      "name": "vaishnava_bow_challenge",
+      "start_sec": 32.0,
+      "end_sec": 40.0,
+      "description": "Stunned Parashurama lowers axe and presents the celestial golden Vaishnava Sharang bow",
+      "camera": "low_angle_hero_reveal"
+    },
+    {
+      "shot_id": 6,
+      "name": "sharang_stringing_blinding_light",
+      "start_sec": 40.0,
+      "end_sec": 48.0,
+      "description": "Shri Ram grasps the Vaishnava bow and draws the string effortlessly; cosmic radial aura bursts across the hall",
+      "camera": "climax_zoom_and_lens_flare"
+    },
+    {
+      "shot_id": 7,
+      "name": "parashurama_surrender_cliffhanger",
+      "start_sec": 48.0,
+      "end_sec": 55.0,
+      "description": "Parashurama bows in divine realization; hard cut to black with 3D Gold Cliffhanger Badge",
+      "camera": "hard_cut_to_void_black"
+    }
+  ]
+}

@@ -305,6 +305,14 @@ def render_episode(ep_data):
         from studio_ramayana.pipeline.render_fixed_ep005 import main as render_ep005_fixed
         render_ep005_fixed()
         return ep_dir / "ep005_final.mp4"
+    elif ep_id == "EP007":
+        from studio_ramayana.pipeline.render_fixed_ep007 import main as render_ep007_fixed
+        render_ep007_fixed()
+        return ep_dir / "ep007_final.mp4"
+    elif ep_id == "EP008":
+        from studio_ramayana.pipeline.render_fixed_ep008 import main as render_ep008_fixed
+        render_ep008_fixed()
+        return ep_dir / "ep008_final.mp4"
     else:
         chunk_dur = duration / len(lines)
         print("🎨 Rendering 100% shaped Devanagari caption badges (zero tofu boxes)...")
@@ -551,8 +559,9 @@ def render_episode(ep_data):
             py = (pt["y"] - pt["speed"] * frame_idx * 0.9) % H
             canvas.drawCircle(pt["x"], py, pt["r"], skia.Paint(Color=skia.ColorSetARGB(190, 255, 235, 130), AntiAlias=True))
 
-        # Kinetic Devanagari Caption Overlay (from 4.5s onwards)
-        if 4.5 <= t_sec < (62.0 if ep_id == "EP005" else duration):
+        # Kinetic Devanagari Caption Overlay (Zero-caption doctrine: Keep screen 100% clean)
+        DRAW_CAPTIONS_ON_SCREEN = False
+        if DRAW_CAPTIONS_ON_SCREEN and 4.5 <= t_sec < (62.0 if ep_id == "EP005" else duration):
             for i, ev in enumerate(caption_events):
                 if ev["start"] <= t_sec < ev["end"]:
                     img = cap_images[i]

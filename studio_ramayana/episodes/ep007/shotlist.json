@@ -1,0 +1,90 @@
+[
+  {
+    "id": "shot_01",
+    "start": 0.0,
+    "end": 4.5,
+    "scene": "Split Faceoff Standoff",
+    "camera": "Dual tracking slider: Parashurama's glowing axe vs Laxman's fearless smirk",
+    "visual_style": "Indian Miniature + Luminous Gold Rim Light",
+    "action": "Parashurama's axe blade crackling with heat on left, Laxman standing fearless with hand on sword on right",
+    "sfx": ["breath_in", "suspense_drone", "flame_crackle"],
+    "voice": "परशुराम के हाथ में चमकता हुआ फरसा... और लक्ष्मण के चेहरे पर वो बेखौफ मुस्कान!"
+  },
+  {
+    "id": "shot_02",
+    "start": 4.5,
+    "end": 10.5,
+    "scene": "Parashurama Divine Rage Macro",
+    "camera": "Extreme macro push-in on bloodshot eyes, furrowed brow, and roaring mouth",
+    "visual_style": "High-Action Anime + Red Cel-Shade",
+    "action": "Parashurama roaring with trembling wrath, vibrating shockwaves radiating across the marble hall",
+    "sfx": ["sub_bass_swell", "fire_whoosh", "ground_crackle"],
+    "voice": "\"रे बालक! तू काल के वश में होकर बोल रहा है! क्या तू नहीं जानता कि मेरा फरसा क्या कर सकता है?!\""
+  },
+  {
+    "id": "shot_03",
+    "start": 10.5,
+    "end": 16.5,
+    "scene": "Full-Body Kumar Laxman Fearless Retort",
+    "camera": "Medium full-body tracking shot with golden palace pillars and amused smirk",
+    "visual_style": "Indian Miniature + Royal Armor Shading",
+    "action": "Laxman smiling with amused defiance, gesturing casually, completely unfazed by Parashurama's wrath",
+    "sfx": ["amused_smirk_tone", "sword_pommel_clink"],
+    "voice": "लक्ष्मण हँसकर बोले— \"मुनिवर! हमने बचपन में ऐसी कितनी ही धनुहियाँ तोड़ी हैं! तब तो आप कभी ऐसे क्रोधित नहीं हुए?\""
+  },
+  {
+    "id": "shot_04",
+    "start": 16.5,
+    "end": 22.5,
+    "scene": "Pinaka Fracture Truth Metaphor",
+    "camera": "Slow rotational tilt over the severed bow fragments floating in cosmic golden dust",
+    "visual_style": "24K Gold Line Contour + Cosmic Arc VFX",
+    "action": "Severed Pinaka bow pieces resting on altar, showing how fragile the ancient wood was when touched",
+    "sfx": ["metallic_resonance", "cosmic_chime"],
+    "voice": "\"पुराने धनुष के टूटने पर कैसा लाभ और कैसी हानि? भैया राम ने तो इसे सिर्फ छुआ था... और यह खुद टूट गया!\""
+  },
+  {
+    "id": "shot_05",
+    "start": 22.5,
+    "end": 28.5,
+    "scene": "Court Panic & Axe Raised Overhead",
+    "camera": "Wide Dutch angle showing cowering kings covering heads as Parashurama raises axe high",
+    "visual_style": "Mythological Comic Book + Ink Wash",
+    "action": "Parashurama raises the colossal Parashu axe above his head, ready to strike; kings sweating in terror",
+    "sfx": ["crowd_gasp", "throat_gulp", "rising_thunder"],
+    "voice": "पूरी सभा काँप उठी! राजाओं के पसीने छूट गए— क्योंकि परशुराम ने अपना फरसा हवा में उठा लिया था!"
+  },
+  {
+    "id": "shot_06",
+    "start": 28.5,
+    "end": 33.5,
+    "scene": "Parashurama Strike Threat",
+    "camera": "Low-angle upward dolly tracking Parashurama's towering muscular silhouette",
+    "visual_style": "High-Action Anime + Crimson Aura",
+    "action": "The blazing axe glows white-hot, casting sharp red shadows across the throne room",
+    "sfx": ["battle_roar", "war_shankh"],
+    "voice": "\"मूर्ख! आज तेरा वध मेरे हाथों निश्चित है!\""
+  },
+  {
+    "id": "shot_07",
+    "start": 33.5,
+    "end": 40.5,
+    "scene": "Shri Ram Divine Stride in 0 dB Silence",
+    "camera": "Smooth cinematic tracking shot: Maryada Purushottam Shri Ram walking calmly with folded hands",
+    "visual_style": "Indian Miniature + Luminous Cyan-Gold Halo",
+    "action": "Shri Ram steps between Parashurama and Laxman with folded hands and boundless tranquility in absolute silence",
+    "sfx": ["zero_db_silence", "divine_temple_chime_432hz"],
+    "voice": "तभी... मर्यादा पुरुषोत्तम श्रीराम आगे बढ़े। दोनों हाथ जोड़कर, असीम शांति के साथ!"
+  },
+  {
+    "id": "shot_08",
+    "start": 40.5,
+    "end": 49.5,
+    "scene": "Climactic Faceoff & 3D Golden Cliffhanger",
+    "camera": "Freeze faceoff -> Flash to black -> 3D Golden Cliffhanger Card scaling up",
+    "visual_style": "Gold Line Contour + 3D Cliffhanger Badge",
+    "action": "Flash to black at 42.0s -> Golden badge appears with floating embers: 'अगले भाग में: भगवान राम और परशुराम का महा-मिलन!'",
+    "sfx": ["climactic_riser_hit", "deep_gong_tail", "sub_bass_drop"],
+    "voice": "क्या भगवान राम शांत कर पाएंगे परशुराम के महा-क्रोध को? देखिए अगले भाग में! फॉलो करें @grow10z"
+  }
+]
