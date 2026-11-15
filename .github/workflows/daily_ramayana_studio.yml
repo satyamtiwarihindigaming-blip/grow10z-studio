@@ -31,10 +31,10 @@ jobs:
           python-version: '3.11'
           cache: 'pip'
 
-      - name: 📦 Install FFmpeg and Devanagari Fonts
+      - name: 📦 Install FFmpeg, OpenGL/EGL, and Devanagari Fonts
         run: |
           sudo apt-get update
-          sudo apt-get install -y ffmpeg fonts-deva fonts-lohit-deva wget
+          sudo apt-get install -y ffmpeg fonts-deva fonts-lohit-deva wget libegl1 libgl1 libfontconfig1 libfreetype6 libglib2.0-0
 
       - name: ⚙️ Install Python Dependencies & Playwright
         run: |
@@ -113,6 +113,6 @@ jobs:
         run: |
           git config --global user.name "GROW10Z-Bot"
           git config --global user.email "bot@grow10z.com"
-          git add studio_ramayana/episodes/episodes_database.json UPLOAD_READY_VIDEOS/*.txt
+          git add studio_ramayana/episodes/episodes_database.json UPLOAD_READY_VIDEOS/ || true
           git commit -m "chore(auto): record completed episode [skip ci]" || echo "No changes to commit"
           git push
