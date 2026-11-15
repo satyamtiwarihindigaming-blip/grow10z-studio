@@ -1,0 +1,68 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "UltimateCinematicStoryTemplate",
+  "description": "8-Part Viral Mythological Reel Blueprint optimized for high audience retention",
+  "project_name": "mythological_story_short",
+  "target_duration_sec": 45.0,
+  "aspect_ratio": "9:16",
+  "resolution": [1080, 1920],
+  "framerate": 30,
+  "structure": [
+    {
+      "beat_id": 1,
+      "name": "THE_HOOK",
+      "time_range": "0.0s - 3.5s",
+      "pacing": "Immediate shock, visual anomaly, or auditory jolt",
+      "rule": "Capture complete attention within 3 seconds. Zero generic introductions."
+    },
+    {
+      "beat_id": 2,
+      "name": "THE_CONTEXT",
+      "time_range": "3.5s - 9.0s",
+      "pacing": "Rapid historical or cosmic grounding",
+      "rule": "Establish the stakes and the sacred territory in 2 concise sentences."
+    },
+    {
+      "beat_id": 3,
+      "name": "THE_MYSTERY",
+      "time_range": "9.0s - 16.0s",
+      "pacing": "Unanswered question or impossible challenge",
+      "rule": "Why could nobody achieve this? Raise the curiosity gap."
+    },
+    {
+      "beat_id": 4,
+      "name": "THE_REVELATION",
+      "time_range": "16.0s - 24.0s",
+      "pacing": "The arrival of the protagonist or divine presence",
+      "rule": "Sudden shift in visual scale, camera zoom, or auditory focus."
+    },
+    {
+      "beat_id": 5,
+      "name": "THE_CONFLICT",
+      "time_range": "24.0s - 32.0s",
+      "pacing": "Clashing of wills, cosmic challenge, or imminent peril",
+      "rule": "Heighten tension with heartbeat pulse and rapid vocal rhythm."
+    },
+    {
+      "beat_id": 6,
+      "name": "THE_CLIMAX",
+      "time_range": "32.0s - 39.0s",
+      "pacing": "Sub-bass impact, 0 dB vacuum silence, and blinding visual pay-off",
+      "rule": "The peak emotional or visual event of the short."
+    },
+    {
+      "beat_id": 7,
+      "name": "THE_TWIST",
+      "time_range": "39.0s - 42.5s",
+      "pacing": "Unexpected reversal or profound realization",
+      "rule": "Change the perception of the audience completely."
+    },
+    {
+      "beat_id": 8,
+      "name": "MEMORABLE_ENDING",
+      "time_range": "42.5s - 45.0s",
+      "pacing": "Hard cut to void black, deep reverberating gong, and 3D badge",
+      "rule": "Leave the viewer craving the next chapter."
+    }
+  ]
+}
