@@ -37,6 +37,10 @@ from studio_ramayana.character_engine.cinematic_character_v2 import (
     draw_sacred_pinaka_bow,
     draw_maharaja_janak
 )
+from studio_ramayana.character_engine.ep009_visual_rigs import (
+    draw_sacred_vivah_mandap,
+    draw_cinematic_mata_sita
+)
 from studio_ramayana.character_engine.playwright_typography import (
     generate_manuscript_image,
     generate_captions_batch,
@@ -381,6 +385,18 @@ def render_episode(ep_data):
     draw_cinematic_environment(ecv, env_type, 1.0, W, H)
     env_snap = env_surf.makeImageSnapshot()
 
+    # Pre-render Mandap and Devi Sita for EP009
+    mandap_snap = None
+    sita_snap = None
+    if ep_id == "EP009":
+        m_surf = skia.Surface(W, H)
+        draw_sacred_vivah_mandap(m_surf.getCanvas(), W, H)
+        mandap_snap = m_surf.makeImageSnapshot()
+
+        s_surf = skia.Surface(W, H)
+        draw_cinematic_mata_sita(s_surf.getCanvas(), 540, 1260, scale=1.75)
+        sita_snap = s_surf.makeImageSnapshot()
+
     # Pre-load caption images
     cap_images = []
     for event in caption_events:
@@ -467,6 +483,64 @@ def render_episode(ep_data):
                     canvas.clear(skia.ColorBLACK)
                     if cliff_snap:
                         canvas.drawImage(cliff_snap, 80, 780)
+
+        elif ep_id == "EP009":
+            if t_sec < 4.5:
+                # Shot 1: Manuscript push-in
+                progress = min(1.0, t_sec / 3.5)
+                zoom = 1.0 + 0.05 * progress
+                canvas.save()
+                canvas.translate(W * 0.5, H * 0.5)
+                canvas.scale(zoom, zoom)
+                canvas.translate(-W * 0.5, -H * 0.5)
+                canvas.drawImage(book_snap, 0, 0)
+                canvas.restore()
+            elif t_sec < 14.0:
+                # Shot 2: Vivah Mandap Panorama & Sacred Agni
+                pan_x = 15 * math.sin((t_sec - 4.5) * 0.3)
+                canvas.drawImage(mandap_snap or env_snap, pan_x, 0)
+            elif t_sec < 26.0:
+                # Shot 3: Devi Mata Sita Arriving with Varmala
+                canvas.drawImage(mandap_snap or env_snap, 0, 0)
+                if sita_snap:
+                    sita_stride = min(1.0, (t_sec - 14.0) / 4.0)
+                    canvas.save()
+                    canvas.translate((1.0 - sita_stride) * 150, 0)
+                    canvas.drawImage(sita_snap, 0, 0)
+                    canvas.restore()
+            elif t_sec < 38.0:
+                # Shot 4: Shri Ram & Mata Sita Face to Face
+                canvas.drawImage(mandap_snap or env_snap, 0, 0)
+                canvas.save()
+                canvas.translate(-200, 0)
+                draw_cinematic_shri_ram(canvas, 540, 1220, scale=1.65, breathing=t_sec)
+                canvas.restore()
+                canvas.save()
+                canvas.translate(200, 0)
+                if sita_snap:
+                    canvas.drawImage(sita_snap, 0, 0)
+                canvas.restore()
+            elif t_sec < 47.0:
+                # Shot 5: Varmala Placed & Flower Shower from Heavens
+                canvas.drawImage(mandap_snap or env_snap, 0, 0)
+                canvas.save()
+                canvas.translate(-150, 0)
+                draw_cinematic_shri_ram(canvas, 540, 1220, scale=1.75, breathing=t_sec)
+                canvas.restore()
+                canvas.save()
+                canvas.translate(150, 0)
+                if sita_snap:
+                    canvas.drawImage(sita_snap, 0, 0)
+                canvas.restore()
+                for i in range(30):
+                    pet_y = (i * 75 + frame_idx * 5) % H
+                    pet_x = (i * 40 + 25 * math.sin(frame_idx * 0.05 + i)) % W
+                    canvas.drawCircle(pet_x, pet_y, 6.5, skia.Paint(Color=skia.ColorSetARGB(220, 255, 175, 190), AntiAlias=True))
+            else:
+                # Shot 6: Hard cut to Void Black with 3D Golden Cliffhanger Badge
+                canvas.clear(skia.ColorBLACK)
+                if cliff_snap:
+                    canvas.drawImage(cliff_snap, 80, 780)
 
         elif t_sec < 4.5:
             # SHOT 1: Ancient Manuscript Opening with subtle push-in
