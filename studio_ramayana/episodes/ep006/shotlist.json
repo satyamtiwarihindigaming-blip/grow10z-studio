@@ -1,0 +1,90 @@
+[
+  {
+    "id": "shot_01",
+    "start": 0.0,
+    "end": 3.2,
+    "scene": "Mithila Darbar Macro",
+    "camera": "Macro push-in on bow fracture with high-frequency dual-axis shake",
+    "visual_style": "Indian Miniature + 24K Gold Leaf + Cosmic Arc VFX",
+    "action": "Pinaka bow snaps into two distinct halves with blinding golden light and branching electric blue-white arcs",
+    "sfx": ["sub_bass_drop", "colossal_metallic_snap", "electric_spark"],
+    "voice": "एक भयानक आवाज़... और पिनाक दो टुकड़ों में फट गया!"
+  },
+  {
+    "id": "shot_02",
+    "start": 3.2,
+    "end": 8.2,
+    "scene": "Royal Court Seismic Shockwave",
+    "camera": "Wide Dutch angle with radial shockwave distortion and falling marble dust",
+    "visual_style": "Mythological Comic Book + Ink Wash",
+    "action": "Concentric white shockwave rings erupt from altar, kings ducking with hands covering ears, palace pillars rumbling",
+    "sfx": ["earthquake_rumble", "falling_debris", "crowd_gasp"],
+    "voice": "धमाका इतना भीषण था कि तीनों लोकों की नींव हिल गई!"
+  },
+  {
+    "id": "shot_03",
+    "start": 8.2,
+    "end": 14.5,
+    "scene": "Ancient Bharatvarsha 3D Map",
+    "camera": "3D orthographic tilt over parchment terrain from Mithila down to Mount Mahendra",
+    "visual_style": "Blueprint + Antique Cartography + Dynamic Vector Trajectory",
+    "action": "Seismic red shockwave vector sweeps 3,000 km across mountains and rivers, locking onto Mount Mahendra with a glowing radar pulse",
+    "sfx": ["tibetan_singing_bowl", "deep_heartbeat", "seismic_ping"],
+    "voice": "3,000 किलोमीटर दूर... महेंद्र पर्वत पर ध्यान में बैठे एक महा-ऋषि की आँखें खुल गईं!"
+  },
+  {
+    "id": "shot_04",
+    "start": 14.5,
+    "end": 20.8,
+    "scene": "Chronological Legend of Parashurama",
+    "camera": "Staggered paper-slam with 3D card tilt and vintage ink vignettes",
+    "visual_style": "Vintage Pulp Comic + Gold Line Contour",
+    "action": "The blazing battle axe (Parashu) slams into frame with 21 conquest victory markers and burning crimson flames",
+    "sfx": ["war_horn_shankh", "metal_axe_clash", "fire_whoosh"],
+    "voice": "स्वयं भगवान परशुराम! जिन्होंने 21 बार इस धरती को क्षत्रिय-विहीन किया था!"
+  },
+  {
+    "id": "shot_05",
+    "start": 20.8,
+    "end": 26.5,
+    "scene": "Mithila Court Tempest Entrance",
+    "camera": "Low-angle upward dolly tracking Parashurama's thunderous stride",
+    "visual_style": "High-Action Anime + Ink Wash Clouds",
+    "action": "Parashurama storms into the darbar; wild flying jatas, tiger-skin robe, glowing battle axe dragging sparks on marble floor",
+    "sfx": ["tempest_wind", "heavy_footsteps", "spark_grind"],
+    "voice": "वो तूफान की तरह मिथिला के राज-दरबार में दाखिल हुए!"
+  },
+  {
+    "id": "shot_06",
+    "start": 26.5,
+    "end": 31.8,
+    "scene": "Parashurama Roar of Divine Wrath",
+    "camera": "Extreme macro close-up on blazing bloodshot eyes and furrowed brow",
+    "visual_style": "Anime Impact Frame + Red Cel-Shade",
+    "action": "Parashurama raises his axe with trembling fury; soundwaves visibly rippling the candle flames and royal tapestries",
+    "sfx": ["parashurama_divine_roar", "sub_bass_swell", "reverse_cymbal"],
+    "voice": "\"किसकी गर्दन पर मौत सवार है, जिसने मेरे महादेव का धनुष छुआ?!\""
+  },
+  {
+    "id": "shot_07",
+    "start": 31.8,
+    "end": 36.5,
+    "scene": "Laxman's Fearless Defiant Stance",
+    "camera": "Smooth horizontal slider reveal: Terrified kings cowering -> Laxman standing tall with a fearless smirk",
+    "visual_style": "Indian Miniature + Luminous Gold Rim-Light",
+    "action": "Laxman steps forward, hand casually resting on his sword pommel, eyes sparkling with fearless amusement in complete 0 dB silence",
+    "sfx": ["zero_db_silence", "subtle_sword_sheath_ring"],
+    "voice": "पूरी सभा खामोश थी। लेकिन तभी... लक्ष्मण आगे बढ़े। चेहरे पर बेखौफ मुस्कान!"
+  },
+  {
+    "id": "shot_08",
+    "start": 36.5,
+    "end": 40.5,
+    "scene": "The Ultimate Standoff & Void Cut",
+    "camera": "Split-screen faceoff: Parashurama's burning axe vs Laxman's smirk -> Shri Ram stepping between them with folded hands -> Hard cut to black",
+    "visual_style": "Gold Line Contour + 3D Cliffhanger Badge",
+    "action": "Climactic freeze on Parashurama's raised axe -> Flash to black -> Golden cliffhanger badge appears: 'अगले भाग में: परशुराम-लक्ष्मण संवाद!'",
+    "sfx": ["climactic_riser_hit", "deep_gong_tail", "sub_bass_drop"],
+    "voice": "दो महा-शक्तियों का महा-टकराव! अगले भाग में: परशुराम-लक्ष्मण संवाद! फॉलो करें @grow10z"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "file": "line_00_fast.wav",
+    "start": 0.4,
+    "end": 4.94,
+    "duration": 4.54
+  },
+  {
+    "file": "line_01_fast.wav",
+    "start": 5.3,
+    "end": 9.28,
+    "duration": 3.98
+  },
+  {
+    "file": "line_02_fast.wav",
+    "start": 9.6,
+    "end": 16.13,
+    "duration": 6.53
+  },
+  {
+    "file": "line_03_fast.wav",
+    "start": 16.6,
+    "end": 22.53,
+    "duration": 5.93
+  },
+  {
+    "file": "line_04_fast.wav",
+    "start": 22.9,
+    "end": 26.72,
+    "duration": 3.82
+  },
+  {
+    "file": "line_05_fast.wav",
+    "start": 27.2,
+    "end": 31.66,
+    "duration": 4.46
+  },
+  {
+    "file": "line_06_fast.wav",
+    "start": 32.2,
+    "end": 40.0,
+    "duration": 7.8
+  },
+  {
+    "file": "line_07_fast.wav",
+    "start": 40.8,
+    "end": 48.82,
+    "duration": 8.02
+  }
+]

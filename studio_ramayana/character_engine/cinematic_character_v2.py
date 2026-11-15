@@ -7,6 +7,7 @@ sacred attributes, and cinematic volumetric lighting.
 
 import math
 import random
+import numpy as np
 import skia
 
 def draw_ornate_aura(cv, cx, cy, radius, pulse=1.0, color_scheme="gold"):
@@ -1141,5 +1142,219 @@ def draw_maharaja_janak(cv, cx, cy, scale=1.0, agony=1.0, breathing=0.0):
     cv.drawPath(crown_p, skia.Paint(Style=skia.Paint.kStroke_Style, StrokeWidth=3, Color=skia.ColorSetARGB(255, 160, 110, 20), AntiAlias=True))
     cv.drawCircle(0, -165, 8, skia.Paint(Color=skia.ColorSetARGB(255, 215, 25, 35), AntiAlias=True))
     cv.drawLine(0, -125, 0, -108, skia.Paint(StrokeWidth=3, Color=skia.ColorSetARGB(255, 215, 30, 35), AntiAlias=True))
+
+    cv.restore()
+
+
+def draw_mighty_kings_struggle(cv, cx, cy, scale=1.0, strain=1.0):
+    """
+    Renders two mighty warrior kings straining with full arrogance and power
+    against the immovable sacred Pinaka bow.
+    """
+    cv.save()
+    cv.translate(cx, cy)
+    cv.scale(scale, scale)
+
+    # King 1 (Left side, straining rightwards)
+    for side, kx in [(-1, -120), (1, 120)]:
+        cv.save()
+        cv.translate(kx, 0)
+        cv.scale(side, 1)
+
+        # Muscular armored torso
+        body_p = skia.Path()
+        body_p.moveTo(-45, 120)
+        body_p.lineTo(-65, -20)
+        body_p.lineTo(-30, -80)
+        body_p.lineTo(25, -80)
+        body_p.lineTo(45, -20)
+        body_p.lineTo(30, 120)
+        body_p.close()
+        # Heavy bronze armor
+        cv.drawPath(body_p, skia.Paint(
+            Shader=skia.GradientShader.MakeLinear(
+                [skia.Point(-65, -80), skia.Point(45, 120)],
+                [skia.ColorSetARGB(255, 140, 85, 35), skia.ColorSetARGB(255, 75, 45, 20)],
+                [0.0, 1.0]
+            ),
+            AntiAlias=True
+        ))
+        cv.drawPath(body_p, skia.Paint(Style=skia.Paint.kStroke_Style, StrokeWidth=3, Color=skia.ColorSetARGB(255, 210, 150, 60), AntiAlias=True))
+
+        # Strained arm reaching toward bow center
+        arm_p = skia.Path()
+        arm_p.moveTo(-10, -60)
+        arm_p.lineTo(60, -20 + strain * 5)
+        arm_p.lineTo(110, -10 + strain * 8)
+        cv.drawPath(arm_p, skia.Paint(Style=skia.Paint.kStroke_Style, StrokeWidth=28, StrokeCap=skia.Paint.kRound_Cap, Color=skia.ColorSetARGB(255, 160, 95, 45), AntiAlias=True))
+        # Spiked bronze bracer
+        cv.drawCircle(80, -15, 16, skia.Paint(Color=skia.ColorSetARGB(255, 215, 165, 45), AntiAlias=True))
+
+        # Fierce helmet with horns
+        head_p = skia.Path()
+        head_p.moveTo(-25, -80)
+        head_p.lineTo(-20, -135)
+        head_p.lineTo(15, -135)
+        head_p.lineTo(20, -80)
+        head_p.close()
+        cv.drawPath(head_p, skia.Paint(Color=skia.ColorSetARGB(255, 95, 60, 25), AntiAlias=True))
+
+        # Helmet Horns
+        horn_p = skia.Path()
+        horn_p.moveTo(-20, -125)
+        horn_p.cubicTo(-55, -165, -35, -205, -15, -215)
+        horn_p.cubicTo(-25, -185, -20, -155, -15, -125)
+        cv.drawPath(horn_p, skia.Paint(Color=skia.ColorSetARGB(255, 230, 190, 70), AntiAlias=True))
+
+        # Straining sweat drops
+        if strain > 0.5:
+            cv.drawCircle(25, -95, 3, skia.Paint(Color=skia.ColorSetARGB(200, 210, 240, 255), AntiAlias=True))
+            cv.drawCircle(32, -80, 2.5, skia.Paint(Color=skia.ColorSetARGB(200, 210, 240, 255), AntiAlias=True))
+
+        cv.restore()
+
+    # Red anger / frustration aura around kings
+    cv.drawCircle(0, 0, 280, skia.Paint(
+        Shader=skia.GradientShader.MakeRadial(
+            skia.Point(0, 0), 280,
+            [skia.ColorSetARGB(70, 220, 40, 20), skia.ColorTRANSPARENT],
+            [0.2, 1.0]
+        ),
+        AntiAlias=True
+    ))
+
+    cv.restore()
+
+
+def draw_ram_extreme_profile_pull(cv, cx, cy, scale=1.0, pull=1.0, spark=True):
+    """
+    Cinema-Grade Heroic Profile Close-up:
+    Shri Ram's focused divine lotus eyes, golden Suryavanshi mukut,
+    and hands pulling the Pinaka bowstring right back to his ear.
+    Electric sparks and celestial energy crackling.
+    """
+    cv.save()
+    cv.translate(cx, cy)
+    cv.scale(scale, scale)
+
+    # 1. Divine Aura Flare
+    cv.drawCircle(0, -60, 320, skia.Paint(
+        Shader=skia.GradientShader.MakeRadial(
+            skia.Point(0, -60), 320,
+            [skia.ColorSetARGB(180, 255, 225, 110), skia.ColorSetARGB(60, 255, 150, 30), skia.ColorTRANSPARENT],
+            [0.1, 0.6, 1.0]
+        ),
+        AntiAlias=True
+    ))
+
+    # 2. Celestial Blue Contoured Face (Heroic Profile)
+    face_p = skia.Path()
+    face_p.moveTo(-110, 80)
+    face_p.cubicTo(-130, -30, -110, -140, -40, -190)
+    face_p.cubicTo(20, -190, 80, -140, 95, -50)
+    face_p.cubicTo(105, 30, 80, 110, 20, 140)
+    face_p.cubicTo(-40, 150, -85, 130, -110, 80)
+    face_p.close()
+
+    cv.drawPath(face_p, skia.Paint(
+        Shader=skia.GradientShader.MakeLinear(
+            [skia.Point(-110, -190), skia.Point(95, 140)],
+            [skia.ColorSetARGB(255, 45, 120, 195), skia.ColorSetARGB(255, 20, 75, 145), skia.ColorSetARGB(255, 12, 45, 95)],
+            [0.0, 0.6, 1.0]
+        ),
+        AntiAlias=True
+    ))
+
+    # Golden Rim Light on Jaw and Brow
+    cv.drawPath(face_p, skia.Paint(
+        Style=skia.Paint.kStroke_Style, StrokeWidth=5,
+        Color=skia.ColorSetARGB(180, 255, 230, 130), AntiAlias=True
+    ))
+
+    # 3. Divine Lotus Eye (कमल नयन - Focused Heroic Glint)
+    eye_x, eye_y = -10, -55
+    eye_p = skia.Path()
+    eye_p.moveTo(eye_x - 38, eye_y)
+    eye_p.cubicTo(eye_x - 15, eye_y - 20, eye_x + 18, eye_y - 20, eye_x + 42, eye_y)
+    eye_p.cubicTo(eye_x + 18, eye_y + 18, eye_x - 15, eye_y + 18, eye_x - 38, eye_y)
+    eye_p.close()
+    cv.drawPath(eye_p, skia.Paint(Color=skia.ColorSetARGB(255, 248, 248, 252), AntiAlias=True))
+    # Iris
+    cv.drawCircle(eye_x + 2, eye_y, 14, skia.Paint(Color=skia.ColorSetARGB(255, 25, 30, 45), AntiAlias=True))
+    # Catchlight
+    cv.drawCircle(eye_x + 6, eye_y - 4, 4.5, skia.Paint(Color=skia.ColorWHITE, AntiAlias=True))
+    # Upper Lash & Eyebrow
+    cv.drawPath(eye_p, skia.Paint(Style=skia.Paint.kStroke_Style, StrokeWidth=3.5, Color=skia.ColorSetARGB(255, 15, 20, 30), AntiAlias=True))
+    brow_p = skia.Path()
+    brow_p.moveTo(eye_x - 44, eye_y - 26)
+    brow_p.cubicTo(eye_x - 10, eye_y - 42, eye_x + 25, eye_y - 38, eye_x + 50, eye_y - 22)
+    cv.drawPath(brow_p, skia.Paint(Style=skia.Paint.kStroke_Style, StrokeWidth=6, StrokeCap=skia.Paint.kRound_Cap, Color=skia.ColorSetARGB(255, 12, 18, 28), AntiAlias=True))
+
+    # Tilak
+    tilak_p = skia.Path()
+    tilak_p.moveTo(eye_x - 70, eye_y - 85)
+    tilak_p.lineTo(eye_x - 70, eye_y - 145)
+    cv.drawPath(tilak_p, skia.Paint(Style=skia.Paint.kStroke_Style, StrokeWidth=7, Color=skia.ColorSetARGB(255, 245, 240, 215), AntiAlias=True))
+    cv.drawCircle(eye_x - 70, eye_y - 100, 5, skia.Paint(Color=skia.ColorSetARGB(255, 210, 25, 35), AntiAlias=True))
+
+    # 4. Makara-Kundal (Golden Earring touching bowstring)
+    cv.drawCircle(78, -35, 18, skia.Paint(Color=skia.ColorSetARGB(255, 245, 205, 55), AntiAlias=True))
+    cv.drawCircle(78, -12, 8, skia.Paint(Color=skia.ColorSetARGB(255, 255, 240, 180), AntiAlias=True))
+
+    # 5. Bowstring Pulled to Ear!
+    pull_x = 75 - (1.0 - pull) * 80
+    pull_y = -30
+    cv.drawLine(-160, -320, pull_x, pull_y, skia.Paint(StrokeWidth=5, Color=skia.ColorSetARGB(255, 255, 245, 210), AntiAlias=True))
+    cv.drawLine(pull_x, pull_y, -140, 280, skia.Paint(StrokeWidth=5, Color=skia.ColorSetARGB(255, 255, 245, 210), AntiAlias=True))
+
+    # Arm & Golden Gauntlet
+    cv.drawCircle(pull_x + 12, pull_y, 22, skia.Paint(Color=skia.ColorSetARGB(255, 225, 175, 45), AntiAlias=True))
+    cv.drawCircle(pull_x + 12, pull_y, 14, skia.Paint(Color=skia.ColorSetARGB(255, 255, 230, 110), AntiAlias=True))
+
+    # 6. Arcane Electric Sparks (Lightning crackling on wood)
+    if spark:
+        for _ in range(8):
+            sx = pull_x + random.uniform(-60, 40)
+            sy = pull_y + random.uniform(-80, 80)
+            cv.drawLine(pull_x, pull_y, sx, sy, skia.Paint(StrokeWidth=2.5, Color=skia.ColorSetARGB(230, 200, 240, 255), AntiAlias=True))
+            cv.drawCircle(sx, sy, 3.5, skia.Paint(Color=skia.ColorWHITE, AntiAlias=True))
+
+    cv.restore()
+
+
+def draw_cosmic_lightning_burst(cv, cx, cy, intensity=1.0, seed=42):
+    """
+    Renders violent branching divine lightning bolts and cosmic shockwaves.
+    """
+    np.random.seed(seed)
+    cv.save()
+    cv.translate(cx, cy)
+
+    # Radial blinding shockwave
+    cv.drawCircle(0, 0, 450 * intensity, skia.Paint(
+        Shader=skia.GradientShader.MakeRadial(
+            skia.Point(0, 0), 450 * intensity,
+            [skia.ColorSetARGB(230, 255, 255, 255), skia.ColorSetARGB(140, 120, 210, 255), skia.ColorTRANSPARENT],
+            [0.1, 0.45, 1.0]
+        ),
+        AntiAlias=True
+    ))
+
+    # Branching bolts
+    for b in range(12):
+        angle = (b / 12.0) * 2 * math.pi + np.random.uniform(-0.15, 0.15)
+        cur_x, cur_y = 0, 0
+        dist = np.random.uniform(220, 550) * intensity
+        steps = 6
+        p = skia.Path()
+        p.moveTo(0, 0)
+        for s in range(1, steps + 1):
+            r = (s / steps) * dist
+            jitter = np.random.uniform(-25, 25)
+            nx = r * math.cos(angle) + jitter * math.sin(angle)
+            ny = r * math.sin(angle) + jitter * math.cos(angle)
+            p.lineTo(nx, ny)
+        cv.drawPath(p, skia.Paint(Style=skia.Paint.kStroke_Style, StrokeWidth=4, Color=skia.ColorWHITE, AntiAlias=True))
+        cv.drawPath(p, skia.Paint(Style=skia.Paint.kStroke_Style, StrokeWidth=10, Color=skia.ColorSetARGB(120, 100, 190, 255), AntiAlias=True))
 
     cv.restore()

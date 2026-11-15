@@ -1,0 +1,28 @@
+{
+  "name": "viral-2d-3d-cod-animationns-series",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/satyamtiwarihindigaming-blip/grow10z-studio.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/satyamtiwarihindigaming-blip/grow10z-studio/issues"
+  },
+  "homepage": "https://github.com/satyamtiwarihindigaming-blip/grow10z-studio#readme",
+  "dependencies": {
+    "@remotion/cli": "^4.0.543",
+    "gsap": "^3.15.1",
+    "hyperframes": "^0.9.52",
+    "remotion": "^4.0.543",
+    "three": "^0.187.0"
+  }
+}
